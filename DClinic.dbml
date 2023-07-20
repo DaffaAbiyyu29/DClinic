@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DClinic" Class="DClinicDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=daffa;Initial Catalog=DClinic;User ID=sa" SettingsObjectName="D_Clinic.Properties.Settings" SettingsPropertyName="DClinicConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Resepsionis" Member="Resepsionis">
+    <Type Name="Resepsioni">
+      <Column Name="Id_Resepsionis" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Karyawan" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Karyawan_Resepsioni" Member="Karyawan" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Karyawan" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manager" Member="Managers">
+    <Type Name="Manager">
+      <Column Name="Id_Manager" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Karyawan" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Karyawan_Manager" Member="Karyawan" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Karyawan" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dokter" Member="Dokters">
+    <Type Name="Dokter">
+      <Column Name="Id_Dokter" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Karyawan" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Karyawan_Dokter" Member="Karyawan" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Karyawan" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Apoteker" Member="Apotekers">
+    <Type Name="Apoteker">
+      <Column Name="Id_Apoteker" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Karyawan" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Karyawan_Apoteker" Member="Karyawan" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Karyawan" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Karyawan" Member="Karyawans">
+    <Type Name="Karyawan">
+      <Column Name="Id_Karyawan" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nama" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Telp" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Jabatan" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Karyawan_Resepsioni" Member="Resepsionis" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Resepsioni" />
+      <Association Name="Karyawan_Manager" Member="Managers" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Manager" />
+      <Association Name="Karyawan_Dokter" Member="Dokters" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Dokter" />
+      <Association Name="Karyawan_Apoteker" Member="Apotekers" ThisKey="Id_Karyawan" OtherKey="Id_Karyawan" Type="Apoteker" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Obat" Member="Obats">
+    <Type Name="Obat">
+      <Column Name="Id_Obat" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nama" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Merk" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Kemasan" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Efek" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Tgl_Kadaluarsa" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Stok" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Harga_Beli" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Harga_Jual" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pasien" Member="Pasiens">
+    <Type Name="Pasien">
+      <Column Name="Id_Pasien" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nama" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Jenis_Kelamin" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Golongan_Darah" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Telp" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Alamat" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Riwayat_Login" Member="Riwayat_Logins">
+    <Type Name="Riwayat_Login">
+      <Column Name="Id_Login" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Karyawan" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Nama" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Tanggal" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Waktu" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
