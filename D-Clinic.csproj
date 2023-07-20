@@ -150,6 +150,12 @@
     <Compile Include="Halaman\Transaksi\Form_Daftar_Resep.Designer.cs">
       <DependentUpon>Form_Daftar_Resep.cs</DependentUpon>
     </Compile>
+    <Compile Include="Halaman\Transaksi\Form_Transaksi_Pembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Halaman\Transaksi\Form_Transaksi_Pembayaran.Designer.cs">
+      <DependentUpon>Form_Transaksi_Pembayaran.cs</DependentUpon>
+    </Compile>
     <Compile Include="Halaman\Transaksi\Form_Transaksi_Pemberian_Resep.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Halaman\Transaksi\Form_Daftar_Resep.resx">
       <DependentUpon>Form_Daftar_Resep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Halaman\Transaksi\Form_Transaksi_Pembayaran.resx">
+      <DependentUpon>Form_Transaksi_Pembayaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Halaman\Transaksi\Form_Transaksi_Pemberian_Resep.resx">
       <DependentUpon>Form_Transaksi_Pemberian_Resep.cs</DependentUpon>
