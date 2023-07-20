@@ -26,9 +26,7 @@ namespace D_Clinic.Halaman.Transaksi
 
         private void Form_Transaksi_Rujukan_Pasien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dClinicDataSet.View_TrsRujukan' table. You can move, or remove it, as needed.
             this.view_TrsRujukanTableAdapter.Fill(this.dClinicDataSet.View_TrsRujukan);
-            // TODO: This line of code loads data into the 'dClinicDataSet.View_TrsPendaftaran' table. You can move, or remove it, as needed.
             this.view_TrsPendaftaranTableAdapter.Fill(this.dClinicDataSet.View_TrsPendaftaran);
             RS_Tersedia();
             txTanggal.Text = currentDateTime.ToString("dd MMMM yyyy");

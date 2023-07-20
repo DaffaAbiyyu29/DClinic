@@ -20,7 +20,7 @@ namespace D_Clinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DClinic_App());
+            Application.Run(new Form_Daftar_Resep());
         }
 
         public static void CloseAllForms()

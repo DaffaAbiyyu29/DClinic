@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radiusForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -162,7 +162,7 @@
             this.lblDokter.BackColor = System.Drawing.Color.Transparent;
             this.lblDokter.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDokter.ForeColor = System.Drawing.Color.White;
-            this.lblDokter.Location = new System.Drawing.Point(142, 232);
+            this.lblDokter.Location = new System.Drawing.Point(200, 232);
             this.lblDokter.Name = "lblDokter";
             this.lblDokter.Size = new System.Drawing.Size(83, 31);
             this.lblDokter.TabIndex = 77;
@@ -193,7 +193,7 @@
             this.txTanggal.IconLeft = global::D_Clinic.Properties.Resources.green_cal;
             this.txTanggal.IconLeftOffset = new System.Drawing.Point(0, -2);
             this.txTanggal.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txTanggal.Location = new System.Drawing.Point(100, 283);
+            this.txTanggal.Location = new System.Drawing.Point(158, 283);
             this.txTanggal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txTanggal.MaxLength = 30;
             this.txTanggal.Name = "txTanggal";
@@ -212,22 +212,22 @@
             this.tblTrsPendaftaran.AllowUserToDeleteRows = false;
             this.tblTrsPendaftaran.AllowUserToResizeColumns = false;
             this.tblTrsPendaftaran.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            this.tblTrsPendaftaran.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            this.tblTrsPendaftaran.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tblTrsPendaftaran.AutoGenerateColumns = false;
             this.tblTrsPendaftaran.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.tblTrsPendaftaran.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.tblTrsPendaftaran.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tblTrsPendaftaran.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Porsche Next TT", 11F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblTrsPendaftaran.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Porsche Next TT", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblTrsPendaftaran.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tblTrsPendaftaran.ColumnHeadersHeight = 40;
             this.tblTrsPendaftaran.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomor,
@@ -241,14 +241,14 @@
             this.tanggalDataGridViewTextBoxColumn,
             this.waktuDataGridViewTextBoxColumn});
             this.tblTrsPendaftaran.DataSource = this.viewTrsPendaftaranBindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Porsche Next TT", 11F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblTrsPendaftaran.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Porsche Next TT", 11F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblTrsPendaftaran.DefaultCellStyle = dataGridViewCellStyle4;
             this.tblTrsPendaftaran.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tblTrsPendaftaran.Location = new System.Drawing.Point(827, 361);
             this.tblTrsPendaftaran.MultiSelect = false;
@@ -355,9 +355,9 @@
             // 
             this.tanggalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
-            dataGridViewCellStyle10.Format = "D";
-            dataGridViewCellStyle10.NullValue = null;
-            this.tanggalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Format = "D";
+            dataGridViewCellStyle3.NullValue = null;
+            this.tanggalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
             this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
             this.tanggalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -386,22 +386,22 @@
             this.tblPasien.AllowUserToDeleteRows = false;
             this.tblPasien.AllowUserToResizeColumns = false;
             this.tblPasien.AllowUserToResizeRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            this.tblPasien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            this.tblPasien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.tblPasien.AutoGenerateColumns = false;
             this.tblPasien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.tblPasien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.tblPasien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tblPasien.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Porsche Next TT", 11F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblPasien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Porsche Next TT", 11F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblPasien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tblPasien.ColumnHeadersHeight = 40;
             this.tblPasien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -410,14 +410,14 @@
             this.jenisKelaminDataGridViewTextBoxColumn,
             this.golonganDarahDataGridViewTextBoxColumn});
             this.tblPasien.DataSource = this.pasienBindingSource;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Porsche Next TT", 11F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblPasien.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Porsche Next TT", 11F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblPasien.DefaultCellStyle = dataGridViewCellStyle7;
             this.tblPasien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tblPasien.Location = new System.Drawing.Point(827, 22);
             this.tblPasien.MultiSelect = false;
@@ -517,7 +517,7 @@
             this.btnBatal.ForeColor = System.Drawing.Color.Moccasin;
             this.btnBatal.HoverState.FillColor = System.Drawing.Color.Moccasin;
             this.btnBatal.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnBatal.Location = new System.Drawing.Point(138, 555);
+            this.btnBatal.Location = new System.Drawing.Point(192, 555);
             this.btnBatal.Margin = new System.Windows.Forms.Padding(2);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.PressedColor = System.Drawing.Color.NavajoWhite;
@@ -548,7 +548,7 @@
             this.btnDaftar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnDaftar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnDaftar.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnDaftar.Location = new System.Drawing.Point(138, 505);
+            this.btnDaftar.Location = new System.Drawing.Point(192, 505);
             this.btnDaftar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDaftar.Name = "btnDaftar";
             this.btnDaftar.PressedColor = System.Drawing.Color.NavajoWhite;
@@ -593,7 +593,7 @@
             // 
             this.imgDokter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.imgDokter.Image = global::D_Clinic.Properties.Resources.white_dokter;
-            this.imgDokter.Location = new System.Drawing.Point(103, 229);
+            this.imgDokter.Location = new System.Drawing.Point(161, 229);
             this.imgDokter.Margin = new System.Windows.Forms.Padding(2);
             this.imgDokter.Name = "imgDokter";
             this.imgDokter.Size = new System.Drawing.Size(30, 30);
@@ -621,7 +621,7 @@
             this.cbDokter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.cbDokter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbDokter.ItemHeight = 30;
-            this.cbDokter.Location = new System.Drawing.Point(100, 230);
+            this.cbDokter.Location = new System.Drawing.Point(158, 230);
             this.cbDokter.Margin = new System.Windows.Forms.Padding(2);
             this.cbDokter.Name = "cbDokter";
             this.cbDokter.Size = new System.Drawing.Size(478, 36);
@@ -656,7 +656,7 @@
             this.txPasien.IconLeft = global::D_Clinic.Properties.Resources.white_pasien;
             this.txPasien.IconLeftOffset = new System.Drawing.Point(0, -2);
             this.txPasien.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txPasien.Location = new System.Drawing.Point(100, 177);
+            this.txPasien.Location = new System.Drawing.Point(158, 177);
             this.txPasien.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txPasien.MaxLength = 30;
             this.txPasien.Name = "txPasien";
@@ -695,7 +695,7 @@
             this.txResepsionis.IconLeft = global::D_Clinic.Properties.Resources.green_resepsionis;
             this.txResepsionis.IconLeftOffset = new System.Drawing.Point(0, -2);
             this.txResepsionis.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txResepsionis.Location = new System.Drawing.Point(100, 124);
+            this.txResepsionis.Location = new System.Drawing.Point(158, 124);
             this.txResepsionis.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txResepsionis.MaxLength = 30;
             this.txResepsionis.Name = "txResepsionis";
@@ -732,7 +732,7 @@
             this.txID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txID.IconLeft = global::D_Clinic.Properties.Resources.white_kode;
             this.txID.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txID.Location = new System.Drawing.Point(100, 71);
+            this.txID.Location = new System.Drawing.Point(158, 71);
             this.txID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txID.MaxLength = 7;
             this.txID.Name = "txID";
