@@ -94,6 +94,7 @@ namespace D_Clinic.Resources
                         {
                             menu.btnObat.Visible = true;
                             menu.btnRestok.Visible = true;
+                            menu.btnDaftarObat.Visible = true;
                         }
                     }
                 }

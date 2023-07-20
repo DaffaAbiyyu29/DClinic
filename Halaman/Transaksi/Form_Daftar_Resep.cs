@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,9 +92,27 @@ namespace D_Clinic.Halaman.Transaksi
                 adapter.Fill(table);
                 tblDaftarResep.DataSource = table;
             }
+            cariDetailObat();
+        }
+        private void cariDetailObat()
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand search = new SqlCommand("sp_Search_Detail_TrsPemberianResep", connection);
+                search.CommandType = CommandType.StoredProcedure;
+                search.Parameters.AddWithValue("Id_TrsResep", txID.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(search);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                tblDetailObat.DataSource = table;
+            }
         }
         private void Form_Daftar_Resep_Load(object sender, EventArgs e)
         {
+            this.view_DetailObatTrsPemberianResepTableAdapter.Fill(this.dClinicDataSet.View_DetailObatTrsPemberianResep);
             this.view_TrsPemberianResepTableAdapter.Fill(this.dClinicDataSet.View_TrsPemberianResep);
             this.view_TrsPemberianResepDiterimaTableAdapter.Fill(this.dClinicDataSet.View_TrsPemberianResepDiterima);
             cariResepTerkirim();
@@ -103,7 +122,10 @@ namespace D_Clinic.Halaman.Transaksi
         {
             this.tblDaftarResep.Rows[e.RowIndex].Cells["no_daftar"].Value = (e.RowIndex + 1).ToString();
         }
-
+        private void tblDetailObat_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.tblDetailObat.Rows[e.RowIndex].Cells["no_obat"].Value = (e.RowIndex + 1).ToString();
+        }
         private void tblResepDiterima_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             this.tblResepDiterima.Rows[e.RowIndex].Cells["no_daftar2"].Value = (e.RowIndex + 1).ToString();
@@ -135,6 +157,45 @@ namespace D_Clinic.Halaman.Transaksi
         private void btnBatal_Click(object sender, EventArgs e)
         {
             clearText();
+        }
+        private void TerimaResep()
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            //EXEC SP INSERT TABLE TRANSAKSI PEMBERIAN RESEP
+            SqlCommand insert_trs = new SqlCommand("sp_TerimaResep", connection);
+            insert_trs.CommandType = CommandType.StoredProcedure;
+            insert_trs.Parameters.AddWithValue("Id_TrsResep", txID.Text);
+
+            try
+            {
+                connection.Open();
+                insert_trs.ExecuteNonQuery();
+                mBox.text1.Text = "Berhasil Terima Resep Obat";
+                mBox.session.Text = "Resep";
+                mBox.Show();
+                mBox.SuccessMessage();
+                clearText();
+                btnTerima.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                mBox.text1.Text = "Gagal Terima Resep Obat";
+                mBox.session.Text = "Resep";
+                mBox.Show();
+                mBox.ErrorMessage();
+            }
+            finally
+            {
+                this.view_TrsPemberianResepDiterimaTableAdapter.Fill(this.dClinicDataSet.View_TrsPemberianResepDiterima);
+                cariResepTerkirim();
+            }
+        }
+        private void btnTerima_Click(object sender, EventArgs e)
+        {
+            TerimaResep();
         }
     }
 }

@@ -293,5 +293,14 @@ namespace D_Clinic.Halaman
             restok.Show();
             restok.txApoteker.Text = lblNama.Text;
         }
+
+        private void btnDaftarObat_Click(object sender, EventArgs e)
+        {
+            Form_Daftar_Resep daftar = new Form_Daftar_Resep();
+            daftar.TopLevel = false;
+            pnlContainer.Controls.Add(daftar);
+            daftar.BringToFront();
+            daftar.Show();
+        }
     }
 }
