@@ -251,6 +251,9 @@
     <EmbeddedResource Include="Halaman\Master\Form_Master_Supplier.resx">
       <DependentUpon>Form_Master_Supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Halaman\Transaksi\Form_Daftar_Resep.resx">
+      <DependentUpon>Form_Daftar_Resep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Halaman\Transaksi\Form_Transaksi_Pemberian_Resep.resx">
       <DependentUpon>Form_Transaksi_Pemberian_Resep.cs</DependentUpon>
     </EmbeddedResource>

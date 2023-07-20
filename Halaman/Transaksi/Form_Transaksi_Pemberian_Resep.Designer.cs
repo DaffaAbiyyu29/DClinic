@@ -48,8 +48,6 @@
             this.radiusForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txKeterangan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txDiagnosa = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tblPendaftaran = new Guna.UI2.WinForms.Guna2DataGridView();
             this.no_daftar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,11 +66,8 @@
             this.viewTrsPendaftaranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dClinicDataSet = new D_Clinic.DClinicDataSet();
             this.lblTotalHarga = new System.Windows.Forms.Label();
-            this.txTotalHarga = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnKurang = new Guna.UI2.WinForms.Guna2Button();
             this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
-            this.txDokter = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txTanggal = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBatal = new Guna.UI2.WinForms.Guna2Button();
@@ -107,10 +102,7 @@
             this.harga_obat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnKembali = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txCariObat = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.radiusTabelKeranjang = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.radiusTabelObat = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -119,6 +111,14 @@
             this.obatTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.ObatTableAdapter();
             this.view_TrsPendaftaranTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPendaftaranTableAdapter();
             this.view_TrsPemberianResepTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPemberianResepTableAdapter();
+            this.txCariObat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txKeterangan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txDiagnosa = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txTotalHarga = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txDokter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txTanggal = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnKembali = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.txID = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPendaftaran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTrsPendaftaranBindingSource)).BeginInit();
@@ -184,82 +184,6 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(1584, 680);
             this.guna2GroupBox1.TabIndex = 62;
             // 
-            // txKeterangan
-            // 
-            this.txKeterangan.Animated = true;
-            this.txKeterangan.AutoRoundedCorners = true;
-            this.txKeterangan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txKeterangan.BorderColor = System.Drawing.Color.White;
-            this.txKeterangan.BorderRadius = 17;
-            this.txKeterangan.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txKeterangan.BorderThickness = 2;
-            this.txKeterangan.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txKeterangan.DefaultText = "";
-            this.txKeterangan.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.txKeterangan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txKeterangan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txKeterangan.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txKeterangan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txKeterangan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txKeterangan.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txKeterangan.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txKeterangan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txKeterangan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txKeterangan.IconLeft = global::D_Clinic.Properties.Resources.white_keluhan;
-            this.txKeterangan.IconLeftOffset = new System.Drawing.Point(0, -2);
-            this.txKeterangan.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txKeterangan.Location = new System.Drawing.Point(100, 283);
-            this.txKeterangan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txKeterangan.MaxLength = 1000;
-            this.txKeterangan.Name = "txKeterangan";
-            this.txKeterangan.PasswordChar = '\0';
-            this.txKeterangan.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txKeterangan.PlaceholderText = "Keterangan";
-            this.txKeterangan.SelectedText = "";
-            this.txKeterangan.Size = new System.Drawing.Size(478, 37);
-            this.txKeterangan.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txKeterangan.TabIndex = 90;
-            this.txKeterangan.TextOffset = new System.Drawing.Point(5, 0);
-            this.txKeterangan.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
-            // 
-            // txDiagnosa
-            // 
-            this.txDiagnosa.Animated = true;
-            this.txDiagnosa.AutoRoundedCorners = true;
-            this.txDiagnosa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDiagnosa.BorderColor = System.Drawing.Color.White;
-            this.txDiagnosa.BorderRadius = 17;
-            this.txDiagnosa.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txDiagnosa.BorderThickness = 2;
-            this.txDiagnosa.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txDiagnosa.DefaultText = "";
-            this.txDiagnosa.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.txDiagnosa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDiagnosa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txDiagnosa.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txDiagnosa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDiagnosa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txDiagnosa.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDiagnosa.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txDiagnosa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txDiagnosa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txDiagnosa.IconLeft = global::D_Clinic.Properties.Resources.white_diagnosa;
-            this.txDiagnosa.IconLeftOffset = new System.Drawing.Point(0, -2);
-            this.txDiagnosa.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txDiagnosa.Location = new System.Drawing.Point(100, 230);
-            this.txDiagnosa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txDiagnosa.MaxLength = 1000;
-            this.txDiagnosa.Name = "txDiagnosa";
-            this.txDiagnosa.PasswordChar = '\0';
-            this.txDiagnosa.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txDiagnosa.PlaceholderText = "Diagnosa";
-            this.txDiagnosa.SelectedText = "";
-            this.txDiagnosa.Size = new System.Drawing.Size(478, 37);
-            this.txDiagnosa.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txDiagnosa.TabIndex = 89;
-            this.txDiagnosa.TextOffset = new System.Drawing.Point(5, 0);
-            this.txDiagnosa.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -295,7 +219,6 @@
             this.tblPendaftaran.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tblPendaftaran.ColumnHeadersHeight = 40;
             this.tblPendaftaran.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.no_daftar,
             this.id_daftar,
             this.idKaryawanDataGridViewTextBoxColumn,
             this.namaResepsionisDataGridViewTextBoxColumn,
@@ -307,7 +230,8 @@
             this.waktuDataGridViewTextBoxColumn,
             this.statusRujukanDataGridViewTextBoxColumn,
             this.statusResepDataGridViewTextBoxColumn,
-            this.statusPembayaranDataGridViewTextBoxColumn});
+            this.statusPembayaranDataGridViewTextBoxColumn,
+            this.no_daftar});
             this.tblPendaftaran.DataSource = this.viewTrsPendaftaranBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -479,47 +403,6 @@
             this.lblTotalHarga.TabIndex = 83;
             this.lblTotalHarga.Text = "Total Harga";
             // 
-            // txTotalHarga
-            // 
-            this.txTotalHarga.Animated = true;
-            this.txTotalHarga.AutoRoundedCorners = true;
-            this.txTotalHarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTotalHarga.BorderColor = System.Drawing.Color.White;
-            this.txTotalHarga.BorderRadius = 17;
-            this.txTotalHarga.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txTotalHarga.BorderThickness = 2;
-            this.txTotalHarga.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txTotalHarga.DefaultText = "";
-            this.txTotalHarga.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.txTotalHarga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTotalHarga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txTotalHarga.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txTotalHarga.Enabled = false;
-            this.txTotalHarga.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTotalHarga.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txTotalHarga.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTotalHarga.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txTotalHarga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txTotalHarga.HideSelection = false;
-            this.txTotalHarga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txTotalHarga.IconLeft = global::D_Clinic.Properties.Resources.white_harga;
-            this.txTotalHarga.IconLeftOffset = new System.Drawing.Point(0, -2);
-            this.txTotalHarga.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txTotalHarga.Location = new System.Drawing.Point(423, 560);
-            this.txTotalHarga.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txTotalHarga.MaxLength = 30;
-            this.txTotalHarga.Name = "txTotalHarga";
-            this.txTotalHarga.PasswordChar = '\0';
-            this.txTotalHarga.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txTotalHarga.PlaceholderText = "Total Harga";
-            this.txTotalHarga.ReadOnly = true;
-            this.txTotalHarga.SelectedText = "";
-            this.txTotalHarga.Size = new System.Drawing.Size(339, 37);
-            this.txTotalHarga.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txTotalHarga.TabIndex = 87;
-            this.txTotalHarga.TabStop = false;
-            this.txTotalHarga.TextOffset = new System.Drawing.Point(5, 0);
-            // 
             // btnKurang
             // 
             this.btnKurang.Animated = true;
@@ -579,87 +462,6 @@
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseTransparentBackground = true;
             this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
-            // 
-            // txDokter
-            // 
-            this.txDokter.AcceptsReturn = true;
-            this.txDokter.AcceptsTab = true;
-            this.txDokter.Animated = true;
-            this.txDokter.AutoRoundedCorners = true;
-            this.txDokter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDokter.BorderColor = System.Drawing.Color.White;
-            this.txDokter.BorderRadius = 17;
-            this.txDokter.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txDokter.BorderThickness = 2;
-            this.txDokter.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txDokter.DefaultText = "";
-            this.txDokter.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.txDokter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDokter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txDokter.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txDokter.Enabled = false;
-            this.txDokter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDokter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txDokter.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txDokter.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txDokter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txDokter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txDokter.IconLeft = global::D_Clinic.Properties.Resources.green_dokter;
-            this.txDokter.IconLeftOffset = new System.Drawing.Point(0, -2);
-            this.txDokter.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txDokter.Location = new System.Drawing.Point(100, 124);
-            this.txDokter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txDokter.MaxLength = 30;
-            this.txDokter.Name = "txDokter";
-            this.txDokter.PasswordChar = '\0';
-            this.txDokter.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txDokter.PlaceholderText = "Dokter";
-            this.txDokter.SelectedText = "";
-            this.txDokter.Size = new System.Drawing.Size(478, 37);
-            this.txDokter.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txDokter.TabIndex = 85;
-            this.txDokter.Tag = "";
-            this.txDokter.TextOffset = new System.Drawing.Point(5, 0);
-            this.txDokter.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
-            // 
-            // txTanggal
-            // 
-            this.txTanggal.Animated = true;
-            this.txTanggal.AutoRoundedCorners = true;
-            this.txTanggal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTanggal.BorderColor = System.Drawing.Color.White;
-            this.txTanggal.BorderRadius = 17;
-            this.txTanggal.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txTanggal.BorderThickness = 2;
-            this.txTanggal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txTanggal.DefaultText = "";
-            this.txTanggal.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.txTanggal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTanggal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txTanggal.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txTanggal.Enabled = false;
-            this.txTanggal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTanggal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txTanggal.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txTanggal.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txTanggal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txTanggal.IconLeft = global::D_Clinic.Properties.Resources.green_cal;
-            this.txTanggal.IconLeftOffset = new System.Drawing.Point(0, -2);
-            this.txTanggal.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txTanggal.Location = new System.Drawing.Point(100, 177);
-            this.txTanggal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txTanggal.MaxLength = 30;
-            this.txTanggal.Name = "txTanggal";
-            this.txTanggal.PasswordChar = '\0';
-            this.txTanggal.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txTanggal.PlaceholderText = "Tanggal";
-            this.txTanggal.SelectedText = "";
-            this.txTanggal.Size = new System.Drawing.Size(478, 37);
-            this.txTanggal.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txTanggal.TabIndex = 84;
-            this.txTanggal.TextOffset = new System.Drawing.Point(5, 0);
-            this.txTanggal.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
             // panel2
             // 
@@ -887,14 +689,14 @@
             this.tblResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.tblResep.ColumnHeadersHeight = 40;
             this.tblResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.no_resep,
             this.idTrsResepDataGridViewTextBoxColumn,
             this.idTrsPendaftaranDataGridViewTextBoxColumn,
             this.namaDokterDataGridViewTextBoxColumn1,
             this.tanggalDataGridViewTextBoxColumn1,
             this.waktuDataGridViewTextBoxColumn1,
             this.keteranganDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn1});
+            this.statusDataGridViewTextBoxColumn1,
+            this.no_resep});
             this.tblResep.DataSource = this.viewTrsPemberianResepBindingSource;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -1035,7 +837,6 @@
             this.tblObat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.tblObat.ColumnHeadersHeight = 40;
             this.tblObat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.no_obat,
             this.id_obat,
             this.nama_obat,
             this.merkDataGridViewTextBoxColumn,
@@ -1045,7 +846,8 @@
             this.stokDataGridViewTextBoxColumn,
             this.hargaBeliDataGridViewTextBoxColumn,
             this.harga_obat,
-            this.statusDataGridViewTextBoxColumn});
+            this.statusDataGridViewTextBoxColumn,
+            this.no_obat});
             this.tblObat.DataSource = this.obatBindingSource;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -1186,26 +988,6 @@
             this.obatBindingSource.DataMember = "Obat";
             this.obatBindingSource.DataSource = this.dClinicDataSet;
             // 
-            // btnKembali
-            // 
-            this.btnKembali.BackColor = System.Drawing.Color.Transparent;
-            this.btnKembali.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnKembali.HoverState.Image = global::D_Clinic.Properties.Resources.green_next;
-            this.btnKembali.HoverState.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
-            this.btnKembali.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnKembali.Image = global::D_Clinic.Properties.Resources.white_next;
-            this.btnKembali.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
-            this.btnKembali.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnKembali.ImageRotate = 0F;
-            this.btnKembali.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnKembali.Location = new System.Drawing.Point(30, 683);
-            this.btnKembali.Name = "btnKembali";
-            this.btnKembali.PressedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnKembali.ShadowDecoration.BorderRadius = 9;
-            this.btnKembali.Size = new System.Drawing.Size(40, 40);
-            this.btnKembali.TabIndex = 75;
-            this.btnKembali.UseTransparentBackground = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -1214,82 +996,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 637);
             this.panel1.TabIndex = 73;
-            // 
-            // txID
-            // 
-            this.txID.Animated = true;
-            this.txID.AutoRoundedCorners = true;
-            this.txID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txID.BorderColor = System.Drawing.Color.White;
-            this.txID.BorderRadius = 17;
-            this.txID.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txID.BorderThickness = 2;
-            this.txID.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txID.DefaultText = "";
-            this.txID.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.txID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txID.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txID.Enabled = false;
-            this.txID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txID.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.txID.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txID.IconLeft = global::D_Clinic.Properties.Resources.white_kode;
-            this.txID.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txID.Location = new System.Drawing.Point(100, 71);
-            this.txID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txID.MaxLength = 7;
-            this.txID.Name = "txID";
-            this.txID.PasswordChar = '\0';
-            this.txID.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txID.PlaceholderText = "ID Restok Obat";
-            this.txID.SelectedText = "";
-            this.txID.Size = new System.Drawing.Size(478, 37);
-            this.txID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txID.TabIndex = 21;
-            this.txID.TextOffset = new System.Drawing.Point(5, 0);
-            this.txID.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
-            // 
-            // txCariObat
-            // 
-            this.txCariObat.Animated = true;
-            this.txCariObat.AutoRoundedCorners = true;
-            this.txCariObat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.txCariObat.BorderColor = System.Drawing.Color.White;
-            this.txCariObat.BorderRadius = 17;
-            this.txCariObat.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txCariObat.BorderThickness = 2;
-            this.txCariObat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txCariObat.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txCariObat.DefaultText = "";
-            this.txCariObat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txCariObat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txCariObat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txCariObat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txCariObat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.txCariObat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txCariObat.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txCariObat.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txCariObat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txCariObat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txCariObat.IconLeft = global::D_Clinic.Properties.Resources.white_magnifier;
-            this.txCariObat.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txCariObat.Location = new System.Drawing.Point(1271, 172);
-            this.txCariObat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txCariObat.MaxLength = 30;
-            this.txCariObat.Name = "txCariObat";
-            this.txCariObat.PasswordChar = '\0';
-            this.txCariObat.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txCariObat.PlaceholderText = "Cari Obat";
-            this.txCariObat.SelectedText = "";
-            this.txCariObat.Size = new System.Drawing.Size(232, 37);
-            this.txCariObat.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txCariObat.TabIndex = 64;
-            this.txCariObat.TextOffset = new System.Drawing.Point(5, 0);
-            this.txCariObat.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
             // btnRefresh
             // 
@@ -1350,6 +1056,300 @@
             // view_TrsPemberianResepTableAdapter
             // 
             this.view_TrsPemberianResepTableAdapter.ClearBeforeFill = true;
+            // 
+            // txCariObat
+            // 
+            this.txCariObat.Animated = true;
+            this.txCariObat.AutoRoundedCorners = true;
+            this.txCariObat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.txCariObat.BorderColor = System.Drawing.Color.White;
+            this.txCariObat.BorderRadius = 17;
+            this.txCariObat.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txCariObat.BorderThickness = 2;
+            this.txCariObat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txCariObat.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txCariObat.DefaultText = "";
+            this.txCariObat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txCariObat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txCariObat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txCariObat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txCariObat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.txCariObat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txCariObat.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txCariObat.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txCariObat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txCariObat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txCariObat.IconLeft = global::D_Clinic.Properties.Resources.white_magnifier;
+            this.txCariObat.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txCariObat.Location = new System.Drawing.Point(1271, 172);
+            this.txCariObat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txCariObat.MaxLength = 30;
+            this.txCariObat.Name = "txCariObat";
+            this.txCariObat.PasswordChar = '\0';
+            this.txCariObat.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txCariObat.PlaceholderText = "Cari Obat";
+            this.txCariObat.SelectedText = "";
+            this.txCariObat.Size = new System.Drawing.Size(232, 37);
+            this.txCariObat.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txCariObat.TabIndex = 64;
+            this.txCariObat.TextOffset = new System.Drawing.Point(5, 0);
+            this.txCariObat.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            // 
+            // txKeterangan
+            // 
+            this.txKeterangan.Animated = true;
+            this.txKeterangan.AutoRoundedCorners = true;
+            this.txKeterangan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txKeterangan.BorderColor = System.Drawing.Color.White;
+            this.txKeterangan.BorderRadius = 17;
+            this.txKeterangan.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txKeterangan.BorderThickness = 2;
+            this.txKeterangan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txKeterangan.DefaultText = "";
+            this.txKeterangan.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.txKeterangan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txKeterangan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txKeterangan.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txKeterangan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txKeterangan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txKeterangan.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txKeterangan.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txKeterangan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txKeterangan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txKeterangan.IconLeft = global::D_Clinic.Properties.Resources.white_keluhan;
+            this.txKeterangan.IconLeftOffset = new System.Drawing.Point(0, -2);
+            this.txKeterangan.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txKeterangan.Location = new System.Drawing.Point(100, 283);
+            this.txKeterangan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txKeterangan.MaxLength = 1000;
+            this.txKeterangan.Name = "txKeterangan";
+            this.txKeterangan.PasswordChar = '\0';
+            this.txKeterangan.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txKeterangan.PlaceholderText = "Keterangan";
+            this.txKeterangan.SelectedText = "";
+            this.txKeterangan.Size = new System.Drawing.Size(478, 37);
+            this.txKeterangan.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txKeterangan.TabIndex = 90;
+            this.txKeterangan.TextOffset = new System.Drawing.Point(5, 0);
+            this.txKeterangan.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            // 
+            // txDiagnosa
+            // 
+            this.txDiagnosa.Animated = true;
+            this.txDiagnosa.AutoRoundedCorners = true;
+            this.txDiagnosa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDiagnosa.BorderColor = System.Drawing.Color.White;
+            this.txDiagnosa.BorderRadius = 17;
+            this.txDiagnosa.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txDiagnosa.BorderThickness = 2;
+            this.txDiagnosa.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txDiagnosa.DefaultText = "";
+            this.txDiagnosa.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.txDiagnosa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDiagnosa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txDiagnosa.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txDiagnosa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDiagnosa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txDiagnosa.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDiagnosa.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txDiagnosa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txDiagnosa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txDiagnosa.IconLeft = global::D_Clinic.Properties.Resources.white_diagnosa;
+            this.txDiagnosa.IconLeftOffset = new System.Drawing.Point(0, -2);
+            this.txDiagnosa.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txDiagnosa.Location = new System.Drawing.Point(100, 230);
+            this.txDiagnosa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txDiagnosa.MaxLength = 1000;
+            this.txDiagnosa.Name = "txDiagnosa";
+            this.txDiagnosa.PasswordChar = '\0';
+            this.txDiagnosa.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txDiagnosa.PlaceholderText = "Diagnosa";
+            this.txDiagnosa.SelectedText = "";
+            this.txDiagnosa.Size = new System.Drawing.Size(478, 37);
+            this.txDiagnosa.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txDiagnosa.TabIndex = 89;
+            this.txDiagnosa.TextOffset = new System.Drawing.Point(5, 0);
+            this.txDiagnosa.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            // 
+            // txTotalHarga
+            // 
+            this.txTotalHarga.Animated = true;
+            this.txTotalHarga.AutoRoundedCorners = true;
+            this.txTotalHarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTotalHarga.BorderColor = System.Drawing.Color.White;
+            this.txTotalHarga.BorderRadius = 17;
+            this.txTotalHarga.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txTotalHarga.BorderThickness = 2;
+            this.txTotalHarga.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txTotalHarga.DefaultText = "";
+            this.txTotalHarga.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.txTotalHarga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTotalHarga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txTotalHarga.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txTotalHarga.Enabled = false;
+            this.txTotalHarga.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTotalHarga.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txTotalHarga.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTotalHarga.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txTotalHarga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txTotalHarga.HideSelection = false;
+            this.txTotalHarga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txTotalHarga.IconLeft = global::D_Clinic.Properties.Resources.white_harga;
+            this.txTotalHarga.IconLeftOffset = new System.Drawing.Point(0, -2);
+            this.txTotalHarga.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txTotalHarga.Location = new System.Drawing.Point(423, 560);
+            this.txTotalHarga.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txTotalHarga.MaxLength = 30;
+            this.txTotalHarga.Name = "txTotalHarga";
+            this.txTotalHarga.PasswordChar = '\0';
+            this.txTotalHarga.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txTotalHarga.PlaceholderText = "Total Harga";
+            this.txTotalHarga.ReadOnly = true;
+            this.txTotalHarga.SelectedText = "";
+            this.txTotalHarga.Size = new System.Drawing.Size(339, 37);
+            this.txTotalHarga.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txTotalHarga.TabIndex = 87;
+            this.txTotalHarga.TabStop = false;
+            this.txTotalHarga.TextOffset = new System.Drawing.Point(5, 0);
+            // 
+            // txDokter
+            // 
+            this.txDokter.AcceptsReturn = true;
+            this.txDokter.AcceptsTab = true;
+            this.txDokter.Animated = true;
+            this.txDokter.AutoRoundedCorners = true;
+            this.txDokter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDokter.BorderColor = System.Drawing.Color.White;
+            this.txDokter.BorderRadius = 17;
+            this.txDokter.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txDokter.BorderThickness = 2;
+            this.txDokter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txDokter.DefaultText = "";
+            this.txDokter.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.txDokter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDokter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txDokter.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txDokter.Enabled = false;
+            this.txDokter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDokter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txDokter.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txDokter.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txDokter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txDokter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txDokter.IconLeft = global::D_Clinic.Properties.Resources.green_dokter;
+            this.txDokter.IconLeftOffset = new System.Drawing.Point(0, -2);
+            this.txDokter.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txDokter.Location = new System.Drawing.Point(100, 124);
+            this.txDokter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txDokter.MaxLength = 30;
+            this.txDokter.Name = "txDokter";
+            this.txDokter.PasswordChar = '\0';
+            this.txDokter.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txDokter.PlaceholderText = "Dokter";
+            this.txDokter.SelectedText = "";
+            this.txDokter.Size = new System.Drawing.Size(478, 37);
+            this.txDokter.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txDokter.TabIndex = 85;
+            this.txDokter.Tag = "";
+            this.txDokter.TextOffset = new System.Drawing.Point(5, 0);
+            this.txDokter.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            // 
+            // txTanggal
+            // 
+            this.txTanggal.Animated = true;
+            this.txTanggal.AutoRoundedCorners = true;
+            this.txTanggal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTanggal.BorderColor = System.Drawing.Color.White;
+            this.txTanggal.BorderRadius = 17;
+            this.txTanggal.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txTanggal.BorderThickness = 2;
+            this.txTanggal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txTanggal.DefaultText = "";
+            this.txTanggal.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.txTanggal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTanggal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txTanggal.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txTanggal.Enabled = false;
+            this.txTanggal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTanggal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txTanggal.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txTanggal.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txTanggal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txTanggal.IconLeft = global::D_Clinic.Properties.Resources.green_cal;
+            this.txTanggal.IconLeftOffset = new System.Drawing.Point(0, -2);
+            this.txTanggal.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txTanggal.Location = new System.Drawing.Point(100, 177);
+            this.txTanggal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txTanggal.MaxLength = 30;
+            this.txTanggal.Name = "txTanggal";
+            this.txTanggal.PasswordChar = '\0';
+            this.txTanggal.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txTanggal.PlaceholderText = "Tanggal";
+            this.txTanggal.SelectedText = "";
+            this.txTanggal.Size = new System.Drawing.Size(478, 37);
+            this.txTanggal.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txTanggal.TabIndex = 84;
+            this.txTanggal.TextOffset = new System.Drawing.Point(5, 0);
+            this.txTanggal.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            // 
+            // btnKembali
+            // 
+            this.btnKembali.BackColor = System.Drawing.Color.Transparent;
+            this.btnKembali.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnKembali.HoverState.Image = global::D_Clinic.Properties.Resources.green_next;
+            this.btnKembali.HoverState.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.btnKembali.HoverState.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnKembali.Image = global::D_Clinic.Properties.Resources.white_next;
+            this.btnKembali.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.btnKembali.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnKembali.ImageRotate = 0F;
+            this.btnKembali.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnKembali.Location = new System.Drawing.Point(30, 683);
+            this.btnKembali.Name = "btnKembali";
+            this.btnKembali.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnKembali.ShadowDecoration.BorderRadius = 9;
+            this.btnKembali.Size = new System.Drawing.Size(40, 40);
+            this.btnKembali.TabIndex = 75;
+            this.btnKembali.UseTransparentBackground = true;
+            // 
+            // txID
+            // 
+            this.txID.Animated = true;
+            this.txID.AutoRoundedCorners = true;
+            this.txID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txID.BorderColor = System.Drawing.Color.White;
+            this.txID.BorderRadius = 17;
+            this.txID.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txID.BorderThickness = 2;
+            this.txID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txID.DefaultText = "";
+            this.txID.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.txID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txID.DisabledState.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txID.Enabled = false;
+            this.txID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txID.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.txID.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txID.IconLeft = global::D_Clinic.Properties.Resources.white_kode;
+            this.txID.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txID.Location = new System.Drawing.Point(100, 71);
+            this.txID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txID.MaxLength = 7;
+            this.txID.Name = "txID";
+            this.txID.PasswordChar = '\0';
+            this.txID.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txID.PlaceholderText = "ID Resep Obat";
+            this.txID.SelectedText = "";
+            this.txID.Size = new System.Drawing.Size(478, 37);
+            this.txID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txID.TabIndex = 21;
+            this.txID.TextOffset = new System.Drawing.Point(5, 0);
+            this.txID.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
             // Form_Transaksi_Pemberian_Resep
             // 
