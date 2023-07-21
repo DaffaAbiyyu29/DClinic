@@ -16,7 +16,6 @@ namespace D_Clinic.Halaman.Transaksi
     public partial class Form_Daftar_Resep : Form
     {
         Msg_Box mBox = new Msg_Box();
-        string idResep;
         public Form_Daftar_Resep()
         {
             InitializeComponent();
@@ -137,7 +136,7 @@ namespace D_Clinic.Halaman.Transaksi
             {
                 DataGridViewRow row = tblDaftarResep.Rows[e.RowIndex];
                 // Mendapatkan nilai dari kolom yang sesuai dengan kolom dalam tabel
-                idResep = row.Cells["id_resep"].Value.ToString();
+                string idResep = row.Cells["id_resep"].Value.ToString();
                 string namaDokter = row.Cells["dokter_resep"].Value.ToString();
                 DateTime tanggal = DateTime.Parse(row.Cells["tanggal_resep"].Value.ToString());
                 string ket = row.Cells["ket_resep"].Value.ToString();

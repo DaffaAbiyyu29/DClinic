@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -356,6 +357,7 @@ namespace D_Clinic.Halaman.Transaksi
         private void KirimResep()
         {
             string waktu = currentDateTime.ToString("HH:mm:ss", CultureInfo.GetCultureInfo("en-US")); // Format: HH:mm:ss
+            string unformatTotalBayar = Regex.Replace(lblTotalHarga.Text, "[^0-9]", "");
 
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
             SqlConnection connection = new SqlConnection(connectionString);
@@ -369,6 +371,7 @@ namespace D_Clinic.Halaman.Transaksi
             insert_trs.Parameters.AddWithValue("Tanggal", DateTime.Parse(txTanggal.Text));
             insert_trs.Parameters.AddWithValue("Waktu", waktu);
             insert_trs.Parameters.AddWithValue("Keterangan", txKeterangan.Text);
+            insert_trs.Parameters.AddWithValue("Harga_Resep", int.Parse(unformatTotalBayar));
             insert_trs.Parameters.AddWithValue("Diagnosa", txDiagnosa.Text);
 
             try

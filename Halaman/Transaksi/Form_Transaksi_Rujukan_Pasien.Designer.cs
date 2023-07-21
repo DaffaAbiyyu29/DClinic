@@ -32,11 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radiusForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnBatal = new Guna.UI2.WinForms.Guna2Button();
             this.btnKirim = new Guna.UI2.WinForms.Guna2Button();
@@ -50,6 +50,32 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txKeterangan = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblRujukanPasien = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.viewTrsRujukanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dClinicDataSet = new D_Clinic.DClinicDataSet();
+            this.tblPendaftaran = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.viewTrsPendaftaranBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnKembali = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.imgRS = new System.Windows.Forms.PictureBox();
+            this.txPasien = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txDokter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radiusTabelDaftar = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.radiusTabelRujukan = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.view_TrsPendaftaranTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPendaftaranTableAdapter();
+            this.view_TrsRujukanTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsRujukanTableAdapter();
+            this.txCariPendaftaran = new Guna.UI2.WinForms.Guna2TextBox();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_daftar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKaryawanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaResepsionisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idJadwalDokterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_dokter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_pasien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_pasien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.waktuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_rujukan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_pendaftaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idKaryawanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,32 +89,6 @@
             this.tanggalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.waktuDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewTrsRujukanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dClinicDataSet = new D_Clinic.DClinicDataSet();
-            this.tblPendaftaran = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.id_daftar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKaryawanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaResepsionisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idJadwalDokterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_dokter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_pasien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_pasien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.waktuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewTrsPendaftaranBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnKembali = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.imgRS = new System.Windows.Forms.PictureBox();
-            this.txPasien = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txDokter = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radiusTabelDaftar = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.radiusTabelRujukan = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.view_TrsPendaftaranTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPendaftaranTableAdapter();
-            this.view_TrsRujukanTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsRujukanTableAdapter();
-            this.txCariPendaftaran = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblRujukanPasien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTrsRujukanBindingSource)).BeginInit();
@@ -395,6 +395,7 @@
             this.tblRujukanPasien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tblRujukanPasien.ColumnHeadersHeight = 40;
             this.tblRujukanPasien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomor,
             this.id_rujukan,
             this.id_pendaftaran,
             this.idKaryawanDataGridViewTextBoxColumn1,
@@ -407,8 +408,7 @@
             this.namaDataGridViewTextBoxColumn,
             this.tanggalDataGridViewTextBoxColumn1,
             this.waktuDataGridViewTextBoxColumn1,
-            this.keteranganDataGridViewTextBoxColumn,
-            this.nomor});
+            this.keteranganDataGridViewTextBoxColumn});
             this.tblRujukanPasien.DataSource = this.viewTrsRujukanBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -455,115 +455,6 @@
             this.tblRujukanPasien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.tblRujukanPasien.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tblRujukanPasien_RowPostPaint);
             // 
-            // id_rujukan
-            // 
-            this.id_rujukan.DataPropertyName = "Id_TrsRujukanPasien";
-            this.id_rujukan.HeaderText = "ID Rujukan";
-            this.id_rujukan.Name = "id_rujukan";
-            this.id_rujukan.ReadOnly = true;
-            // 
-            // id_pendaftaran
-            // 
-            this.id_pendaftaran.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id_pendaftaran.DataPropertyName = "Id_TrsPendaftaran";
-            this.id_pendaftaran.HeaderText = "ID Pendaftaran";
-            this.id_pendaftaran.Name = "id_pendaftaran";
-            this.id_pendaftaran.ReadOnly = true;
-            this.id_pendaftaran.Width = 110;
-            // 
-            // idKaryawanDataGridViewTextBoxColumn1
-            // 
-            this.idKaryawanDataGridViewTextBoxColumn1.DataPropertyName = "Id_Karyawan";
-            this.idKaryawanDataGridViewTextBoxColumn1.HeaderText = "ID Karyawan";
-            this.idKaryawanDataGridViewTextBoxColumn1.Name = "idKaryawanDataGridViewTextBoxColumn1";
-            this.idKaryawanDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idKaryawanDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // namaResepsionisDataGridViewTextBoxColumn1
-            // 
-            this.namaResepsionisDataGridViewTextBoxColumn1.DataPropertyName = "Nama_Resepsionis";
-            this.namaResepsionisDataGridViewTextBoxColumn1.HeaderText = "Resepsionis";
-            this.namaResepsionisDataGridViewTextBoxColumn1.Name = "namaResepsionisDataGridViewTextBoxColumn1";
-            this.namaResepsionisDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.namaResepsionisDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // idJadwalDokterDataGridViewTextBoxColumn1
-            // 
-            this.idJadwalDokterDataGridViewTextBoxColumn1.DataPropertyName = "Id_JadwalDokter";
-            this.idJadwalDokterDataGridViewTextBoxColumn1.HeaderText = "ID Jadwal";
-            this.idJadwalDokterDataGridViewTextBoxColumn1.Name = "idJadwalDokterDataGridViewTextBoxColumn1";
-            this.idJadwalDokterDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idJadwalDokterDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // namaDokterDataGridViewTextBoxColumn
-            // 
-            this.namaDokterDataGridViewTextBoxColumn.DataPropertyName = "Nama_Dokter";
-            this.namaDokterDataGridViewTextBoxColumn.HeaderText = "Dokter";
-            this.namaDokterDataGridViewTextBoxColumn.Name = "namaDokterDataGridViewTextBoxColumn";
-            this.namaDokterDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idPasienDataGridViewTextBoxColumn
-            // 
-            this.idPasienDataGridViewTextBoxColumn.DataPropertyName = "Id_Pasien";
-            this.idPasienDataGridViewTextBoxColumn.HeaderText = "ID Pasien";
-            this.idPasienDataGridViewTextBoxColumn.Name = "idPasienDataGridViewTextBoxColumn";
-            this.idPasienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPasienDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // namaPasienDataGridViewTextBoxColumn
-            // 
-            this.namaPasienDataGridViewTextBoxColumn.DataPropertyName = "Nama_Pasien";
-            this.namaPasienDataGridViewTextBoxColumn.HeaderText = "Pasien";
-            this.namaPasienDataGridViewTextBoxColumn.Name = "namaPasienDataGridViewTextBoxColumn";
-            this.namaPasienDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idRumahSakitDataGridViewTextBoxColumn
-            // 
-            this.idRumahSakitDataGridViewTextBoxColumn.DataPropertyName = "Id_RumahSakit";
-            this.idRumahSakitDataGridViewTextBoxColumn.HeaderText = "ID RS";
-            this.idRumahSakitDataGridViewTextBoxColumn.Name = "idRumahSakitDataGridViewTextBoxColumn";
-            this.idRumahSakitDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idRumahSakitDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama RS";
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tanggalDataGridViewTextBoxColumn1
-            // 
-            this.tanggalDataGridViewTextBoxColumn1.DataPropertyName = "Tanggal";
-            dataGridViewCellStyle3.Format = "D";
-            dataGridViewCellStyle3.NullValue = null;
-            this.tanggalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tanggalDataGridViewTextBoxColumn1.HeaderText = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn1.Name = "tanggalDataGridViewTextBoxColumn1";
-            this.tanggalDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // waktuDataGridViewTextBoxColumn1
-            // 
-            this.waktuDataGridViewTextBoxColumn1.DataPropertyName = "Waktu";
-            this.waktuDataGridViewTextBoxColumn1.HeaderText = "Waktu";
-            this.waktuDataGridViewTextBoxColumn1.Name = "waktuDataGridViewTextBoxColumn1";
-            this.waktuDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // keteranganDataGridViewTextBoxColumn
-            // 
-            this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "Keterangan";
-            this.keteranganDataGridViewTextBoxColumn.HeaderText = "Keterangan";
-            this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
-            this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomor
-            // 
-            this.nomor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nomor.HeaderText = "No";
-            this.nomor.Name = "nomor";
-            this.nomor.ReadOnly = true;
-            this.nomor.Width = 40;
-            // 
             // viewTrsRujukanBindingSource
             // 
             this.viewTrsRujukanBindingSource.DataMember = "View_TrsRujukan";
@@ -599,6 +490,7 @@
             this.tblPendaftaran.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tblPendaftaran.ColumnHeadersHeight = 40;
             this.tblPendaftaran.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.No,
             this.id_daftar,
             this.idKaryawanDataGridViewTextBoxColumn,
             this.namaResepsionisDataGridViewTextBoxColumn,
@@ -607,8 +499,7 @@
             this.id_pasien,
             this.nama_pasien,
             this.tanggalDataGridViewTextBoxColumn,
-            this.waktuDataGridViewTextBoxColumn,
-            this.No});
+            this.waktuDataGridViewTextBoxColumn});
             this.tblPendaftaran.DataSource = this.viewTrsPendaftaranBindingSource;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -655,87 +546,6 @@
             this.tblPendaftaran.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.tblPendaftaran.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblPendaftaran_CellContentClick);
             this.tblPendaftaran.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tblPendaftaran_RowPostPaint);
-            // 
-            // id_daftar
-            // 
-            this.id_daftar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id_daftar.DataPropertyName = "Id_TrsPendaftaran";
-            this.id_daftar.HeaderText = "ID Pendaftaran";
-            this.id_daftar.Name = "id_daftar";
-            this.id_daftar.ReadOnly = true;
-            this.id_daftar.Width = 110;
-            // 
-            // idKaryawanDataGridViewTextBoxColumn
-            // 
-            this.idKaryawanDataGridViewTextBoxColumn.DataPropertyName = "Id_Karyawan";
-            this.idKaryawanDataGridViewTextBoxColumn.HeaderText = "ID Resepsionis";
-            this.idKaryawanDataGridViewTextBoxColumn.Name = "idKaryawanDataGridViewTextBoxColumn";
-            this.idKaryawanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idKaryawanDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // namaResepsionisDataGridViewTextBoxColumn
-            // 
-            this.namaResepsionisDataGridViewTextBoxColumn.DataPropertyName = "Nama_Resepsionis";
-            this.namaResepsionisDataGridViewTextBoxColumn.HeaderText = "Resepsionis";
-            this.namaResepsionisDataGridViewTextBoxColumn.Name = "namaResepsionisDataGridViewTextBoxColumn";
-            this.namaResepsionisDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idJadwalDokterDataGridViewTextBoxColumn
-            // 
-            this.idJadwalDokterDataGridViewTextBoxColumn.DataPropertyName = "Id_JadwalDokter";
-            this.idJadwalDokterDataGridViewTextBoxColumn.HeaderText = "ID Jadwal";
-            this.idJadwalDokterDataGridViewTextBoxColumn.Name = "idJadwalDokterDataGridViewTextBoxColumn";
-            this.idJadwalDokterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idJadwalDokterDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nama_dokter
-            // 
-            this.nama_dokter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nama_dokter.DataPropertyName = "Nama_Dokter";
-            this.nama_dokter.HeaderText = "Dokter";
-            this.nama_dokter.Name = "nama_dokter";
-            this.nama_dokter.ReadOnly = true;
-            // 
-            // id_pasien
-            // 
-            this.id_pasien.DataPropertyName = "Id_Pasien";
-            this.id_pasien.HeaderText = "ID Pasien";
-            this.id_pasien.Name = "id_pasien";
-            this.id_pasien.ReadOnly = true;
-            this.id_pasien.Visible = false;
-            // 
-            // nama_pasien
-            // 
-            this.nama_pasien.DataPropertyName = "Nama_Pasien";
-            this.nama_pasien.HeaderText = "Pasien";
-            this.nama_pasien.Name = "nama_pasien";
-            this.nama_pasien.ReadOnly = true;
-            // 
-            // tanggalDataGridViewTextBoxColumn
-            // 
-            this.tanggalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
-            dataGridViewCellStyle7.Format = "D";
-            dataGridViewCellStyle7.NullValue = null;
-            this.tanggalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
-            this.tanggalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // waktuDataGridViewTextBoxColumn
-            // 
-            this.waktuDataGridViewTextBoxColumn.DataPropertyName = "Waktu";
-            this.waktuDataGridViewTextBoxColumn.HeaderText = "Waktu";
-            this.waktuDataGridViewTextBoxColumn.Name = "waktuDataGridViewTextBoxColumn";
-            this.waktuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 40;
             // 
             // viewTrsPendaftaranBindingSource
             // 
@@ -961,6 +771,196 @@
             this.txCariPendaftaran.TabIndex = 58;
             this.txCariPendaftaran.TextOffset = new System.Drawing.Point(5, 0);
             this.txCariPendaftaran.TextChanged += new System.EventHandler(this.txCariRS_TextChanged);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 40;
+            // 
+            // id_daftar
+            // 
+            this.id_daftar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id_daftar.DataPropertyName = "Id_TrsPendaftaran";
+            this.id_daftar.HeaderText = "ID Pendaftaran";
+            this.id_daftar.Name = "id_daftar";
+            this.id_daftar.ReadOnly = true;
+            this.id_daftar.Width = 110;
+            // 
+            // idKaryawanDataGridViewTextBoxColumn
+            // 
+            this.idKaryawanDataGridViewTextBoxColumn.DataPropertyName = "Id_Karyawan";
+            this.idKaryawanDataGridViewTextBoxColumn.HeaderText = "ID Resepsionis";
+            this.idKaryawanDataGridViewTextBoxColumn.Name = "idKaryawanDataGridViewTextBoxColumn";
+            this.idKaryawanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idKaryawanDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // namaResepsionisDataGridViewTextBoxColumn
+            // 
+            this.namaResepsionisDataGridViewTextBoxColumn.DataPropertyName = "Nama_Resepsionis";
+            this.namaResepsionisDataGridViewTextBoxColumn.HeaderText = "Resepsionis";
+            this.namaResepsionisDataGridViewTextBoxColumn.Name = "namaResepsionisDataGridViewTextBoxColumn";
+            this.namaResepsionisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idJadwalDokterDataGridViewTextBoxColumn
+            // 
+            this.idJadwalDokterDataGridViewTextBoxColumn.DataPropertyName = "Id_JadwalDokter";
+            this.idJadwalDokterDataGridViewTextBoxColumn.HeaderText = "ID Jadwal";
+            this.idJadwalDokterDataGridViewTextBoxColumn.Name = "idJadwalDokterDataGridViewTextBoxColumn";
+            this.idJadwalDokterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idJadwalDokterDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nama_dokter
+            // 
+            this.nama_dokter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama_dokter.DataPropertyName = "Nama_Dokter";
+            this.nama_dokter.HeaderText = "Dokter";
+            this.nama_dokter.Name = "nama_dokter";
+            this.nama_dokter.ReadOnly = true;
+            // 
+            // id_pasien
+            // 
+            this.id_pasien.DataPropertyName = "Id_Pasien";
+            this.id_pasien.HeaderText = "ID Pasien";
+            this.id_pasien.Name = "id_pasien";
+            this.id_pasien.ReadOnly = true;
+            this.id_pasien.Visible = false;
+            // 
+            // nama_pasien
+            // 
+            this.nama_pasien.DataPropertyName = "Nama_Pasien";
+            this.nama_pasien.HeaderText = "Pasien";
+            this.nama_pasien.Name = "nama_pasien";
+            this.nama_pasien.ReadOnly = true;
+            // 
+            // tanggalDataGridViewTextBoxColumn
+            // 
+            this.tanggalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
+            dataGridViewCellStyle7.Format = "D";
+            dataGridViewCellStyle7.NullValue = null;
+            this.tanggalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
+            this.tanggalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // waktuDataGridViewTextBoxColumn
+            // 
+            this.waktuDataGridViewTextBoxColumn.DataPropertyName = "Waktu";
+            this.waktuDataGridViewTextBoxColumn.HeaderText = "Waktu";
+            this.waktuDataGridViewTextBoxColumn.Name = "waktuDataGridViewTextBoxColumn";
+            this.waktuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomor
+            // 
+            this.nomor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nomor.HeaderText = "No";
+            this.nomor.Name = "nomor";
+            this.nomor.ReadOnly = true;
+            this.nomor.Width = 40;
+            // 
+            // id_rujukan
+            // 
+            this.id_rujukan.DataPropertyName = "Id_TrsRujukanPasien";
+            this.id_rujukan.HeaderText = "ID Rujukan";
+            this.id_rujukan.Name = "id_rujukan";
+            this.id_rujukan.ReadOnly = true;
+            // 
+            // id_pendaftaran
+            // 
+            this.id_pendaftaran.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id_pendaftaran.DataPropertyName = "Id_TrsPendaftaran";
+            this.id_pendaftaran.HeaderText = "ID Pendaftaran";
+            this.id_pendaftaran.Name = "id_pendaftaran";
+            this.id_pendaftaran.ReadOnly = true;
+            this.id_pendaftaran.Width = 110;
+            // 
+            // idKaryawanDataGridViewTextBoxColumn1
+            // 
+            this.idKaryawanDataGridViewTextBoxColumn1.DataPropertyName = "Id_Karyawan";
+            this.idKaryawanDataGridViewTextBoxColumn1.HeaderText = "ID Karyawan";
+            this.idKaryawanDataGridViewTextBoxColumn1.Name = "idKaryawanDataGridViewTextBoxColumn1";
+            this.idKaryawanDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idKaryawanDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // namaResepsionisDataGridViewTextBoxColumn1
+            // 
+            this.namaResepsionisDataGridViewTextBoxColumn1.DataPropertyName = "Nama_Resepsionis";
+            this.namaResepsionisDataGridViewTextBoxColumn1.HeaderText = "Resepsionis";
+            this.namaResepsionisDataGridViewTextBoxColumn1.Name = "namaResepsionisDataGridViewTextBoxColumn1";
+            this.namaResepsionisDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.namaResepsionisDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // idJadwalDokterDataGridViewTextBoxColumn1
+            // 
+            this.idJadwalDokterDataGridViewTextBoxColumn1.DataPropertyName = "Id_JadwalDokter";
+            this.idJadwalDokterDataGridViewTextBoxColumn1.HeaderText = "ID Jadwal";
+            this.idJadwalDokterDataGridViewTextBoxColumn1.Name = "idJadwalDokterDataGridViewTextBoxColumn1";
+            this.idJadwalDokterDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idJadwalDokterDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // namaDokterDataGridViewTextBoxColumn
+            // 
+            this.namaDokterDataGridViewTextBoxColumn.DataPropertyName = "Nama_Dokter";
+            this.namaDokterDataGridViewTextBoxColumn.HeaderText = "Dokter";
+            this.namaDokterDataGridViewTextBoxColumn.Name = "namaDokterDataGridViewTextBoxColumn";
+            this.namaDokterDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idPasienDataGridViewTextBoxColumn
+            // 
+            this.idPasienDataGridViewTextBoxColumn.DataPropertyName = "Id_Pasien";
+            this.idPasienDataGridViewTextBoxColumn.HeaderText = "ID Pasien";
+            this.idPasienDataGridViewTextBoxColumn.Name = "idPasienDataGridViewTextBoxColumn";
+            this.idPasienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPasienDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // namaPasienDataGridViewTextBoxColumn
+            // 
+            this.namaPasienDataGridViewTextBoxColumn.DataPropertyName = "Nama_Pasien";
+            this.namaPasienDataGridViewTextBoxColumn.HeaderText = "Pasien";
+            this.namaPasienDataGridViewTextBoxColumn.Name = "namaPasienDataGridViewTextBoxColumn";
+            this.namaPasienDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idRumahSakitDataGridViewTextBoxColumn
+            // 
+            this.idRumahSakitDataGridViewTextBoxColumn.DataPropertyName = "Id_RumahSakit";
+            this.idRumahSakitDataGridViewTextBoxColumn.HeaderText = "ID RS";
+            this.idRumahSakitDataGridViewTextBoxColumn.Name = "idRumahSakitDataGridViewTextBoxColumn";
+            this.idRumahSakitDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idRumahSakitDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama RS";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tanggalDataGridViewTextBoxColumn1
+            // 
+            this.tanggalDataGridViewTextBoxColumn1.DataPropertyName = "Tanggal";
+            dataGridViewCellStyle3.Format = "D";
+            dataGridViewCellStyle3.NullValue = null;
+            this.tanggalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tanggalDataGridViewTextBoxColumn1.HeaderText = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn1.Name = "tanggalDataGridViewTextBoxColumn1";
+            this.tanggalDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // waktuDataGridViewTextBoxColumn1
+            // 
+            this.waktuDataGridViewTextBoxColumn1.DataPropertyName = "Waktu";
+            this.waktuDataGridViewTextBoxColumn1.HeaderText = "Waktu";
+            this.waktuDataGridViewTextBoxColumn1.Name = "waktuDataGridViewTextBoxColumn1";
+            this.waktuDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // keteranganDataGridViewTextBoxColumn
+            // 
+            this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "Keterangan";
+            this.keteranganDataGridViewTextBoxColumn.HeaderText = "Keterangan";
+            this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
+            this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form_Transaksi_Rujukan_Pasien
             // 
