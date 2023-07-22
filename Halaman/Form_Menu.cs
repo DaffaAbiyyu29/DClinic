@@ -302,5 +302,14 @@ namespace D_Clinic.Halaman
             daftar.BringToFront();
             daftar.Show();
         }
+
+        private void btnPembayaran_Click(object sender, EventArgs e)
+        {
+            Form_Transaksi_Pembayaran bayar = new Form_Transaksi_Pembayaran();
+            bayar.TopLevel = false;
+            pnlContainer.Controls.Add(bayar);
+            bayar.BringToFront();
+            bayar.Show();
+        }
     }
 }

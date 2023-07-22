@@ -990,11 +990,10 @@ FROM         View_TrsPemberianResepDiterima</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_TrsPendaftaran_TrsPembayaranTableAdapter" GeneratorDataComponentClassName="View_TrsPendaftaran_TrsPembayaranTableAdapter" Name="View_TrsPendaftaran_TrsPembayaran" UserDataComponentName="View_TrsPendaftaran_TrsPembayaranTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DClinicConnectionString (Settings)" DbObjectName="DClinic.dbo.View_TrsPendaftaran_TrsPembayaran" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DClinicConnectionString (Settings)" DbObjectName="DClinic.dbo.View_TrsPendaftaran_TrsPembayaran" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT      Id_TrsPendaftaran, Id_Karyawan, Nama_Resepsionis, Id_JadwalDokter, Nama_Dokter, Tarif_Jasa, Id_Pasien, Nama_Pasien, Id_TrsResep, Harga_Resep, Tanggal, Waktu, Status_Rujukan, Status_Resep, Status_Pembayaran
-FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id_TrsPendaftaran, Id_Karyawan, Nama_Resepsionis, Id_JadwalDokter, Nama_Dokter, Tarif_Jasa, Id_Pasien, Nama_Pasien, Id_TrsResep, Harga_Resep, Tanggal, Waktu, Status_Rujukan, Status_Resep, Status_Pembayaran FROM dbo.View_TrsPendaftaran_TrsPembayaran</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1009,13 +1008,103 @@ FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
               <Mapping SourceColumn="Tarif_Jasa" DataSetColumn="Tarif_Jasa" />
               <Mapping SourceColumn="Id_Pasien" DataSetColumn="Id_Pasien" />
               <Mapping SourceColumn="Nama_Pasien" DataSetColumn="Nama_Pasien" />
+              <Mapping SourceColumn="Id_TrsResep" DataSetColumn="Id_TrsResep" />
               <Mapping SourceColumn="Harga_Resep" DataSetColumn="Harga_Resep" />
               <Mapping SourceColumn="Tanggal" DataSetColumn="Tanggal" />
               <Mapping SourceColumn="Waktu" DataSetColumn="Waktu" />
               <Mapping SourceColumn="Status_Rujukan" DataSetColumn="Status_Rujukan" />
               <Mapping SourceColumn="Status_Resep" DataSetColumn="Status_Resep" />
               <Mapping SourceColumn="Status_Pembayaran" DataSetColumn="Status_Pembayaran" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TrsPembayaranTableAdapter" GeneratorDataComponentClassName="TrsPembayaranTableAdapter" Name="TrsPembayaran" UserDataComponentName="TrsPembayaranTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DClinicConnectionString (Settings)" DbObjectName="DClinic.dbo.TrsPembayaran" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[TrsPembayaran] WHERE (([Id_TrsPembayaran] = @Original_Id_TrsPembayaran) AND ([Id_TrsPendaftaran] = @Original_Id_TrsPendaftaran) AND ([Id_TrsResep] = @Original_Id_TrsResep) AND ([Tanggal] = @Original_Tanggal) AND ([Waktu] = @Original_Waktu) AND ([Total_Bayar] = @Original_Total_Bayar))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Id_TrsPembayaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPembayaran" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Id_TrsPendaftaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPendaftaran" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Id_TrsResep" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsResep" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Tanggal" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Tanggal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Waktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Waktu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Total_Bayar" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Total_Bayar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[TrsPembayaran] ([Id_TrsPembayaran], [Id_TrsPendaftaran], [Id_TrsResep], [Tanggal], [Waktu], [Total_Bayar]) VALUES (@Id_TrsPembayaran, @Id_TrsPendaftaran, @Id_TrsResep, @Tanggal, @Waktu, @Total_Bayar);
+SELECT Id_TrsPembayaran, Id_TrsPendaftaran, Id_TrsResep, Tanggal, Waktu, Total_Bayar FROM TrsPembayaran WHERE (Id_TrsPembayaran = @Id_TrsPembayaran)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Id_TrsPembayaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPembayaran" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Id_TrsPendaftaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPendaftaran" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Id_TrsResep" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsResep" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Tanggal" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Tanggal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Waktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Waktu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Total_Bayar" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Total_Bayar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id_TrsPembayaran, Id_TrsPendaftaran, Id_TrsResep, Tanggal, Waktu, Total_Bayar FROM dbo.TrsPembayaran</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[TrsPembayaran] SET [Id_TrsPembayaran] = @Id_TrsPembayaran, [Id_TrsPendaftaran] = @Id_TrsPendaftaran, [Id_TrsResep] = @Id_TrsResep, [Tanggal] = @Tanggal, [Waktu] = @Waktu, [Total_Bayar] = @Total_Bayar WHERE (([Id_TrsPembayaran] = @Original_Id_TrsPembayaran) AND ([Id_TrsPendaftaran] = @Original_Id_TrsPendaftaran) AND ([Id_TrsResep] = @Original_Id_TrsResep) AND ([Tanggal] = @Original_Tanggal) AND ([Waktu] = @Original_Waktu) AND ([Total_Bayar] = @Original_Total_Bayar));
+SELECT Id_TrsPembayaran, Id_TrsPendaftaran, Id_TrsResep, Tanggal, Waktu, Total_Bayar FROM TrsPembayaran WHERE (Id_TrsPembayaran = @Id_TrsPembayaran)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Id_TrsPembayaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPembayaran" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Id_TrsPendaftaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPendaftaran" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Id_TrsResep" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsResep" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Tanggal" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Tanggal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Waktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Waktu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Total_Bayar" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Total_Bayar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Id_TrsPembayaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPembayaran" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Id_TrsPendaftaran" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsPendaftaran" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Id_TrsResep" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Id_TrsResep" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Tanggal" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Tanggal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Waktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Waktu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Total_Bayar" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Total_Bayar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_TrsPembayaran" DataSetColumn="Id_TrsPembayaran" />
+              <Mapping SourceColumn="Id_TrsPendaftaran" DataSetColumn="Id_TrsPendaftaran" />
               <Mapping SourceColumn="Id_TrsResep" DataSetColumn="Id_TrsResep" />
+              <Mapping SourceColumn="Tanggal" DataSetColumn="Tanggal" />
+              <Mapping SourceColumn="Waktu" DataSetColumn="Waktu" />
+              <Mapping SourceColumn="Total_Bayar" DataSetColumn="Total_Bayar" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_TrsPembayaranTableAdapter" GeneratorDataComponentClassName="View_TrsPembayaranTableAdapter" Name="View_TrsPembayaran" UserDataComponentName="View_TrsPembayaranTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DClinicConnectionString (Settings)" DbObjectName="DClinic.dbo.View_TrsPembayaran" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id_TrsPembayaran, Id_TrsPendaftaran, Nama_Pasien, Id_TrsResep, Tanggal, Waktu, Total_Bayar FROM dbo.View_TrsPembayaran</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_TrsPembayaran" DataSetColumn="Id_TrsPembayaran" />
+              <Mapping SourceColumn="Id_TrsPendaftaran" DataSetColumn="Id_TrsPendaftaran" />
+              <Mapping SourceColumn="Nama_Pasien" DataSetColumn="Nama_Pasien" />
+              <Mapping SourceColumn="Id_TrsResep" DataSetColumn="Id_TrsResep" />
+              <Mapping SourceColumn="Tanggal" DataSetColumn="Tanggal" />
+              <Mapping SourceColumn="Waktu" DataSetColumn="Waktu" />
+              <Mapping SourceColumn="Total_Bayar" DataSetColumn="Total_Bayar" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2045,7 +2134,7 @@ FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Tarif_Jasa" msprop:Generator_UserColumnName="Tarif_Jasa" msprop:Generator_ColumnPropNameInTable="Tarif_JasaColumn" msprop:Generator_ColumnPropNameInRow="Tarif_Jasa" msprop:Generator_ColumnVarNameInTable="columnTarif_Jasa" type="xs:decimal" />
+              <xs:element name="Tarif_Jasa" msprop:Generator_UserColumnName="Tarif_Jasa" msprop:Generator_ColumnPropNameInTable="Tarif_JasaColumn" msprop:Generator_ColumnPropNameInRow="Tarif_Jasa" msprop:Generator_ColumnVarNameInTable="columnTarif_Jasa" type="xs:decimal" minOccurs="0" />
               <xs:element name="Id_Pasien" msprop:Generator_UserColumnName="Id_Pasien" msprop:Generator_ColumnPropNameInTable="Id_PasienColumn" msprop:Generator_ColumnPropNameInRow="Id_Pasien" msprop:Generator_ColumnVarNameInTable="columnId_Pasien">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2057,6 +2146,13 @@ FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_TrsResep" msprop:Generator_UserColumnName="Id_TrsResep" msprop:Generator_ColumnPropNameInTable="Id_TrsResepColumn" msprop:Generator_ColumnPropNameInRow="Id_TrsResep" msprop:Generator_ColumnVarNameInTable="columnId_TrsResep" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -2090,6 +2186,69 @@ FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TrsPembayaran" msprop:Generator_RowClassName="TrsPembayaranRow" msprop:Generator_RowEvHandlerName="TrsPembayaranRowChangeEventHandler" msprop:Generator_RowDeletedName="TrsPembayaranRowDeleted" msprop:Generator_RowDeletingName="TrsPembayaranRowDeleting" msprop:Generator_RowEvArgName="TrsPembayaranRowChangeEvent" msprop:Generator_TablePropName="TrsPembayaran" msprop:Generator_RowChangedName="TrsPembayaranRowChanged" msprop:Generator_UserTableName="TrsPembayaran" msprop:Generator_RowChangingName="TrsPembayaranRowChanging" msprop:Generator_TableClassName="TrsPembayaranDataTable" msprop:Generator_TableVarName="tableTrsPembayaran">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_TrsPembayaran" msprop:Generator_UserColumnName="Id_TrsPembayaran" msprop:Generator_ColumnPropNameInTable="Id_TrsPembayaranColumn" msprop:Generator_ColumnPropNameInRow="Id_TrsPembayaran" msprop:Generator_ColumnVarNameInTable="columnId_TrsPembayaran">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_TrsPendaftaran" msprop:Generator_UserColumnName="Id_TrsPendaftaran" msprop:Generator_ColumnPropNameInTable="Id_TrsPendaftaranColumn" msprop:Generator_ColumnPropNameInRow="Id_TrsPendaftaran" msprop:Generator_ColumnVarNameInTable="columnId_TrsPendaftaran">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_TrsResep" msprop:Generator_UserColumnName="Id_TrsResep" msprop:Generator_ColumnPropNameInTable="Id_TrsResepColumn" msprop:Generator_ColumnPropNameInRow="Id_TrsResep" msprop:Generator_ColumnVarNameInTable="columnId_TrsResep">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tanggal" msprop:Generator_UserColumnName="Tanggal" msprop:Generator_ColumnPropNameInTable="TanggalColumn" msprop:Generator_ColumnPropNameInRow="Tanggal" msprop:Generator_ColumnVarNameInTable="columnTanggal" type="xs:dateTime" />
+              <xs:element name="Waktu" msprop:Generator_UserColumnName="Waktu" msprop:Generator_ColumnPropNameInTable="WaktuColumn" msprop:Generator_ColumnPropNameInRow="Waktu" msprop:Generator_ColumnVarNameInTable="columnWaktu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total_Bayar" msprop:Generator_UserColumnName="Total_Bayar" msprop:Generator_ColumnPropNameInTable="Total_BayarColumn" msprop:Generator_ColumnPropNameInRow="Total_Bayar" msprop:Generator_ColumnVarNameInTable="columnTotal_Bayar" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_TrsPembayaran" msprop:Generator_RowEvHandlerName="View_TrsPembayaranRowChangeEventHandler" msprop:Generator_RowDeletedName="View_TrsPembayaranRowDeleted" msprop:Generator_RowDeletingName="View_TrsPembayaranRowDeleting" msprop:Generator_RowEvArgName="View_TrsPembayaranRowChangeEvent" msprop:Generator_TablePropName="View_TrsPembayaran" msprop:Generator_RowChangedName="View_TrsPembayaranRowChanged" msprop:Generator_RowChangingName="View_TrsPembayaranRowChanging" msprop:Generator_TableClassName="View_TrsPembayaranDataTable" msprop:Generator_RowClassName="View_TrsPembayaranRow" msprop:Generator_TableVarName="tableView_TrsPembayaran" msprop:Generator_UserTableName="View_TrsPembayaran">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_TrsPembayaran" msprop:Generator_ColumnPropNameInRow="Id_TrsPembayaran" msprop:Generator_ColumnPropNameInTable="Id_TrsPembayaranColumn" msprop:Generator_ColumnVarNameInTable="columnId_TrsPembayaran" msprop:Generator_UserColumnName="Id_TrsPembayaran">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_TrsPendaftaran" msprop:Generator_ColumnPropNameInRow="Id_TrsPendaftaran" msprop:Generator_ColumnPropNameInTable="Id_TrsPendaftaranColumn" msprop:Generator_ColumnVarNameInTable="columnId_TrsPendaftaran" msprop:Generator_UserColumnName="Id_TrsPendaftaran">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nama_Pasien" msprop:Generator_ColumnPropNameInRow="Nama_Pasien" msprop:Generator_ColumnPropNameInTable="Nama_PasienColumn" msprop:Generator_ColumnVarNameInTable="columnNama_Pasien" msprop:Generator_UserColumnName="Nama_Pasien">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Id_TrsResep" msprop:Generator_ColumnPropNameInRow="Id_TrsResep" msprop:Generator_ColumnPropNameInTable="Id_TrsResepColumn" msprop:Generator_ColumnVarNameInTable="columnId_TrsResep" msprop:Generator_UserColumnName="Id_TrsResep">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2097,6 +2256,15 @@ FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Tanggal" msprop:Generator_ColumnPropNameInRow="Tanggal" msprop:Generator_ColumnPropNameInTable="TanggalColumn" msprop:Generator_ColumnVarNameInTable="columnTanggal" msprop:Generator_UserColumnName="Tanggal" type="xs:dateTime" />
+              <xs:element name="Waktu" msprop:Generator_ColumnPropNameInRow="Waktu" msprop:Generator_ColumnPropNameInTable="WaktuColumn" msprop:Generator_ColumnVarNameInTable="columnWaktu" msprop:Generator_UserColumnName="Waktu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total_Bayar" msprop:Generator_ColumnPropNameInRow="Total_Bayar" msprop:Generator_ColumnPropNameInTable="Total_BayarColumn" msprop:Generator_ColumnVarNameInTable="columnTotal_Bayar" msprop:Generator_UserColumnName="Total_Bayar" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2171,6 +2339,14 @@ FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
       <xs:field xpath="mstns:Id_TrsResep" />
       <xs:field xpath="mstns:Id_Obat" />
     </xs:unique>
+    <xs:unique name="TrsPembayaran_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TrsPembayaran" />
+      <xs:field xpath="mstns:Id_TrsPembayaran" />
+    </xs:unique>
+    <xs:unique name="View_TrsPembayaran_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_TrsPembayaran" />
+      <xs:field xpath="mstns:Id_TrsPembayaran" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -2184,6 +2360,8 @@ FROM         View_TrsPendaftaran_TrsPembayaran</CommandText>
       <msdata:Relationship name="FK_TrsRestokObat_Apoteker" msdata:parent="Karyawan" msdata:child="TrsRestokObat" msdata:parentkey="Id_Karyawan" msdata:childkey="Id_Apoteker" msprop:Generator_UserParentTable="Karyawan" msprop:Generator_UserChildTable="TrsRestokObat" msprop:Generator_RelationVarName="relationFK_TrsRestokObat_Apoteker" msprop:Generator_ChildPropName="GetTrsRestokObatRows" msprop:Generator_UserRelationName="FK_TrsRestokObat_Apoteker" msprop:Generator_ParentPropName="KaryawanRow" />
       <msdata:Relationship name="FK_TrsRestokObat_Supplier" msdata:parent="Supplier" msdata:child="TrsRestokObat" msdata:parentkey="Id_Supplier" msdata:childkey="Id_Supplier" msprop:Generator_UserParentTable="Supplier" msprop:Generator_UserChildTable="TrsRestokObat" msprop:Generator_RelationVarName="relationFK_TrsRestokObat_Supplier" msprop:Generator_ChildPropName="GetTrsRestokObatRows" msprop:Generator_UserRelationName="FK_TrsRestokObat_Supplier" msprop:Generator_ParentPropName="SupplierRow" />
       <msdata:Relationship name="FK_TrsPemberianResep_TrsPendaftaran" msdata:parent="TrsPendaftaran" msdata:child="TrsPemberianResep" msdata:parentkey="Id_TrsPendaftaran" msdata:childkey="Id_TrsPendaftaran" msprop:Generator_UserParentTable="TrsPendaftaran" msprop:Generator_UserChildTable="TrsPemberianResep" msprop:Generator_RelationVarName="relationFK_TrsPemberianResep_TrsPendaftaran" msprop:Generator_ChildPropName="GetTrsPemberianResepRows" msprop:Generator_ParentPropName="TrsPendaftaranRow" msprop:Generator_UserRelationName="FK_TrsPemberianResep_TrsPendaftaran" />
+      <msdata:Relationship name="FK_TrsPembayaran_Pendaftaran" msdata:parent="TrsPendaftaran" msdata:child="TrsPembayaran" msdata:parentkey="Id_TrsPendaftaran" msdata:childkey="Id_TrsPendaftaran" msprop:Generator_UserParentTable="TrsPendaftaran" msprop:Generator_UserChildTable="TrsPembayaran" msprop:Generator_RelationVarName="relationFK_TrsPembayaran_Pendaftaran" msprop:Generator_ChildPropName="GetTrsPembayaranRows" msprop:Generator_UserRelationName="FK_TrsPembayaran_Pendaftaran" msprop:Generator_ParentPropName="TrsPendaftaranRow" />
+      <msdata:Relationship name="FK_TrsPembayaran_Resep" msdata:parent="TrsPemberianResep" msdata:child="TrsPembayaran" msdata:parentkey="Id_TrsResep" msdata:childkey="Id_TrsResep" msprop:Generator_UserParentTable="TrsPemberianResep" msprop:Generator_UserChildTable="TrsPembayaran" msprop:Generator_RelationVarName="relationFK_TrsPembayaran_Resep" msprop:Generator_ChildPropName="GetTrsPembayaranRows" msprop:Generator_UserRelationName="FK_TrsPembayaran_Resep" msprop:Generator_ParentPropName="TrsPemberianResepRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

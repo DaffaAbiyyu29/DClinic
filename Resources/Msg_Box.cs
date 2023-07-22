@@ -84,6 +84,7 @@ namespace D_Clinic.Resources
                         {
                             menu.btnPasien.Visible = true;
                             menu.btnPendaftaran.Visible = true;
+                            menu.btnPembayaran.Visible = true;
                         }
                         else if (jabatan == "Dokter")
                         {

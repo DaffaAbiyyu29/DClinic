@@ -20,7 +20,7 @@ namespace D_Clinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Transaksi_Pembayaran());
+            Application.Run(new Form_Master_Jadwal_Dokter());
         }
 
         public static void CloseAllForms()

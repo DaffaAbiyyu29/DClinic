@@ -403,7 +403,7 @@ namespace D_Clinic.Halaman
                 string nama_dokter = row.Cells["dokter"].Value.ToString();
                 string nama_ruang = row.Cells["ruang"].Value.ToString();
                 string hari = row.Cells["day"].Value.ToString();
-                string jam_mulai = row.Cells["jam1"].Value.ToString();
+                DateTime jam_mulai = (DateTime)row.Cells["jam1"].Value;
                 string jam_akhir = row.Cells["jam2"].Value.ToString();
                 string tarif = (row.Cells["trf_jasa"].Value.ToString());
                 string status = row.Cells["stts"].Value.ToString();
@@ -439,10 +439,11 @@ namespace D_Clinic.Halaman
                 cbDokter.Text = nama_dokter;
                 cbRuang.Text = nama_ruang;
                 cbHari.Text = hari;
-                numJamAwal.Value = int.Parse(jam_mulai.Substring(0, 2));
-                numMenitAwal.Value = int.Parse(jam_mulai.Substring(3, 2));
+                /*numJamAwal.Value = int.Parse(jam_mulai.Substring(0, 2));
+                numMenitAwal.Value = int.Parse(jam_mulai.Substring(3, 2));*/
                 numJamAkhir.Value = int.Parse(jam_akhir.Substring(0, 2));
                 numMenitAkhir.Value = int.Parse(jam_akhir.Substring(3, 2));
+                dtpJamMulai.Value = jam_mulai;
                 txTarif.Text = formatTarif;
             }
         }

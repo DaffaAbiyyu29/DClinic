@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,7 +29,7 @@ namespace D_Clinic.Halaman.Transaksi
         private void clearText()
         {
             //Mengkosongkan Semua Textbox dan Combobox
-            txCariObat.Clear();
+            txCariPendaftaran.Clear();
             txID.Clear();
             txResepsionis.Clear();
             txDokter.Clear();
@@ -37,13 +38,15 @@ namespace D_Clinic.Halaman.Transaksi
         }
         private void Gambar()
         {
-            if (!string.IsNullOrEmpty(txCariObat.Text))
+            if (!string.IsNullOrEmpty(txCariPendaftaran.Text))
             {
-                txCariObat.IconLeft = Properties.Resources.green_magnifier;
+                txCariPendaftaran.IconLeft = Properties.Resources.green_magnifier;
+                cariPendaftaran();
             }
             else
             {
-                txCariObat.IconLeft = Properties.Resources.white_magnifier;
+                txCariPendaftaran.IconLeft = Properties.Resources.white_magnifier;
+                cariPendaftaran();
             }
             if (!string.IsNullOrEmpty(txID.Text))
             {
@@ -113,6 +116,8 @@ namespace D_Clinic.Halaman.Transaksi
         }
         private void Form_Transaksi_Pembayaran_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dClinicDataSet.View_TrsPembayaran' table. You can move, or remove it, as needed.
+            this.view_TrsPembayaranTableAdapter.Fill(this.dClinicDataSet.View_TrsPembayaran);
             this.view_TrsPendaftaran_TrsPembayaranTableAdapter.Fill(this.dClinicDataSet.View_TrsPendaftaran_TrsPembayaran);
             txTanggal.Text = currentDateTime.ToString("dd MMMM yyyy");
         }
@@ -131,9 +136,65 @@ namespace D_Clinic.Halaman.Transaksi
         {
             clearText();
         }
+        private void cariPendaftaran()
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            string data = txCariPendaftaran.Text;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand search = new SqlCommand("sp_Search_TrsPendaftaran_TrsPembayaran", connection);
+                search.CommandType = CommandType.StoredProcedure;
+                search.Parameters.AddWithValue("Data", data);
+                SqlDataAdapter adapter = new SqlDataAdapter(search);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                tblPendaftaran.DataSource = table;
+            }
+        }
         private void Bayar()
         {
             string waktu = currentDateTime.ToString("HH:mm:ss", CultureInfo.GetCultureInfo("en-US")); // Format: HH:mm:ss
+            string unformatTotalHarga = Regex.Replace(txTotalHarga.Text, "[^0-9]", "");
+
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            //EXEC SP INSERT TABLE TRANSAKSI PEMBERIAN RESEP
+            SqlCommand insert_trs = new SqlCommand("sp_InsertTrsPembayaran", connection);
+            insert_trs.CommandType = CommandType.StoredProcedure;
+            insert_trs.Parameters.AddWithValue("Id_TrsPembayaran", txID.Text);
+            insert_trs.Parameters.AddWithValue("Id_TrsPendaftaran", idPendaftaran);
+            insert_trs.Parameters.AddWithValue("Id_TrsResep", idResep);
+            insert_trs.Parameters.AddWithValue("Tanggal", DateTime.Parse(txTanggal.Text));
+            insert_trs.Parameters.AddWithValue("Waktu", waktu);
+            insert_trs.Parameters.AddWithValue("Total_Bayar", unformatTotalHarga);
+
+            try
+            {
+                connection.Open();
+                insert_trs.ExecuteNonQuery();
+                mBox.text1.Text = "Pembayaran Berhasil";
+                mBox.session.Text = "Bayar";
+                mBox.Show();
+                mBox.SuccessMessage();
+                clearText();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                mBox.text1.Text = "Pembayaran Gagal";
+                mBox.session.Text = "Bayar";
+                mBox.Show();
+                mBox.ErrorMessage();
+            }
+            finally
+            {
+                this.view_TrsPembayaranTableAdapter.Fill(this.dClinicDataSet.View_TrsPembayaran);
+                cariPendaftaran();
+            }
         }
         private void btnBayar_Click(object sender, EventArgs e)
         {
@@ -156,7 +217,18 @@ namespace D_Clinic.Halaman.Transaksi
                 string namaDokter = row.Cells["nama_dokter"].Value.ToString();
                 string namaPasien = row.Cells["nama_pasien"].Value.ToString();
                 tarifJasa = decimal.Parse(row.Cells["tarif_jasa"].Value.ToString());
-                hargaResep = decimal.Parse(row.Cells["harga_resep"].Value.ToString());
+                //hargaResep = decimal.Parse(row.Cells["harga_resep"].Value.ToString());
+                decimal? cellHargaResep= row.Cells["harga_resep"].Value as decimal?;
+                if (cellHargaResep.HasValue)
+                {
+                    // Jika nilai sel memiliki nilai atau tidak null, tampilkan nilainya
+                    hargaResep = cellHargaResep.Value;
+                }
+                else
+                {
+                    // Jika nilai sel adalah null, berikan penanganan khusus
+                    hargaResep = 0;
+                }
 
                 txID.Text = IDPembayaran();
                 txResepsionis.Text = namaResepsionis;

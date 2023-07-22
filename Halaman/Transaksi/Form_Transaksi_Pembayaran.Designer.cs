@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radiusForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -69,18 +70,30 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBatal = new Guna.UI2.WinForms.Guna2Button();
             this.btnBayar = new Guna.UI2.WinForms.Guna2Button();
-            this.tblResep = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.no_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblPembayaran = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnKembali = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txCariObat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txCariPendaftaran = new Guna.UI2.WinForms.Guna2TextBox();
             this.view_TrsPendaftaran_TrsPembayaranTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPendaftaran_TrsPembayaranTableAdapter();
+            this.viewTrsPembayaranBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.view_TrsPembayaranTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPembayaranTableAdapter();
+            this.label3 = new System.Windows.Forms.Label();
+            this.no_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTrsPembayaranDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTrsPendaftaranDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaPasienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTrsResepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.waktuDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalBayarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPendaftaran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTrsPendaftaranTrsPembayaranBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblResep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPembayaran)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTrsPembayaranBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // radiusForm
@@ -97,7 +110,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1715, 131);
+            this.label1.Size = new System.Drawing.Size(1715, 87);
             this.label1.TabIndex = 62;
             this.label1.Text = "Pembayaran";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,6 +120,8 @@
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.guna2GroupBox1.BorderRadius = 15;
             this.guna2GroupBox1.BorderThickness = 2;
+            this.guna2GroupBox1.Controls.Add(this.label4);
+            this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.tblPendaftaran);
             this.guna2GroupBox1.Controls.Add(this.txTotalHarga);
             this.guna2GroupBox1.Controls.Add(this.txResepsionis);
@@ -117,7 +132,7 @@
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.btnBatal);
             this.guna2GroupBox1.Controls.Add(this.btnBayar);
-            this.guna2GroupBox1.Controls.Add(this.tblResep);
+            this.guna2GroupBox1.Controls.Add(this.tblPembayaran);
             this.guna2GroupBox1.Controls.Add(this.btnKembali);
             this.guna2GroupBox1.Controls.Add(this.panel1);
             this.guna2GroupBox1.Controls.Add(this.txID);
@@ -183,7 +198,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tblPendaftaran.DefaultCellStyle = dataGridViewCellStyle6;
             this.tblPendaftaran.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tblPendaftaran.Location = new System.Drawing.Point(827, 22);
+            this.tblPendaftaran.Location = new System.Drawing.Point(827, 57);
             this.tblPendaftaran.MultiSelect = false;
             this.tblPendaftaran.Name = "tblPendaftaran";
             this.tblPendaftaran.ReadOnly = true;
@@ -192,7 +207,7 @@
             this.tblPendaftaran.RowHeadersWidth = 4;
             this.tblPendaftaran.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.tblPendaftaran.RowTemplate.Height = 30;
-            this.tblPendaftaran.Size = new System.Drawing.Size(721, 298);
+            this.tblPendaftaran.Size = new System.Drawing.Size(721, 269);
             this.tblPendaftaran.TabIndex = 88;
             this.tblPendaftaran.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
             this.tblPendaftaran.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
@@ -651,21 +666,22 @@
             this.btnBayar.UseTransparentBackground = true;
             this.btnBayar.Click += new System.EventHandler(this.btnBayar_Click);
             // 
-            // tblResep
+            // tblPembayaran
             // 
-            this.tblResep.AllowUserToAddRows = false;
-            this.tblResep.AllowUserToDeleteRows = false;
-            this.tblResep.AllowUserToResizeColumns = false;
-            this.tblResep.AllowUserToResizeRows = false;
+            this.tblPembayaran.AllowUserToAddRows = false;
+            this.tblPembayaran.AllowUserToDeleteRows = false;
+            this.tblPembayaran.AllowUserToResizeColumns = false;
+            this.tblPembayaran.AllowUserToResizeRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.tblResep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.tblResep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            this.tblResep.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.tblResep.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.tblResep.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.tblPembayaran.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.tblPembayaran.AutoGenerateColumns = false;
+            this.tblPembayaran.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
+            this.tblPembayaran.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.tblPembayaran.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.tblPembayaran.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Porsche Next TT", 11F);
@@ -673,62 +689,62 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblResep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.tblResep.ColumnHeadersHeight = 40;
-            this.tblResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.no_resep});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Porsche Next TT", 11F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblResep.DefaultCellStyle = dataGridViewCellStyle9;
-            this.tblResep.Enabled = false;
-            this.tblResep.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tblResep.Location = new System.Drawing.Point(827, 361);
-            this.tblResep.MultiSelect = false;
-            this.tblResep.Name = "tblResep";
-            this.tblResep.ReadOnly = true;
-            this.tblResep.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.tblResep.RowHeadersVisible = false;
-            this.tblResep.RowHeadersWidth = 4;
-            this.tblResep.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.tblResep.RowTemplate.Height = 30;
-            this.tblResep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tblResep.Size = new System.Drawing.Size(721, 298);
-            this.tblResep.TabIndex = 80;
-            this.tblResep.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
-            this.tblResep.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            this.tblResep.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.tblResep.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.tblResep.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            this.tblResep.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.tblResep.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.tblResep.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tblResep.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.tblResep.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.tblResep.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Porsche Next TT", 11F);
-            this.tblResep.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.tblResep.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblResep.ThemeStyle.HeaderStyle.Height = 40;
-            this.tblResep.ThemeStyle.ReadOnly = true;
-            this.tblResep.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.tblResep.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.tblResep.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Porsche Next TT", 11F);
-            this.tblResep.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.tblResep.ThemeStyle.RowsStyle.Height = 30;
-            this.tblResep.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.tblResep.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            // 
-            // no_resep
-            // 
-            this.no_resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.no_resep.HeaderText = "No";
-            this.no_resep.Name = "no_resep";
-            this.no_resep.ReadOnly = true;
-            this.no_resep.Width = 40;
+            this.tblPembayaran.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.tblPembayaran.ColumnHeadersHeight = 40;
+            this.tblPembayaran.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.no_resep,
+            this.idTrsPembayaranDataGridViewTextBoxColumn,
+            this.idTrsPendaftaranDataGridViewTextBoxColumn,
+            this.namaPasienDataGridViewTextBoxColumn,
+            this.idTrsResepDataGridViewTextBoxColumn,
+            this.tanggalDataGridViewTextBoxColumn1,
+            this.waktuDataGridViewTextBoxColumn1,
+            this.totalBayarDataGridViewTextBoxColumn});
+            this.tblPembayaran.DataSource = this.viewTrsPembayaranBindingSource;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Porsche Next TT", 11F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblPembayaran.DefaultCellStyle = dataGridViewCellStyle10;
+            this.tblPembayaran.Enabled = false;
+            this.tblPembayaran.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.tblPembayaran.Location = new System.Drawing.Point(827, 390);
+            this.tblPembayaran.MultiSelect = false;
+            this.tblPembayaran.Name = "tblPembayaran";
+            this.tblPembayaran.ReadOnly = true;
+            this.tblPembayaran.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.tblPembayaran.RowHeadersVisible = false;
+            this.tblPembayaran.RowHeadersWidth = 4;
+            this.tblPembayaran.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.tblPembayaran.RowTemplate.Height = 30;
+            this.tblPembayaran.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.tblPembayaran.Size = new System.Drawing.Size(721, 269);
+            this.tblPembayaran.TabIndex = 80;
+            this.tblPembayaran.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
+            this.tblPembayaran.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            this.tblPembayaran.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.tblPembayaran.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.tblPembayaran.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            this.tblPembayaran.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.tblPembayaran.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.tblPembayaran.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.tblPembayaran.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.tblPembayaran.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.tblPembayaran.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Porsche Next TT", 11F);
+            this.tblPembayaran.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.tblPembayaran.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tblPembayaran.ThemeStyle.HeaderStyle.Height = 40;
+            this.tblPembayaran.ThemeStyle.ReadOnly = true;
+            this.tblPembayaran.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.tblPembayaran.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.tblPembayaran.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Porsche Next TT", 11F);
+            this.tblPembayaran.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.tblPembayaran.ThemeStyle.RowsStyle.Height = 30;
+            this.tblPembayaran.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.tblPembayaran.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             // 
             // btnKembali
             // 
@@ -797,47 +813,148 @@
             this.txID.TextOffset = new System.Drawing.Point(5, 0);
             this.txID.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
-            // txCariObat
+            // txCariPendaftaran
             // 
-            this.txCariObat.Animated = true;
-            this.txCariObat.AutoRoundedCorners = true;
-            this.txCariObat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.txCariObat.BorderColor = System.Drawing.Color.White;
-            this.txCariObat.BorderRadius = 17;
-            this.txCariObat.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txCariObat.BorderThickness = 2;
-            this.txCariObat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txCariObat.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txCariObat.DefaultText = "";
-            this.txCariObat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txCariObat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txCariObat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txCariObat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txCariObat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.txCariObat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txCariObat.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txCariObat.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.txCariObat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.txCariObat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txCariObat.IconLeft = global::D_Clinic.Properties.Resources.white_magnifier;
-            this.txCariObat.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txCariObat.Location = new System.Drawing.Point(1271, 172);
-            this.txCariObat.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txCariObat.MaxLength = 30;
-            this.txCariObat.Name = "txCariObat";
-            this.txCariObat.PasswordChar = '\0';
-            this.txCariObat.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txCariObat.PlaceholderText = "Cari Obat";
-            this.txCariObat.SelectedText = "";
-            this.txCariObat.Size = new System.Drawing.Size(381, 37);
-            this.txCariObat.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txCariObat.TabIndex = 65;
-            this.txCariObat.TextOffset = new System.Drawing.Point(5, 0);
-            this.txCariObat.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            this.txCariPendaftaran.Animated = true;
+            this.txCariPendaftaran.AutoRoundedCorners = true;
+            this.txCariPendaftaran.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.txCariPendaftaran.BorderColor = System.Drawing.Color.White;
+            this.txCariPendaftaran.BorderRadius = 17;
+            this.txCariPendaftaran.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txCariPendaftaran.BorderThickness = 2;
+            this.txCariPendaftaran.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txCariPendaftaran.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txCariPendaftaran.DefaultText = "";
+            this.txCariPendaftaran.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txCariPendaftaran.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txCariPendaftaran.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txCariPendaftaran.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txCariPendaftaran.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.txCariPendaftaran.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txCariPendaftaran.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txCariPendaftaran.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.txCariPendaftaran.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.txCariPendaftaran.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txCariPendaftaran.IconLeft = global::D_Clinic.Properties.Resources.white_magnifier;
+            this.txCariPendaftaran.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txCariPendaftaran.Location = new System.Drawing.Point(1271, 172);
+            this.txCariPendaftaran.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txCariPendaftaran.MaxLength = 30;
+            this.txCariPendaftaran.Name = "txCariPendaftaran";
+            this.txCariPendaftaran.PasswordChar = '\0';
+            this.txCariPendaftaran.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txCariPendaftaran.PlaceholderText = "Cari Pendaftaran";
+            this.txCariPendaftaran.SelectedText = "";
+            this.txCariPendaftaran.Size = new System.Drawing.Size(381, 37);
+            this.txCariPendaftaran.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txCariPendaftaran.TabIndex = 65;
+            this.txCariPendaftaran.TextOffset = new System.Drawing.Point(5, 0);
+            this.txCariPendaftaran.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
             // view_TrsPendaftaran_TrsPembayaranTableAdapter
             // 
             this.view_TrsPendaftaran_TrsPembayaranTableAdapter.ClearBeforeFill = true;
+            // 
+            // viewTrsPembayaranBindingSource
+            // 
+            this.viewTrsPembayaranBindingSource.DataMember = "View_TrsPembayaran";
+            this.viewTrsPembayaranBindingSource.DataSource = this.dClinicDataSet;
+            // 
+            // view_TrsPembayaranTableAdapter
+            // 
+            this.view_TrsPembayaranTableAdapter.ClearBeforeFill = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.label3.Location = new System.Drawing.Point(821, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 32);
+            this.label3.TabIndex = 89;
+            this.label3.Text = "Data Pendaftaran";
+            // 
+            // no_resep
+            // 
+            this.no_resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.no_resep.HeaderText = "No";
+            this.no_resep.Name = "no_resep";
+            this.no_resep.ReadOnly = true;
+            this.no_resep.Width = 40;
+            // 
+            // idTrsPembayaranDataGridViewTextBoxColumn
+            // 
+            this.idTrsPembayaranDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idTrsPembayaranDataGridViewTextBoxColumn.DataPropertyName = "Id_TrsPembayaran";
+            this.idTrsPembayaranDataGridViewTextBoxColumn.HeaderText = "ID Pembayaran";
+            this.idTrsPembayaranDataGridViewTextBoxColumn.Name = "idTrsPembayaranDataGridViewTextBoxColumn";
+            this.idTrsPembayaranDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTrsPembayaranDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // idTrsPendaftaranDataGridViewTextBoxColumn
+            // 
+            this.idTrsPendaftaranDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idTrsPendaftaranDataGridViewTextBoxColumn.DataPropertyName = "Id_TrsPendaftaran";
+            this.idTrsPendaftaranDataGridViewTextBoxColumn.HeaderText = "ID Pendaftaran";
+            this.idTrsPendaftaranDataGridViewTextBoxColumn.Name = "idTrsPendaftaranDataGridViewTextBoxColumn";
+            this.idTrsPendaftaranDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTrsPendaftaranDataGridViewTextBoxColumn.Visible = false;
+            this.idTrsPendaftaranDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // namaPasienDataGridViewTextBoxColumn
+            // 
+            this.namaPasienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.namaPasienDataGridViewTextBoxColumn.DataPropertyName = "Nama_Pasien";
+            this.namaPasienDataGridViewTextBoxColumn.HeaderText = "Nama Pasien";
+            this.namaPasienDataGridViewTextBoxColumn.Name = "namaPasienDataGridViewTextBoxColumn";
+            this.namaPasienDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idTrsResepDataGridViewTextBoxColumn
+            // 
+            this.idTrsResepDataGridViewTextBoxColumn.DataPropertyName = "Id_TrsResep";
+            this.idTrsResepDataGridViewTextBoxColumn.HeaderText = "ID Resep";
+            this.idTrsResepDataGridViewTextBoxColumn.Name = "idTrsResepDataGridViewTextBoxColumn";
+            this.idTrsResepDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTrsResepDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tanggalDataGridViewTextBoxColumn1
+            // 
+            this.tanggalDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tanggalDataGridViewTextBoxColumn1.DataPropertyName = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn1.HeaderText = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn1.Name = "tanggalDataGridViewTextBoxColumn1";
+            this.tanggalDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // waktuDataGridViewTextBoxColumn1
+            // 
+            this.waktuDataGridViewTextBoxColumn1.DataPropertyName = "Waktu";
+            this.waktuDataGridViewTextBoxColumn1.HeaderText = "Waktu";
+            this.waktuDataGridViewTextBoxColumn1.Name = "waktuDataGridViewTextBoxColumn1";
+            this.waktuDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // totalBayarDataGridViewTextBoxColumn
+            // 
+            this.totalBayarDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalBayarDataGridViewTextBoxColumn.DataPropertyName = "Total_Bayar";
+            dataGridViewCellStyle9.Format = "C0";
+            this.totalBayarDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.totalBayarDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalBayarDataGridViewTextBoxColumn.Name = "totalBayarDataGridViewTextBoxColumn";
+            this.totalBayarDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.label4.Location = new System.Drawing.Point(821, 355);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 32);
+            this.label4.TabIndex = 90;
+            this.label4.Text = "Data Pembayaran";
             // 
             // Form_Transaksi_Pembayaran
             // 
@@ -845,7 +962,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1715, 924);
-            this.Controls.Add(this.txCariObat);
+            this.Controls.Add(this.txCariPendaftaran);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -857,7 +974,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblPendaftaran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTrsPendaftaranTrsPembayaranBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblResep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPembayaran)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTrsPembayaranBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -875,18 +993,16 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnBatal;
         private Guna.UI2.WinForms.Guna2Button btnBayar;
-        private Guna.UI2.WinForms.Guna2DataGridView tblResep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no_resep;
+        private Guna.UI2.WinForms.Guna2DataGridView tblPembayaran;
         private Guna.UI2.WinForms.Guna2ImageButton btnKembali;
         private System.Windows.Forms.Panel panel1;
         public Guna.UI2.WinForms.Guna2TextBox txID;
-        private Guna.UI2.WinForms.Guna2TextBox txCariObat;
+        private Guna.UI2.WinForms.Guna2TextBox txCariPendaftaran;
         private DClinicDataSet dClinicDataSet;
-        private System.Windows.Forms.BindingSource viewTrsPendaftaranTrsPembayaranBindingSource;
-        private DClinicDataSetTableAdapters.View_TrsPendaftaran_TrsPembayaranTableAdapter view_TrsPendaftaran_TrsPembayaranTableAdapter;
         public Guna.UI2.WinForms.Guna2TextBox txResepsionis;
         public Guna.UI2.WinForms.Guna2TextBox txPasien;
         private System.Windows.Forms.DataGridViewTextBoxColumn no_daftar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_resep;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_daftar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idKaryawanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_resepsionis;
@@ -895,12 +1011,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tarif_jasa;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPasienDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_pasien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_resep;
         private System.Windows.Forms.DataGridViewTextBoxColumn harga_resep;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn waktuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusRujukanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusResepDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusPembayaranDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource viewTrsPendaftaranTrsPembayaranBindingSource;
+        private DClinicDataSetTableAdapters.View_TrsPendaftaran_TrsPembayaranTableAdapter view_TrsPendaftaran_TrsPembayaranTableAdapter;
+        private System.Windows.Forms.BindingSource viewTrsPembayaranBindingSource;
+        private DClinicDataSetTableAdapters.View_TrsPembayaranTableAdapter view_TrsPembayaranTableAdapter;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no_resep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTrsPembayaranDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTrsPendaftaranDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaPasienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTrsResepDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tanggalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn waktuDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalBayarDataGridViewTextBoxColumn;
     }
 }
