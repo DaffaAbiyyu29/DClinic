@@ -37,6 +37,13 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tblObat = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idObatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.merkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaJualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dClinicDataSet = new D_Clinic.DClinicDataSet();
             this.obatTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.ObatTableAdapter();
@@ -46,13 +53,6 @@
             this.rbNonAktif = new Guna.UI2.WinForms.Guna2Button();
             this.rbAktif = new Guna.UI2.WinForms.Guna2Button();
             this.rbSemua = new Guna.UI2.WinForms.Guna2Button();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idObatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.merkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaJualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblObat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource)).BeginInit();
@@ -75,7 +75,7 @@
             this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(68, 182);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(65, 182);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1584, 680);
             this.guna2GroupBox1.TabIndex = 40;
@@ -157,6 +157,67 @@
             this.tblObat.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.tblObat.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.tblObat.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tblObat_RowPostPaint);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 40;
+            // 
+            // idObatDataGridViewTextBoxColumn
+            // 
+            this.idObatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idObatDataGridViewTextBoxColumn.DataPropertyName = "Id_Obat";
+            this.idObatDataGridViewTextBoxColumn.HeaderText = "ID Obat";
+            this.idObatDataGridViewTextBoxColumn.Name = "idObatDataGridViewTextBoxColumn";
+            this.idObatDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama Obat";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // merkDataGridViewTextBoxColumn
+            // 
+            this.merkDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.merkDataGridViewTextBoxColumn.DataPropertyName = "Merk";
+            this.merkDataGridViewTextBoxColumn.HeaderText = "Merk Obat";
+            this.merkDataGridViewTextBoxColumn.Name = "merkDataGridViewTextBoxColumn";
+            this.merkDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hargaJualDataGridViewTextBoxColumn
+            // 
+            this.hargaJualDataGridViewTextBoxColumn.DataPropertyName = "Harga_Jual";
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.hargaJualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.hargaJualDataGridViewTextBoxColumn.HeaderText = "Harga Jual";
+            this.hargaJualDataGridViewTextBoxColumn.Name = "hargaJualDataGridViewTextBoxColumn";
+            this.hargaJualDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hargaJualDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Tgl_Kadaluarsa";
+            dataGridViewCellStyle4.Format = "D";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tanggal Kadaluarsa";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // stokDataGridViewTextBoxColumn
+            // 
+            this.stokDataGridViewTextBoxColumn.DataPropertyName = "Stok";
+            this.stokDataGridViewTextBoxColumn.HeaderText = "Stok";
+            this.stokDataGridViewTextBoxColumn.Name = "stokDataGridViewTextBoxColumn";
+            this.stokDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // obatBindingSource
             // 
@@ -325,67 +386,6 @@
             this.rbSemua.Text = "Semua Data";
             this.rbSemua.UseTransparentBackground = true;
             this.rbSemua.Click += new System.EventHandler(this.CariData);
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 40;
-            // 
-            // idObatDataGridViewTextBoxColumn
-            // 
-            this.idObatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idObatDataGridViewTextBoxColumn.DataPropertyName = "Id_Obat";
-            this.idObatDataGridViewTextBoxColumn.HeaderText = "ID Obat";
-            this.idObatDataGridViewTextBoxColumn.Name = "idObatDataGridViewTextBoxColumn";
-            this.idObatDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama Obat";
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // merkDataGridViewTextBoxColumn
-            // 
-            this.merkDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.merkDataGridViewTextBoxColumn.DataPropertyName = "Merk";
-            this.merkDataGridViewTextBoxColumn.HeaderText = "Merk Obat";
-            this.merkDataGridViewTextBoxColumn.Name = "merkDataGridViewTextBoxColumn";
-            this.merkDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hargaJualDataGridViewTextBoxColumn
-            // 
-            this.hargaJualDataGridViewTextBoxColumn.DataPropertyName = "Harga_Jual";
-            dataGridViewCellStyle3.Format = "C0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.hargaJualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.hargaJualDataGridViewTextBoxColumn.HeaderText = "Harga Jual";
-            this.hargaJualDataGridViewTextBoxColumn.Name = "hargaJualDataGridViewTextBoxColumn";
-            this.hargaJualDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hargaJualDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Tgl_Kadaluarsa";
-            dataGridViewCellStyle4.Format = "D";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Tanggal Kadaluarsa";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // stokDataGridViewTextBoxColumn
-            // 
-            this.stokDataGridViewTextBoxColumn.DataPropertyName = "Stok";
-            this.stokDataGridViewTextBoxColumn.HeaderText = "Stok";
-            this.stokDataGridViewTextBoxColumn.Name = "stokDataGridViewTextBoxColumn";
-            this.stokDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form_View_Obat
             // 

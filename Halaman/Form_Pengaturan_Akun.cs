@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,8 +18,8 @@ namespace D_Clinic.Halaman
     {
         Msg_Box mBox = new Msg_Box();
         byte[] imageData;
-
-        string lastLogin;
+        bool updateFoto = false;
+        string jabatan, lastLogin;
         public Form_Pengaturan_Akun()
         {
             InitializeComponent();
@@ -84,6 +85,7 @@ namespace D_Clinic.Halaman
                         string telp = reader.GetString(3);
                         string username = reader.GetString(4);
                         string password = reader.GetString(5);
+                        jabatan = reader.GetString(6);
                         imageData = (byte[])reader["Foto"];
 
 
@@ -119,74 +121,93 @@ namespace D_Clinic.Halaman
             // Ambil gambar yang akan disimpan
             Image image = imgProfil.Image;
 
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand update = new SqlCommand("sp_UpdateKaryawan", connection);
+            update.CommandType = CommandType.StoredProcedure;
+
+            update.Parameters.AddWithValue("Id_Karyawan", txID.Text);
+            update.Parameters.AddWithValue("Nama", txNama.Text);
+            update.Parameters.AddWithValue("Email", txEmail.Text);
+            update.Parameters.AddWithValue("Telp", txTelp.Text);
+            update.Parameters.AddWithValue("Username", txUsername.Text);
+            update.Parameters.AddWithValue("Password", txPassword.Text);
+            update.Parameters.AddWithValue("Jabatan", jabatan);
+
+            if (!updateFoto)
+            {
+                update.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
+            }
+            else
+            {
+                imageData = ImageToByteArray(image);
+                update.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
+            }
+
             try
             {
-                using (DClinicDataContext context = new DClinicDataContext())
-                {
-                    D_Clinic.Karyawan update = context.Karyawans.FirstOrDefault(data => data.Id_Karyawan == txID.Text);
-                    update.Nama = txNama.Text;
-                    update.Email = txEmail.Text;
-                    update.Telp = txTelp.Text;
-                    update.Username = txUsername.Text;
-                    update.Password = txPassword.Text;
-                    if (imgProfil.Image != null)
-                    {
-                        // Konversi gambar ke byte array
-                        imageData = ImageToByteArray(image);
-                        update.Foto = imageData;
-                    }
-                    else
-                    {
-                        imageData = null;
-                        update.Foto = imageData;
-                    }
+                connection.Open();
+                update.ExecuteNonQuery();
 
-                    context.SubmitChanges();
-
-                    mBox.text1.Text = "Berhasil Memperbarui Akun";
-                    mBox.session.Text = "Karyawan";
-                    mBox.Show();
-                    mBox.SuccessMessage();
-                    GenerateKaryawan();
-                }
+                mBox.text1.Text = "Berhasil Memperbarui Karyawan";
+                mBox.session.Text = "Karyawan";
+                mBox.Show();
+                mBox.SuccessMessage();
+                clearText();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error : " + ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mBox.text1.Text = "Gagal Memperbarui Karyawan";
+                mBox.session.Text = "Karyawan";
+                mBox.Show();
+                mBox.ErrorMessage();
             }
+        }
+        public static bool ValidasiEmail(string email)
+        {
+            // Pola regular expression untuk validasi email
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Lakukan validasi menggunakan Regex.IsMatch
+            return Regex.IsMatch(email, pattern);
         }
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            UpdateKaryawan();
-            Gambar();
-        }
-        private void HapusKaryawan()
-        {
-            try
+            bool validEmail = ValidasiEmail(txEmail.Text);
+
+            if (txNama.Text.Length != 0 && txTelp.Text.Length != 0 && txEmail.Text.Length != 0 && txUsername.Text.Length != 0 && txPassword.Text.Length != 0)
             {
-                using (DClinicDataContext context = new DClinicDataContext())
+                if (txTelp.Text.Length < 12)
                 {
-                    D_Clinic.Karyawan delete = context.Karyawans.FirstOrDefault(data => data.Id_Karyawan == txID.Text);
-
-                    context.Karyawans.DeleteOnSubmit(delete);
-                    context.SubmitChanges();
-
-                    this.Hide();
-                    mBox.text1.Text = "Akun Terhapus";
-                    mBox.session.Text = "Akun Terhapus";
+                    mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                    mBox.session.Text = "Karyawan";
                     mBox.Show();
-                    mBox.ErrorMessage();
+                    mBox.WarningMessage();
+                }
+                else
+                {
+                    if (validEmail)
+                    {
+                        UpdateKaryawan();
+                        Gambar();
+                    }
+                    else
+                    {
+                        mBox.text1.Text = "Format Email Salah!\nexample@gmail.com";
+                        mBox.session.Text = "Karyawan";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error : " + ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mBox.text1.Text = "Masukkan Semua Data!";
+                mBox.session.Text = "Karyawan";
+                mBox.Show();
+                mBox.WarningMessage();
             }
-        }
-        private void btnHapus_Click(object sender, EventArgs e)
-        {
-            HapusKaryawan();
-            Gambar();
         }
 
         private void btnBatal_Click(object sender, EventArgs e)
@@ -286,11 +307,44 @@ namespace D_Clinic.Halaman
                 }
             }
         }
+        private void NonAktifKaryawan()
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand disable = new SqlCommand("sp_DisableKaryawan", connection);
+            disable.CommandType = CommandType.StoredProcedure;
+            disable.Parameters.AddWithValue("Id_Karyawan", txID.Text);
+            disable.Parameters.AddWithValue("Jabatan", jabatan);
+
+            try
+            {
+                connection.Open();
+                disable.ExecuteNonQuery();
+
+                mBox.text1.Text = "Berhasil Non-Aktifkan Karyawan";
+                mBox.session.Text = "Karyawan";
+                mBox.Show();
+                mBox.SuccessMessage();
+                clearText();
+            }
+            catch (Exception)
+            {
+                mBox.text1.Text = "Gagal Non-Aktifkan Karyawan";
+                mBox.session.Text = "Karyawan";
+                mBox.Show();
+                mBox.ErrorMessage();
+            }
+        }
+        private void btnNonAktif_Click(object sender, EventArgs e)
+        {
+            NonAktifKaryawan();
+        }
 
         private void btnHapusGambar_Click(object sender, EventArgs e)
         {
-            imageData = null;
-            imgProfil.Image = null;
+            updateFoto = true;
+            imgProfil.Image = Properties.Resources.profil_default;
         }
     }
 }

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Laporan" targetNamespace="http://tempuri.org/Laporan.xsd" xmlns:mstns="http://tempuri.org/Laporan.xsd" xmlns="http://tempuri.org/Laporan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DClinicConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DClinicConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.D_Clinic.Properties.Settings.GlobalReference.Default.DClinicConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_RekamMedisTableAdapter" GeneratorDataComponentClassName="View_RekamMedisTableAdapter" Name="View_RekamMedis" UserDataComponentName="View_RekamMedisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DClinicConnectionString (Settings)" DbObjectName="DClinic.dbo.View_RekamMedis" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      Id_RekamMedis, Id_TrsPendaftaran, Id_Pasien, Nama_Pasien, Tanggal, Diagnosa
+FROM         View_RekamMedis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_RekamMedis" DataSetColumn="Id_RekamMedis" />
+              <Mapping SourceColumn="Id_TrsPendaftaran" DataSetColumn="Id_TrsPendaftaran" />
+              <Mapping SourceColumn="Id_Pasien" DataSetColumn="Id_Pasien" />
+              <Mapping SourceColumn="Nama_Pasien" DataSetColumn="Nama_Pasien" />
+              <Mapping SourceColumn="Tanggal" DataSetColumn="Tanggal" />
+              <Mapping SourceColumn="Diagnosa" DataSetColumn="Diagnosa" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Laporan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="Laporan" msprop:Generator_DataSetName="Laporan">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_RekamMedis" msprop:Generator_RowEvHandlerName="View_RekamMedisRowChangeEventHandler" msprop:Generator_RowDeletedName="View_RekamMedisRowDeleted" msprop:Generator_RowDeletingName="View_RekamMedisRowDeleting" msprop:Generator_RowEvArgName="View_RekamMedisRowChangeEvent" msprop:Generator_TablePropName="View_RekamMedis" msprop:Generator_RowChangedName="View_RekamMedisRowChanged" msprop:Generator_RowChangingName="View_RekamMedisRowChanging" msprop:Generator_TableClassName="View_RekamMedisDataTable" msprop:Generator_RowClassName="View_RekamMedisRow" msprop:Generator_TableVarName="tableView_RekamMedis" msprop:Generator_UserTableName="View_RekamMedis">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_RekamMedis" msprop:Generator_ColumnPropNameInRow="Id_RekamMedis" msprop:Generator_ColumnPropNameInTable="Id_RekamMedisColumn" msprop:Generator_ColumnVarNameInTable="columnId_RekamMedis" msprop:Generator_UserColumnName="Id_RekamMedis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_TrsPendaftaran" msprop:Generator_ColumnPropNameInRow="Id_TrsPendaftaran" msprop:Generator_ColumnPropNameInTable="Id_TrsPendaftaranColumn" msprop:Generator_ColumnVarNameInTable="columnId_TrsPendaftaran" msprop:Generator_UserColumnName="Id_TrsPendaftaran">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Pasien" msprop:Generator_ColumnPropNameInRow="Id_Pasien" msprop:Generator_ColumnPropNameInTable="Id_PasienColumn" msprop:Generator_ColumnVarNameInTable="columnId_Pasien" msprop:Generator_UserColumnName="Id_Pasien">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nama_Pasien" msprop:Generator_ColumnPropNameInRow="Nama_Pasien" msprop:Generator_ColumnPropNameInTable="Nama_PasienColumn" msprop:Generator_ColumnVarNameInTable="columnNama_Pasien" msprop:Generator_UserColumnName="Nama_Pasien">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tanggal" msprop:Generator_ColumnPropNameInRow="Tanggal" msprop:Generator_ColumnPropNameInTable="TanggalColumn" msprop:Generator_ColumnVarNameInTable="columnTanggal" msprop:Generator_UserColumnName="Tanggal" type="xs:dateTime" />
+              <xs:element name="Diagnosa" msprop:Generator_ColumnPropNameInRow="Diagnosa" msprop:Generator_ColumnPropNameInTable="DiagnosaColumn" msprop:Generator_ColumnVarNameInTable="columnDiagnosa" msprop:Generator_UserColumnName="Diagnosa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

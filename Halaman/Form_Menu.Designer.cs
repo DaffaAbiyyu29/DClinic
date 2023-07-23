@@ -45,8 +45,8 @@
             this.btnRuangPeriksa = new Guna.UI2.WinForms.Guna2Button();
             this.btnJadwalDokter = new Guna.UI2.WinForms.Guna2Button();
             this.pnlLaporan = new System.Windows.Forms.Panel();
-            this.btnLaporanKeuangan = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRekamMedis = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLaporanPemberianResep = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLaporanRekamMedis = new Guna.UI2.WinForms.Guna2Button();
             this.btnLaporan = new Guna.UI2.WinForms.Guna2Button();
             this.pnlObat = new System.Windows.Forms.Panel();
             this.btnMasterObat = new Guna.UI2.WinForms.Guna2Button();
@@ -71,6 +71,7 @@
             this.lblNama = new System.Windows.Forms.Label();
             this.lblN = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnRestokObat = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlSidebar.SuspendLayout();
@@ -492,86 +493,88 @@
             // pnlLaporan
             // 
             this.pnlLaporan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.pnlLaporan.Controls.Add(this.btnLaporanKeuangan);
-            this.pnlLaporan.Controls.Add(this.btnRekamMedis);
+            this.pnlLaporan.Controls.Add(this.btnRestokObat);
+            this.pnlLaporan.Controls.Add(this.btnLaporanPemberianResep);
+            this.pnlLaporan.Controls.Add(this.btnLaporanRekamMedis);
             this.pnlLaporan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlLaporan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.pnlLaporan.Location = new System.Drawing.Point(0, 924);
             this.pnlLaporan.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlLaporan.MaximumSize = new System.Drawing.Size(205, 110);
+            this.pnlLaporan.MaximumSize = new System.Drawing.Size(205, 165);
             this.pnlLaporan.MinimumSize = new System.Drawing.Size(205, 0);
             this.pnlLaporan.Name = "pnlLaporan";
             this.pnlLaporan.Size = new System.Drawing.Size(205, 0);
             this.pnlLaporan.TabIndex = 114;
             // 
-            // btnLaporanKeuangan
+            // btnLaporanPemberianResep
             // 
-            this.btnLaporanKeuangan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnLaporanKeuangan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnLaporanKeuangan.BorderRadius = 6;
-            this.btnLaporanKeuangan.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnLaporanKeuangan.CausesValidation = false;
-            this.btnLaporanKeuangan.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnLaporanKeuangan.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnLaporanKeuangan.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnLaporanKeuangan.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.btnLaporanKeuangan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLaporanKeuangan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLaporanKeuangan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLaporanKeuangan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLaporanKeuangan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLaporanKeuangan.FillColor = System.Drawing.Color.Transparent;
-            this.btnLaporanKeuangan.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLaporanKeuangan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnLaporanKeuangan.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnLaporanKeuangan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnLaporanKeuangan.Image = ((System.Drawing.Image)(resources.GetObject("btnLaporanKeuangan.Image")));
-            this.btnLaporanKeuangan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanKeuangan.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnLaporanKeuangan.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLaporanKeuangan.Location = new System.Drawing.Point(0, 55);
-            this.btnLaporanKeuangan.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLaporanKeuangan.Name = "btnLaporanKeuangan";
-            this.btnLaporanKeuangan.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnLaporanKeuangan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnLaporanKeuangan.Size = new System.Drawing.Size(205, 55);
-            this.btnLaporanKeuangan.TabIndex = 45;
-            this.btnLaporanKeuangan.Text = "Laporan Keuangan";
-            this.btnLaporanKeuangan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLaporanPemberianResep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnLaporanPemberianResep.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnLaporanPemberianResep.BorderRadius = 6;
+            this.btnLaporanPemberianResep.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnLaporanPemberianResep.CausesValidation = false;
+            this.btnLaporanPemberianResep.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnLaporanPemberianResep.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnLaporanPemberianResep.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnLaporanPemberianResep.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.btnLaporanPemberianResep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLaporanPemberianResep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLaporanPemberianResep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLaporanPemberianResep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLaporanPemberianResep.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLaporanPemberianResep.FillColor = System.Drawing.Color.Transparent;
+            this.btnLaporanPemberianResep.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaporanPemberianResep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnLaporanPemberianResep.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnLaporanPemberianResep.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnLaporanPemberianResep.Image = ((System.Drawing.Image)(resources.GetObject("btnLaporanPemberianResep.Image")));
+            this.btnLaporanPemberianResep.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLaporanPemberianResep.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnLaporanPemberianResep.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnLaporanPemberianResep.Location = new System.Drawing.Point(0, 55);
+            this.btnLaporanPemberianResep.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLaporanPemberianResep.Name = "btnLaporanPemberianResep";
+            this.btnLaporanPemberianResep.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnLaporanPemberianResep.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnLaporanPemberianResep.Size = new System.Drawing.Size(205, 55);
+            this.btnLaporanPemberianResep.TabIndex = 45;
+            this.btnLaporanPemberianResep.Text = "Resep Obat";
+            this.btnLaporanPemberianResep.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // btnRekamMedis
+            // btnLaporanRekamMedis
             // 
-            this.btnRekamMedis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnRekamMedis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnRekamMedis.BorderRadius = 6;
-            this.btnRekamMedis.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnRekamMedis.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnRekamMedis.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnRekamMedis.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnRekamMedis.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.btnRekamMedis.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRekamMedis.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRekamMedis.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRekamMedis.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRekamMedis.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRekamMedis.FillColor = System.Drawing.Color.Transparent;
-            this.btnRekamMedis.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRekamMedis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnRekamMedis.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnRekamMedis.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnRekamMedis.Image = ((System.Drawing.Image)(resources.GetObject("btnRekamMedis.Image")));
-            this.btnRekamMedis.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRekamMedis.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnRekamMedis.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnRekamMedis.Location = new System.Drawing.Point(0, 0);
-            this.btnRekamMedis.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRekamMedis.Name = "btnRekamMedis";
-            this.btnRekamMedis.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnRekamMedis.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnRekamMedis.Size = new System.Drawing.Size(205, 55);
-            this.btnRekamMedis.TabIndex = 41;
-            this.btnRekamMedis.Text = "Rekam Medis";
-            this.btnRekamMedis.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLaporanRekamMedis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnLaporanRekamMedis.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnLaporanRekamMedis.BorderRadius = 6;
+            this.btnLaporanRekamMedis.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnLaporanRekamMedis.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnLaporanRekamMedis.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnLaporanRekamMedis.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnLaporanRekamMedis.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.btnLaporanRekamMedis.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLaporanRekamMedis.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLaporanRekamMedis.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLaporanRekamMedis.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLaporanRekamMedis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLaporanRekamMedis.FillColor = System.Drawing.Color.Transparent;
+            this.btnLaporanRekamMedis.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaporanRekamMedis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnLaporanRekamMedis.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnLaporanRekamMedis.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnLaporanRekamMedis.Image = global::D_Clinic.Properties.Resources.green_diagnosa;
+            this.btnLaporanRekamMedis.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLaporanRekamMedis.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnLaporanRekamMedis.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnLaporanRekamMedis.Location = new System.Drawing.Point(0, 0);
+            this.btnLaporanRekamMedis.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLaporanRekamMedis.Name = "btnLaporanRekamMedis";
+            this.btnLaporanRekamMedis.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnLaporanRekamMedis.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnLaporanRekamMedis.Size = new System.Drawing.Size(205, 55);
+            this.btnLaporanRekamMedis.TabIndex = 41;
+            this.btnLaporanRekamMedis.Text = "Rekam Medis";
+            this.btnLaporanRekamMedis.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLaporanRekamMedis.Click += new System.EventHandler(this.btnLaporanRekamMedis_Click);
             // 
             // btnLaporan
             // 
@@ -1155,6 +1158,41 @@
             this.guna2Elipse1.BorderRadius = 40;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // btnRestokObat
+            // 
+            this.btnRestokObat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnRestokObat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnRestokObat.BorderRadius = 6;
+            this.btnRestokObat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnRestokObat.CausesValidation = false;
+            this.btnRestokObat.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnRestokObat.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnRestokObat.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnRestokObat.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.btnRestokObat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRestokObat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRestokObat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRestokObat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRestokObat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRestokObat.FillColor = System.Drawing.Color.Transparent;
+            this.btnRestokObat.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestokObat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnRestokObat.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnRestokObat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnRestokObat.Image = ((System.Drawing.Image)(resources.GetObject("btnRestokObat.Image")));
+            this.btnRestokObat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRestokObat.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnRestokObat.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnRestokObat.Location = new System.Drawing.Point(0, 110);
+            this.btnRestokObat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestokObat.Name = "btnRestokObat";
+            this.btnRestokObat.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnRestokObat.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnRestokObat.Size = new System.Drawing.Size(205, 55);
+            this.btnRestokObat.TabIndex = 46;
+            this.btnRestokObat.Text = "Restok Obat";
+            this.btnRestokObat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1220,11 +1258,12 @@
         public Guna.UI2.WinForms.Guna2Button btnRuangPeriksa;
         public Guna.UI2.WinForms.Guna2Button btnJadwalDokter;
         public System.Windows.Forms.Panel pnlLaporan;
-        private Guna.UI2.WinForms.Guna2Button btnLaporanKeuangan;
-        private Guna.UI2.WinForms.Guna2Button btnRekamMedis;
+        private Guna.UI2.WinForms.Guna2Button btnLaporanPemberianResep;
+        private Guna.UI2.WinForms.Guna2Button btnLaporanRekamMedis;
         public Guna.UI2.WinForms.Guna2Button btnLaporan;
         public Guna.UI2.WinForms.Guna2Button btnSupplier;
         public Guna.UI2.WinForms.Guna2Button btnDaftarObat;
         public Guna.UI2.WinForms.Guna2Button btnPembayaran;
+        private Guna.UI2.WinForms.Guna2Button btnRestokObat;
     }
 }

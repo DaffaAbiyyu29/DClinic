@@ -102,6 +102,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DClinicDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Halaman\Laporan\Form_Laporan_Rekam_Medis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Halaman\Laporan\Form_Laporan_Rekam_Medis.Designer.cs">
+      <DependentUpon>Form_Laporan_Rekam_Medis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Halaman\Form_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,22 +204,22 @@
     <Compile Include="Halaman\Master\Form_Master_Ruang_Periksa.Designer.cs">
       <DependentUpon>Form_Master_Ruang_Periksa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Halaman\Form_View_Karyawan.cs">
+    <Compile Include="Halaman\Master\Form_View_Karyawan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Halaman\Form_View_Karyawan.Designer.cs">
+    <Compile Include="Halaman\Master\Form_View_Karyawan.Designer.cs">
       <DependentUpon>Form_View_Karyawan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Halaman\Form_View_Obat.cs">
+    <Compile Include="Halaman\Master\Form_View_Obat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Halaman\Form_View_Obat.Designer.cs">
+    <Compile Include="Halaman\Master\Form_View_Obat.Designer.cs">
       <DependentUpon>Form_View_Obat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Halaman\Form_View_Pasien.cs">
+    <Compile Include="Halaman\Master\Form_View_Pasien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Halaman\Form_View_Pasien.Designer.cs">
+    <Compile Include="Halaman\Master\Form_View_Pasien.Designer.cs">
       <DependentUpon>Form_View_Pasien.cs</DependentUpon>
     </Compile>
     <Compile Include="Halaman\Transaksi\Form_Transaksi_Restok_Obat.cs">
@@ -227,6 +233,11 @@
     </Compile>
     <Compile Include="Halaman\Transaksi\Form_Transaksi_Rujukan_Pasien.Designer.cs">
       <DependentUpon>Form_Transaksi_Rujukan_Pasien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Laporan.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -242,6 +253,10 @@
     <EmbeddedResource Include="Halaman\Form_Dashboard.resx">
       <DependentUpon>Form_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Halaman\Laporan\Form_Laporan_Rekam_Medis.resx">
+      <DependentUpon>Form_Laporan_Rekam_Medis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Halaman\Laporan\Laporan_Rekam_Medis.rdlc" />
     <EmbeddedResource Include="Halaman\Master\Form_Master_Jadwal_Dokter.resx">
       <DependentUpon>Form_Master_Jadwal_Dokter.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,13 +302,13 @@
     <EmbeddedResource Include="Halaman\Master\Form_Master_Ruang_Periksa.resx">
       <DependentUpon>Form_Master_Ruang_Periksa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Halaman\Form_View_Karyawan.resx">
+    <EmbeddedResource Include="Halaman\Master\Form_View_Karyawan.resx">
       <DependentUpon>Form_View_Karyawan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Halaman\Form_View_Obat.resx">
+    <EmbeddedResource Include="Halaman\Master\Form_View_Obat.resx">
       <DependentUpon>Form_View_Obat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Halaman\Form_View_Pasien.resx">
+    <EmbeddedResource Include="Halaman\Master\Form_View_Pasien.resx">
       <DependentUpon>Form_View_Pasien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Halaman\Transaksi\Form_Transaksi_Restok_Obat.resx">
@@ -333,6 +348,17 @@
     </None>
     <None Include="DClinicDataSet.xss">
       <DependentUpon>DClinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Laporan.xsc">
+      <DependentUpon>Laporan.xsd</DependentUpon>
+    </None>
+    <None Include="Laporan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Laporan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Laporan.xss">
+      <DependentUpon>Laporan.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -572,9 +598,7 @@
     <None Include="Resources\green_apoteker.png" />
     <None Include="Resources\white_apoteker.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Halaman\Laporan\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

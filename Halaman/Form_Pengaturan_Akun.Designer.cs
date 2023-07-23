@@ -32,20 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Pengaturan_Akun));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.imgProfil = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnCariGambar = new Guna.UI2.WinForms.Guna2Button();
             this.btnHapusGambar = new Guna.UI2.WinForms.Guna2Button();
             this.btnBatal = new Guna.UI2.WinForms.Guna2Button();
             this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnHapus = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNonAktif = new Guna.UI2.WinForms.Guna2Button();
             this.txNama = new Guna.UI2.WinForms.Guna2TextBox();
             this.txTelp = new Guna.UI2.WinForms.Guna2TextBox();
             this.txEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfil)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.guna2GroupBox2.Controls.Add(this.btnBatal);
             this.guna2GroupBox2.Controls.Add(this.btnSimpan);
             this.guna2GroupBox2.Controls.Add(this.txID);
-            this.guna2GroupBox2.Controls.Add(this.btnHapus);
+            this.guna2GroupBox2.Controls.Add(this.btnNonAktif);
             this.guna2GroupBox2.Controls.Add(this.txNama);
             this.guna2GroupBox2.Controls.Add(this.txTelp);
             this.guna2GroupBox2.Controls.Add(this.txEmail);
@@ -83,6 +83,15 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 58;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.panel1.Location = new System.Drawing.Point(716, 16);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 580);
+            this.panel1.TabIndex = 63;
+            // 
             // imgProfil
             // 
             this.imgProfil.BackColor = System.Drawing.Color.Transparent;
@@ -90,7 +99,7 @@
             this.imgProfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgProfil.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.imgProfil.ImageRotate = 0F;
-            this.imgProfil.Location = new System.Drawing.Point(932, 71);
+            this.imgProfil.Location = new System.Drawing.Point(941, 71);
             this.imgProfil.Name = "imgProfil";
             this.imgProfil.Size = new System.Drawing.Size(262, 330);
             this.imgProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,12 +126,12 @@
             this.btnCariGambar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnCariGambar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnCariGambar.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnCariGambar.Location = new System.Drawing.Point(932, 457);
+            this.btnCariGambar.Location = new System.Drawing.Point(941, 438);
             this.btnCariGambar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCariGambar.Name = "btnCariGambar";
             this.btnCariGambar.PressedColor = System.Drawing.Color.NavajoWhite;
             this.btnCariGambar.PressedDepth = 50;
-            this.btnCariGambar.Size = new System.Drawing.Size(262, 37);
+            this.btnCariGambar.Size = new System.Drawing.Size(262, 60);
             this.btnCariGambar.TabIndex = 61;
             this.btnCariGambar.Text = "Cari Gambar";
             this.btnCariGambar.UseTransparentBackground = true;
@@ -146,12 +155,12 @@
             this.btnHapusGambar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
             this.btnHapusGambar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
             this.btnHapusGambar.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnHapusGambar.Location = new System.Drawing.Point(932, 505);
+            this.btnHapusGambar.Location = new System.Drawing.Point(941, 502);
             this.btnHapusGambar.Margin = new System.Windows.Forms.Padding(2);
             this.btnHapusGambar.Name = "btnHapusGambar";
             this.btnHapusGambar.PressedColor = System.Drawing.Color.NavajoWhite;
             this.btnHapusGambar.PressedDepth = 50;
-            this.btnHapusGambar.Size = new System.Drawing.Size(262, 37);
+            this.btnHapusGambar.Size = new System.Drawing.Size(262, 60);
             this.btnHapusGambar.TabIndex = 60;
             this.btnHapusGambar.Text = "Hapus Gambar";
             this.btnHapusGambar.UseTransparentBackground = true;
@@ -253,34 +262,34 @@
             this.txID.TabIndex = 21;
             this.txID.TextOffset = new System.Drawing.Point(5, 0);
             // 
-            // btnHapus
+            // btnNonAktif
             // 
-            this.btnHapus.Animated = true;
-            this.btnHapus.BackColor = System.Drawing.Color.Transparent;
-            this.btnHapus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.btnHapus.BorderRadius = 20;
-            this.btnHapus.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnHapus.BorderThickness = 2;
-            this.btnHapus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnHapus.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnHapus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnHapus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnHapus.FillColor = System.Drawing.Color.Transparent;
-            this.btnHapus.Font = new System.Drawing.Font("Porsche Next TT", 16F, System.Drawing.FontStyle.Bold);
-            this.btnHapus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.btnHapus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnHapus.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.btnHapus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnHapus.Location = new System.Drawing.Point(100, 457);
-            this.btnHapus.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnHapus.PressedDepth = 50;
-            this.btnHapus.Size = new System.Drawing.Size(231, 56);
-            this.btnHapus.TabIndex = 26;
-            this.btnHapus.Text = "Hapus";
-            this.btnHapus.UseTransparentBackground = true;
-            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
+            this.btnNonAktif.Animated = true;
+            this.btnNonAktif.BackColor = System.Drawing.Color.Transparent;
+            this.btnNonAktif.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.btnNonAktif.BorderRadius = 20;
+            this.btnNonAktif.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnNonAktif.BorderThickness = 2;
+            this.btnNonAktif.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnNonAktif.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.FillColor = System.Drawing.Color.Transparent;
+            this.btnNonAktif.Font = new System.Drawing.Font("Porsche Next TT", 16F, System.Drawing.FontStyle.Bold);
+            this.btnNonAktif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.btnNonAktif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.btnNonAktif.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnNonAktif.Location = new System.Drawing.Point(100, 457);
+            this.btnNonAktif.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNonAktif.Name = "btnNonAktif";
+            this.btnNonAktif.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.btnNonAktif.PressedDepth = 50;
+            this.btnNonAktif.Size = new System.Drawing.Size(231, 56);
+            this.btnNonAktif.TabIndex = 26;
+            this.btnNonAktif.Text = "Non-Aktif";
+            this.btnNonAktif.UseTransparentBackground = true;
+            this.btnNonAktif.Click += new System.EventHandler(this.btnNonAktif_Click);
             // 
             // txNama
             // 
@@ -482,15 +491,6 @@
             this.label1.Text = "Akun";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.panel1.Location = new System.Drawing.Point(716, 16);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 580);
-            this.panel1.TabIndex = 63;
-            // 
             // Form_Pengaturan_Akun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,7 +515,7 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2Button btnSimpan;
         private Guna.UI2.WinForms.Guna2TextBox txID;
-        private Guna.UI2.WinForms.Guna2Button btnHapus;
+        private Guna.UI2.WinForms.Guna2Button btnNonAktif;
         private Guna.UI2.WinForms.Guna2TextBox txNama;
         private Guna.UI2.WinForms.Guna2TextBox txTelp;
         private Guna.UI2.WinForms.Guna2TextBox txEmail;

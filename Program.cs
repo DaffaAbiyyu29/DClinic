@@ -20,7 +20,7 @@ namespace D_Clinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DClinic_App());
+            Application.Run(new Form_Laporan_Rekam_Medis());
         }
 
         public static void CloseAllForms()

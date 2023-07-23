@@ -29,7 +29,6 @@ namespace D_Clinic.Halaman.Transaksi
             this.view_TrsRujukanTableAdapter.Fill(this.dClinicDataSet.View_TrsRujukan);
             this.view_TrsPendaftaranTableAdapter.Fill(this.dClinicDataSet.View_TrsPendaftaran);
             RS_Tersedia();
-            txTanggal.Text = currentDateTime.ToString("dd MMMM yyyy");
             cariData();
         }
         private void clearText()
@@ -66,6 +65,14 @@ namespace D_Clinic.Halaman.Transaksi
             else
             {
                 txKeterangan.IconLeft = Properties.Resources.white_keluhan;
+            }
+            if (!string.IsNullOrEmpty(txDiagnosa.Text))
+            {
+                txDiagnosa.IconLeft = Properties.Resources.green_diagnosa;
+            }
+            else
+            {
+                txDiagnosa.IconLeft = Properties.Resources.white_diagnosa;
             }
         }
         private string IDRujukan()
@@ -203,8 +210,9 @@ namespace D_Clinic.Halaman.Transaksi
             insert.Parameters.AddWithValue("Id_TrsPendaftaran", IDPendaftaran);
             insert.Parameters.AddWithValue("Id_RumahSakit", GenerateIDRS());
             insert.Parameters.AddWithValue("Keterangan", txKeterangan.Text);
-            insert.Parameters.AddWithValue("Tanggal", DateTime.Parse(txTanggal.Text));
+            insert.Parameters.AddWithValue("Tanggal", currentDateTime);
             insert.Parameters.AddWithValue("Waktu", waktu);
+            insert.Parameters.AddWithValue("Diagnosa", txDiagnosa.Text);
 
             try
             {
@@ -234,7 +242,7 @@ namespace D_Clinic.Halaman.Transaksi
 
         private void btnKirim_Click(object sender, EventArgs e)
         {
-            if (txDokter.Text.Length != 0 || txPasien.Text.Length != 0 || cbRumahSakit.SelectedIndex != -1 || txKeterangan.Text.Length != 0 || txTanggal.Text.Length != 0)
+            if (txDokter.Text.Length != 0 || txPasien.Text.Length != 0 || cbRumahSakit.SelectedIndex != -1 || txKeterangan.Text.Length != 0 || txDiagnosa.Text.Length != 0)
             {
                 RujukanPasien();
             }

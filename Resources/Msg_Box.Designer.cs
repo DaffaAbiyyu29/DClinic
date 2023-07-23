@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Msg_Box));
             this.pnlContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlBawah = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblNama = new System.Windows.Forms.Label();
             this.session = new System.Windows.Forms.Label();
             this.pnlAtas = new Guna.UI2.WinForms.Guna2Panel();
             this.logo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.text1 = new System.Windows.Forms.Label();
             this.btnOkay = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lblNama = new System.Windows.Forms.Label();
             this.pnlContainer.SuspendLayout();
             this.pnlBawah.SuspendLayout();
             this.pnlAtas.SuspendLayout();
@@ -69,6 +69,18 @@
             this.pnlBawah.Name = "pnlBawah";
             this.pnlBawah.Size = new System.Drawing.Size(449, 27);
             this.pnlBawah.TabIndex = 0;
+            // 
+            // lblNama
+            // 
+            this.lblNama.BackColor = System.Drawing.Color.Transparent;
+            this.lblNama.Font = new System.Drawing.Font("Porsche Next TT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.lblNama.Location = new System.Drawing.Point(11, 0);
+            this.lblNama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(427, 22);
+            this.lblNama.TabIndex = 115;
+            this.lblNama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // session
             // 
@@ -152,18 +164,6 @@
             // 
             this.guna2Elipse1.BorderRadius = 40;
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // lblNama
-            // 
-            this.lblNama.BackColor = System.Drawing.Color.Transparent;
-            this.lblNama.Font = new System.Drawing.Font("Porsche Next TT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNama.ForeColor = System.Drawing.Color.Black;
-            this.lblNama.Location = new System.Drawing.Point(11, 0);
-            this.lblNama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(427, 22);
-            this.lblNama.TabIndex = 115;
-            this.lblNama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Msg_Box
             // 
