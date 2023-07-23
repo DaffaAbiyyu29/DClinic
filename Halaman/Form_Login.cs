@@ -71,7 +71,7 @@ namespace D_Clinic
         private void LoginMenu()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
-            string query = "SELECT * FROM Karyawan WHERE Username = @username AND Password = @password COLLATE Latin1_General_CS_AS";
+            string query = "SELECT * FROM Karyawan WHERE Username = @username COLLATE Latin1_General_CS_AS AND Password = @password COLLATE Latin1_General_CS_AS AND Status = @status";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -80,6 +80,7 @@ namespace D_Clinic
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@username", txUsername.Text);
                 command.Parameters.AddWithValue("@password", txPassword.Text);
+                command.Parameters.AddWithValue("@status", "Aktif");
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -97,6 +98,7 @@ namespace D_Clinic
                         mBox.Show();
                         loginSession = "Login Berhasil";
                         mBox.text1.Text = "Selamat Datang " +nama;
+                        mBox.lblNama.Text = nama;
                         mBox.SuccessMessage();
                         mBox.session.Text = loginSession;
                     }

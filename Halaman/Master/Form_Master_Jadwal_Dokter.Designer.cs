@@ -36,17 +36,12 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnCari = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.gbJamMulai = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.dtpJamMulai = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHari = new System.Windows.Forms.Label();
             this.lblRuang = new System.Windows.Forms.Label();
             this.lblDokter = new System.Windows.Forms.Label();
-            this.pnlJam = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.imgJam = new System.Windows.Forms.PictureBox();
-            this.numMenitAkhir = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.numJamAkhir = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.numMenitAwal = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.numJamAwal = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.imgHari = new System.Windows.Forms.PictureBox();
             this.imgRuang = new System.Windows.Forms.PictureBox();
             this.cbHari = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -85,16 +80,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.view_DokterTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_DokterTableAdapter();
             this.view_JadwalDokterTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_JadwalDokterTableAdapter();
-            this.gbJamMulai = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dtpJamMulai = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.gbJamAkhir = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.dtpJamAkhir = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
-            this.pnlJam.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgJam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenitAkhir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJamAkhir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenitAwal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJamAwal)).BeginInit();
+            this.gbJamMulai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgHari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRuang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ruangPeriksaBindingSource)).BeginInit();
@@ -103,7 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewDokterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblJadwalDokter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewJadwalDokterBindingSource)).BeginInit();
-            this.gbJamMulai.SuspendLayout();
+            this.gbJamAkhir.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -159,12 +149,13 @@
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.guna2GroupBox2.BorderRadius = 20;
             this.guna2GroupBox2.BorderThickness = 2;
+            this.guna2GroupBox2.Controls.Add(this.gbJamAkhir);
             this.guna2GroupBox2.Controls.Add(this.gbJamMulai);
             this.guna2GroupBox2.Controls.Add(this.label2);
             this.guna2GroupBox2.Controls.Add(this.lblHari);
             this.guna2GroupBox2.Controls.Add(this.lblRuang);
+            this.guna2GroupBox2.Controls.Add(this.btnBatal);
             this.guna2GroupBox2.Controls.Add(this.lblDokter);
-            this.guna2GroupBox2.Controls.Add(this.pnlJam);
             this.guna2GroupBox2.Controls.Add(this.imgHari);
             this.guna2GroupBox2.Controls.Add(this.imgRuang);
             this.guna2GroupBox2.Controls.Add(this.cbHari);
@@ -175,7 +166,6 @@
             this.guna2GroupBox2.Controls.Add(this.txID);
             this.guna2GroupBox2.Controls.Add(this.tblJadwalDokter);
             this.guna2GroupBox2.Controls.Add(this.panel1);
-            this.guna2GroupBox2.Controls.Add(this.btnBatal);
             this.guna2GroupBox2.Controls.Add(this.btnAktif);
             this.guna2GroupBox2.Controls.Add(this.btnSimpan);
             this.guna2GroupBox2.Controls.Add(this.btnUpdate);
@@ -190,6 +180,61 @@
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 57;
+            // 
+            // gbJamMulai
+            // 
+            this.gbJamMulai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.gbJamMulai.BorderColor = System.Drawing.Color.White;
+            this.gbJamMulai.BorderRadius = 10;
+            this.gbJamMulai.BorderThickness = 2;
+            this.gbJamMulai.Controls.Add(this.dtpJamMulai);
+            this.gbJamMulai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.gbJamMulai.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.gbJamMulai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.gbJamMulai.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbJamMulai.ForeColor = System.Drawing.Color.White;
+            this.gbJamMulai.Location = new System.Drawing.Point(117, 280);
+            this.gbJamMulai.Margin = new System.Windows.Forms.Padding(2);
+            this.gbJamMulai.Name = "gbJamMulai";
+            this.gbJamMulai.Size = new System.Drawing.Size(478, 93);
+            this.gbJamMulai.TabIndex = 71;
+            this.gbJamMulai.Text = "Jam Mulai";
+            // 
+            // dtpJamMulai
+            // 
+            this.dtpJamMulai.Animated = true;
+            this.dtpJamMulai.BackColor = System.Drawing.Color.Transparent;
+            this.dtpJamMulai.BorderColor = System.Drawing.Color.White;
+            this.dtpJamMulai.BorderRadius = 10;
+            this.dtpJamMulai.BorderThickness = 2;
+            this.dtpJamMulai.Checked = true;
+            this.dtpJamMulai.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamMulai.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamMulai.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamMulai.CustomFormat = "HH:ss";
+            this.dtpJamMulai.CustomizableEdges.BottomLeft = false;
+            this.dtpJamMulai.CustomizableEdges.TopRight = false;
+            this.dtpJamMulai.Enabled = false;
+            this.dtpJamMulai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamMulai.FocusedColor = System.Drawing.Color.Transparent;
+            this.dtpJamMulai.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.dtpJamMulai.ForeColor = System.Drawing.Color.White;
+            this.dtpJamMulai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpJamMulai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamMulai.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamMulai.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamMulai.Location = new System.Drawing.Point(17, 40);
+            this.dtpJamMulai.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpJamMulai.MinDate = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
+            this.dtpJamMulai.Name = "dtpJamMulai";
+            this.dtpJamMulai.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
+            this.dtpJamMulai.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.dtpJamMulai.ShowUpDown = true;
+            this.dtpJamMulai.Size = new System.Drawing.Size(445, 36);
+            this.dtpJamMulai.TabIndex = 27;
+            this.dtpJamMulai.TextOffset = new System.Drawing.Point(18, 0);
+            this.dtpJamMulai.UseTransparentBackground = true;
+            this.dtpJamMulai.Value = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -208,7 +253,7 @@
             this.lblHari.BackColor = System.Drawing.Color.Transparent;
             this.lblHari.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHari.ForeColor = System.Drawing.Color.White;
-            this.lblHari.Location = new System.Drawing.Point(143, 230);
+            this.lblHari.Location = new System.Drawing.Point(160, 230);
             this.lblHari.Name = "lblHari";
             this.lblHari.Size = new System.Drawing.Size(83, 31);
             this.lblHari.TabIndex = 0;
@@ -219,7 +264,7 @@
             this.lblRuang.BackColor = System.Drawing.Color.Transparent;
             this.lblRuang.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRuang.ForeColor = System.Drawing.Color.White;
-            this.lblRuang.Location = new System.Drawing.Point(143, 177);
+            this.lblRuang.Location = new System.Drawing.Point(160, 177);
             this.lblRuang.Name = "lblRuang";
             this.lblRuang.Size = new System.Drawing.Size(83, 31);
             this.lblRuang.TabIndex = 0;
@@ -230,185 +275,17 @@
             this.lblDokter.BackColor = System.Drawing.Color.Transparent;
             this.lblDokter.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDokter.ForeColor = System.Drawing.Color.White;
-            this.lblDokter.Location = new System.Drawing.Point(143, 127);
+            this.lblDokter.Location = new System.Drawing.Point(160, 127);
             this.lblDokter.Name = "lblDokter";
             this.lblDokter.Size = new System.Drawing.Size(83, 31);
             this.lblDokter.TabIndex = 0;
             this.lblDokter.Text = "Dokter";
             // 
-            // pnlJam
-            // 
-            this.pnlJam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.pnlJam.BorderColor = System.Drawing.Color.White;
-            this.pnlJam.BorderRadius = 15;
-            this.pnlJam.BorderThickness = 2;
-            this.pnlJam.Controls.Add(this.panel2);
-            this.pnlJam.Controls.Add(this.imgJam);
-            this.pnlJam.Controls.Add(this.numMenitAkhir);
-            this.pnlJam.Controls.Add(this.numJamAkhir);
-            this.pnlJam.Controls.Add(this.numMenitAwal);
-            this.pnlJam.Controls.Add(this.numJamAwal);
-            this.pnlJam.Location = new System.Drawing.Point(100, 283);
-            this.pnlJam.Name = "pnlJam";
-            this.pnlJam.Size = new System.Drawing.Size(478, 136);
-            this.pnlJam.TabIndex = 69;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.panel2.Location = new System.Drawing.Point(60, 68);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(380, 1);
-            this.panel2.TabIndex = 59;
-            // 
-            // imgJam
-            // 
-            this.imgJam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.imgJam.Image = global::D_Clinic.Properties.Resources.white_clock;
-            this.imgJam.Location = new System.Drawing.Point(8, 51);
-            this.imgJam.Margin = new System.Windows.Forms.Padding(2);
-            this.imgJam.Name = "imgJam";
-            this.imgJam.Size = new System.Drawing.Size(35, 35);
-            this.imgJam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgJam.TabIndex = 70;
-            this.imgJam.TabStop = false;
-            // 
-            // numMenitAkhir
-            // 
-            this.numMenitAkhir.BackColor = System.Drawing.Color.Transparent;
-            this.numMenitAkhir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAkhir.BorderRadius = 15;
-            this.numMenitAkhir.BorderThickness = 2;
-            this.numMenitAkhir.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numMenitAkhir.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.numMenitAkhir.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.numMenitAkhir.DisabledState.UpDownButtonFillColor = System.Drawing.Color.White;
-            this.numMenitAkhir.Enabled = false;
-            this.numMenitAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numMenitAkhir.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAkhir.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAkhir.FocusedState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAkhir.Font = new System.Drawing.Font("Porsche Next TT", 13F);
-            this.numMenitAkhir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAkhir.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numMenitAkhir.Location = new System.Drawing.Point(243, 81);
-            this.numMenitAkhir.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.numMenitAkhir.Name = "numMenitAkhir";
-            this.numMenitAkhir.Size = new System.Drawing.Size(100, 41);
-            this.numMenitAkhir.TabIndex = 1;
-            this.numMenitAkhir.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAkhir.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numMenitAkhir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Gambar_KeyPress);
-            // 
-            // numJamAkhir
-            // 
-            this.numJamAkhir.BackColor = System.Drawing.Color.Transparent;
-            this.numJamAkhir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAkhir.BorderRadius = 15;
-            this.numJamAkhir.BorderThickness = 2;
-            this.numJamAkhir.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numJamAkhir.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.numJamAkhir.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.numJamAkhir.DisabledState.UpDownButtonFillColor = System.Drawing.Color.White;
-            this.numJamAkhir.Enabled = false;
-            this.numJamAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numJamAkhir.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAkhir.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAkhir.FocusedState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAkhir.Font = new System.Drawing.Font("Porsche Next TT", 13F);
-            this.numJamAkhir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAkhir.Location = new System.Drawing.Point(124, 81);
-            this.numJamAkhir.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numJamAkhir.Name = "numJamAkhir";
-            this.numJamAkhir.Size = new System.Drawing.Size(100, 41);
-            this.numJamAkhir.TabIndex = 0;
-            this.numJamAkhir.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAkhir.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numJamAkhir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Gambar_KeyPress);
-            // 
-            // numMenitAwal
-            // 
-            this.numMenitAwal.BackColor = System.Drawing.Color.Transparent;
-            this.numMenitAwal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAwal.BorderRadius = 15;
-            this.numMenitAwal.BorderThickness = 2;
-            this.numMenitAwal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numMenitAwal.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.numMenitAwal.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.numMenitAwal.DisabledState.UpDownButtonFillColor = System.Drawing.Color.White;
-            this.numMenitAwal.Enabled = false;
-            this.numMenitAwal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numMenitAwal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAwal.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAwal.FocusedState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAwal.Font = new System.Drawing.Font("Porsche Next TT", 13F);
-            this.numMenitAwal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAwal.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numMenitAwal.Location = new System.Drawing.Point(243, 13);
-            this.numMenitAwal.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.numMenitAwal.Name = "numMenitAwal";
-            this.numMenitAwal.Size = new System.Drawing.Size(100, 41);
-            this.numMenitAwal.TabIndex = 1;
-            this.numMenitAwal.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numMenitAwal.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numMenitAwal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Gambar_KeyPress);
-            // 
-            // numJamAwal
-            // 
-            this.numJamAwal.BackColor = System.Drawing.Color.Transparent;
-            this.numJamAwal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAwal.BorderRadius = 15;
-            this.numJamAwal.BorderThickness = 2;
-            this.numJamAwal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numJamAwal.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.numJamAwal.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.numJamAwal.DisabledState.UpDownButtonFillColor = System.Drawing.Color.White;
-            this.numJamAwal.Enabled = false;
-            this.numJamAwal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numJamAwal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAwal.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAwal.FocusedState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAwal.Font = new System.Drawing.Font("Porsche Next TT", 13F);
-            this.numJamAwal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAwal.Location = new System.Drawing.Point(124, 13);
-            this.numJamAwal.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numJamAwal.Name = "numJamAwal";
-            this.numJamAwal.Size = new System.Drawing.Size(100, 41);
-            this.numJamAwal.TabIndex = 0;
-            this.numJamAwal.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.numJamAwal.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.numJamAwal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Gambar_KeyPress);
-            // 
             // imgHari
             // 
             this.imgHari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.imgHari.Image = global::D_Clinic.Properties.Resources.white_cal;
-            this.imgHari.Location = new System.Drawing.Point(108, 227);
+            this.imgHari.Location = new System.Drawing.Point(125, 227);
             this.imgHari.Margin = new System.Windows.Forms.Padding(2);
             this.imgHari.Name = "imgHari";
             this.imgHari.Size = new System.Drawing.Size(30, 30);
@@ -420,7 +297,7 @@
             // 
             this.imgRuang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.imgRuang.Image = global::D_Clinic.Properties.Resources.white_ruang;
-            this.imgRuang.Location = new System.Drawing.Point(108, 176);
+            this.imgRuang.Location = new System.Drawing.Point(125, 176);
             this.imgRuang.Margin = new System.Windows.Forms.Padding(2);
             this.imgRuang.Name = "imgRuang";
             this.imgRuang.Size = new System.Drawing.Size(30, 30);
@@ -456,7 +333,7 @@
             "Jumat",
             "Sabtu",
             "Minggu"});
-            this.cbHari.Location = new System.Drawing.Point(100, 230);
+            this.cbHari.Location = new System.Drawing.Point(117, 230);
             this.cbHari.Margin = new System.Windows.Forms.Padding(2);
             this.cbHari.Name = "cbHari";
             this.cbHari.Size = new System.Drawing.Size(478, 36);
@@ -487,7 +364,7 @@
             this.cbRuang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.cbRuang.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbRuang.ItemHeight = 30;
-            this.cbRuang.Location = new System.Drawing.Point(100, 177);
+            this.cbRuang.Location = new System.Drawing.Point(117, 177);
             this.cbRuang.Margin = new System.Windows.Forms.Padding(2);
             this.cbRuang.Name = "cbRuang";
             this.cbRuang.Size = new System.Drawing.Size(478, 36);
@@ -511,7 +388,7 @@
             // 
             this.imgDokter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.imgDokter.Image = global::D_Clinic.Properties.Resources.white_dokter;
-            this.imgDokter.Location = new System.Drawing.Point(108, 124);
+            this.imgDokter.Location = new System.Drawing.Point(125, 124);
             this.imgDokter.Margin = new System.Windows.Forms.Padding(2);
             this.imgDokter.Name = "imgDokter";
             this.imgDokter.Size = new System.Drawing.Size(30, 30);
@@ -540,7 +417,7 @@
             this.cbDokter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.cbDokter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbDokter.ItemHeight = 30;
-            this.cbDokter.Location = new System.Drawing.Point(100, 124);
+            this.cbDokter.Location = new System.Drawing.Point(117, 124);
             this.cbDokter.Margin = new System.Windows.Forms.Padding(2);
             this.cbDokter.Name = "cbDokter";
             this.cbDokter.Size = new System.Drawing.Size(478, 36);
@@ -579,7 +456,7 @@
             this.txTarif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txTarif.IconLeft = global::D_Clinic.Properties.Resources.white_harga;
             this.txTarif.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txTarif.Location = new System.Drawing.Point(100, 437);
+            this.txTarif.Location = new System.Drawing.Point(117, 489);
             this.txTarif.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txTarif.MaxLength = 10;
             this.txTarif.Name = "txTarif";
@@ -617,7 +494,7 @@
             this.txID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txID.IconLeft = global::D_Clinic.Properties.Resources.white_kode;
             this.txID.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txID.Location = new System.Drawing.Point(100, 71);
+            this.txID.Location = new System.Drawing.Point(117, 71);
             this.txID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txID.MaxLength = 7;
             this.txID.Name = "txID";
@@ -692,7 +569,7 @@
             this.tblJadwalDokter.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.tblJadwalDokter.RowTemplate.Height = 30;
             this.tblJadwalDokter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tblJadwalDokter.Size = new System.Drawing.Size(657, 571);
+            this.tblJadwalDokter.Size = new System.Drawing.Size(657, 505);
             this.tblJadwalDokter.TabIndex = 62;
             this.tblJadwalDokter.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
             this.tblJadwalDokter.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
@@ -778,21 +655,17 @@
             // 
             // jam1
             // 
-            this.jam1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.jam1.DataPropertyName = "Jam_Mulai";
             this.jam1.HeaderText = "Jam Mulai";
             this.jam1.Name = "jam1";
             this.jam1.ReadOnly = true;
-            this.jam1.Width = 80;
             // 
             // jam2
             // 
-            this.jam2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.jam2.DataPropertyName = "Jam_Akhir";
             this.jam2.HeaderText = "Jam Akhir";
             this.jam2.Name = "jam2";
             this.jam2.ReadOnly = true;
-            this.jam2.Width = 80;
             // 
             // trf_jasa
             // 
@@ -840,12 +713,12 @@
             this.btnBatal.ForeColor = System.Drawing.Color.Moccasin;
             this.btnBatal.HoverState.FillColor = System.Drawing.Color.Moccasin;
             this.btnBatal.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnBatal.Location = new System.Drawing.Point(138, 555);
+            this.btnBatal.Location = new System.Drawing.Point(748, 555);
             this.btnBatal.Margin = new System.Windows.Forms.Padding(2);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.PressedColor = System.Drawing.Color.NavajoWhite;
             this.btnBatal.PressedDepth = 50;
-            this.btnBatal.Size = new System.Drawing.Size(412, 37);
+            this.btnBatal.Size = new System.Drawing.Size(657, 37);
             this.btnBatal.TabIndex = 55;
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseTransparentBackground = true;
@@ -870,7 +743,7 @@
             this.btnAktif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnAktif.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnAktif.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnAktif.Location = new System.Drawing.Point(138, 505);
+            this.btnAktif.Location = new System.Drawing.Point(138, 555);
             this.btnAktif.Margin = new System.Windows.Forms.Padding(2);
             this.btnAktif.Name = "btnAktif";
             this.btnAktif.PressedColor = System.Drawing.Color.NavajoWhite;
@@ -902,7 +775,7 @@
             this.btnSimpan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnSimpan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.btnSimpan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnSimpan.Location = new System.Drawing.Point(420, 505);
+            this.btnSimpan.Location = new System.Drawing.Point(420, 555);
             this.btnSimpan.Margin = new System.Windows.Forms.Padding(2);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.PressedColor = System.Drawing.Color.NavajoWhite;
@@ -932,7 +805,7 @@
             this.btnUpdate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnUpdate.Location = new System.Drawing.Point(279, 505);
+            this.btnUpdate.Location = new System.Drawing.Point(279, 555);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.PressedColor = System.Drawing.Color.NavajoWhite;
@@ -961,7 +834,7 @@
             this.btnNonAktif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
             this.btnNonAktif.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
             this.btnNonAktif.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnNonAktif.Location = new System.Drawing.Point(138, 505);
+            this.btnNonAktif.Location = new System.Drawing.Point(138, 555);
             this.btnNonAktif.Margin = new System.Windows.Forms.Padding(2);
             this.btnNonAktif.Name = "btnNonAktif";
             this.btnNonAktif.PressedColor = System.Drawing.Color.NavajoWhite;
@@ -1077,59 +950,60 @@
             // 
             this.view_JadwalDokterTableAdapter.ClearBeforeFill = true;
             // 
-            // gbJamMulai
+            // gbJamAkhir
             // 
-            this.gbJamMulai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.gbJamMulai.BorderColor = System.Drawing.Color.White;
-            this.gbJamMulai.BorderRadius = 10;
-            this.gbJamMulai.BorderThickness = 2;
-            this.gbJamMulai.Controls.Add(this.dtpJamMulai);
-            this.gbJamMulai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.gbJamMulai.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.gbJamMulai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.gbJamMulai.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbJamMulai.ForeColor = System.Drawing.Color.White;
-            this.gbJamMulai.Location = new System.Drawing.Point(477, 260);
-            this.gbJamMulai.Margin = new System.Windows.Forms.Padding(2);
-            this.gbJamMulai.Name = "gbJamMulai";
-            this.gbJamMulai.Size = new System.Drawing.Size(478, 93);
-            this.gbJamMulai.TabIndex = 71;
-            this.gbJamMulai.Text = "Tanggal Kadaluarsa";
+            this.gbJamAkhir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.gbJamAkhir.BorderColor = System.Drawing.Color.White;
+            this.gbJamAkhir.BorderRadius = 10;
+            this.gbJamAkhir.BorderThickness = 2;
+            this.gbJamAkhir.Controls.Add(this.dtpJamAkhir);
+            this.gbJamAkhir.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.gbJamAkhir.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.gbJamAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.gbJamAkhir.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbJamAkhir.ForeColor = System.Drawing.Color.White;
+            this.gbJamAkhir.Location = new System.Drawing.Point(117, 389);
+            this.gbJamAkhir.Margin = new System.Windows.Forms.Padding(2);
+            this.gbJamAkhir.Name = "gbJamAkhir";
+            this.gbJamAkhir.Size = new System.Drawing.Size(478, 93);
+            this.gbJamAkhir.TabIndex = 71;
+            this.gbJamAkhir.Text = "Jam Mulai";
             // 
-            // dtpJamMulai
+            // dtpJamAkhir
             // 
-            this.dtpJamMulai.Animated = true;
-            this.dtpJamMulai.BackColor = System.Drawing.Color.Transparent;
-            this.dtpJamMulai.BorderColor = System.Drawing.Color.White;
-            this.dtpJamMulai.BorderRadius = 10;
-            this.dtpJamMulai.BorderThickness = 2;
-            this.dtpJamMulai.Checked = true;
-            this.dtpJamMulai.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamMulai.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.dtpJamMulai.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamMulai.CustomFormat = "HH:ss";
-            this.dtpJamMulai.CustomizableEdges.BottomLeft = false;
-            this.dtpJamMulai.CustomizableEdges.TopRight = false;
-            this.dtpJamMulai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.dtpJamMulai.FocusedColor = System.Drawing.Color.Transparent;
-            this.dtpJamMulai.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.dtpJamMulai.ForeColor = System.Drawing.Color.White;
-            this.dtpJamMulai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpJamMulai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamMulai.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.dtpJamMulai.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamMulai.Location = new System.Drawing.Point(17, 40);
-            this.dtpJamMulai.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpJamMulai.MinDate = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
-            this.dtpJamMulai.Name = "dtpJamMulai";
-            this.dtpJamMulai.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
-            this.dtpJamMulai.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.dtpJamMulai.ShowUpDown = true;
-            this.dtpJamMulai.Size = new System.Drawing.Size(445, 36);
-            this.dtpJamMulai.TabIndex = 27;
-            this.dtpJamMulai.TextOffset = new System.Drawing.Point(18, 0);
-            this.dtpJamMulai.UseTransparentBackground = true;
-            this.dtpJamMulai.Value = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
+            this.dtpJamAkhir.Animated = true;
+            this.dtpJamAkhir.BackColor = System.Drawing.Color.Transparent;
+            this.dtpJamAkhir.BorderColor = System.Drawing.Color.White;
+            this.dtpJamAkhir.BorderRadius = 10;
+            this.dtpJamAkhir.BorderThickness = 2;
+            this.dtpJamAkhir.Checked = true;
+            this.dtpJamAkhir.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamAkhir.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.CustomFormat = "HH:ss";
+            this.dtpJamAkhir.CustomizableEdges.BottomLeft = false;
+            this.dtpJamAkhir.CustomizableEdges.TopRight = false;
+            this.dtpJamAkhir.Enabled = false;
+            this.dtpJamAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamAkhir.FocusedColor = System.Drawing.Color.Transparent;
+            this.dtpJamAkhir.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.dtpJamAkhir.ForeColor = System.Drawing.Color.White;
+            this.dtpJamAkhir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpJamAkhir.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamAkhir.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.Location = new System.Drawing.Point(17, 40);
+            this.dtpJamAkhir.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpJamAkhir.MinDate = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
+            this.dtpJamAkhir.Name = "dtpJamAkhir";
+            this.dtpJamAkhir.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
+            this.dtpJamAkhir.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.dtpJamAkhir.ShowUpDown = true;
+            this.dtpJamAkhir.Size = new System.Drawing.Size(445, 36);
+            this.dtpJamAkhir.TabIndex = 27;
+            this.dtpJamAkhir.TextOffset = new System.Drawing.Point(18, 0);
+            this.dtpJamAkhir.UseTransparentBackground = true;
+            this.dtpJamAkhir.Value = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
             // 
             // Form_Master_Jadwal_Dokter
             // 
@@ -1146,12 +1020,7 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
-            this.pnlJam.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgJam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenitAkhir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJamAkhir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMenitAwal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numJamAwal)).EndInit();
+            this.gbJamMulai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgHari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRuang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ruangPeriksaBindingSource)).EndInit();
@@ -1160,7 +1029,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewDokterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblJadwalDokter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewJadwalDokterBindingSource)).EndInit();
-            this.gbJamMulai.ResumeLayout(false);
+            this.gbJamAkhir.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1182,13 +1051,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbDokter;
         private System.Windows.Forms.PictureBox imgRuang;
         private Guna.UI2.WinForms.Guna2ComboBox cbRuang;
-        private Guna.UI2.WinForms.Guna2Panel pnlJam;
-        private System.Windows.Forms.PictureBox imgJam;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numMenitAwal;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numJamAwal;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numMenitAkhir;
-        private Guna.UI2.WinForms.Guna2NumericUpDown numJamAkhir;
         private Guna.UI2.WinForms.Guna2Elipse radiusDGV;
         private Guna.UI2.WinForms.Guna2Elipse radiusForm;
         private DClinicDataSet dClinicDataSet;
@@ -1206,6 +1068,9 @@
         private Guna.UI2.WinForms.Guna2Button btnAktif;
         private System.Windows.Forms.BindingSource viewJadwalDokterBindingSource;
         private DClinicDataSetTableAdapters.View_JadwalDokterTableAdapter view_JadwalDokterTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2GroupBox gbJamMulai;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpJamMulai;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDokterDataGridViewTextBoxColumn;
@@ -1217,8 +1082,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jam2;
         private System.Windows.Forms.DataGridViewTextBoxColumn trf_jasa;
         private System.Windows.Forms.DataGridViewTextBoxColumn stts;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2GroupBox gbJamMulai;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpJamMulai;
+        private Guna.UI2.WinForms.Guna2GroupBox gbJamAkhir;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpJamAkhir;
     }
 }

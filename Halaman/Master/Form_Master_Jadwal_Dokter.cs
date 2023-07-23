@@ -36,11 +36,8 @@ namespace D_Clinic.Halaman
             cbDokter.SelectedIndex = -1;
             cbRuang.SelectedIndex = -1;
             cbHari.SelectedIndex = -1;
-            imgJam.Image = Properties.Resources.white_clock;
-            numJamAwal.Value = 0;
-            numMenitAwal.Value = 0;
-            numJamAkhir.Value = 0;
-            numMenitAkhir.Value = 0;
+            dtpJamMulai.Text = "00:00";
+            dtpJamAkhir.Text = "00:00";
             txTarif.Clear();
             status = "";
             cariData();
@@ -52,10 +49,8 @@ namespace D_Clinic.Halaman
             cbDokter.Enabled = false;
             cbRuang.Enabled = false;
             cbHari.Enabled = false;
-            numJamAwal.Enabled = false;
-            numMenitAwal.Enabled = false;
-            numJamAkhir.Enabled = false;
-            numMenitAkhir.Enabled = false;
+            dtpJamMulai.Enabled = false;
+            dtpJamAkhir.Enabled = false;
             txTarif.Enabled = false;
             btnUpdate.Enabled = false;
             btnNonAktif.Visible = false;
@@ -103,31 +98,18 @@ namespace D_Clinic.Halaman
             cbDokter.SelectedIndex = -1;
             cbRuang.SelectedIndex = -1;
         }
-        private string jamMulai()
-        {
-            string result = numJamAwal.Value.ToString("00") + ":" + numMenitAwal.Value.ToString("00");
-            return result;
-        }
-        private string jamAkhir()
-        {
-            string result = numJamAkhir.Value.ToString("00") + ":" + numMenitAkhir.Value.ToString("00");
-            return result;
-        }
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
             clearText();
             disablePropherties();
             txID.Text = IDJadwalDokter();
-            imgJam.Image = Properties.Resources.green_clock;
             cbDokter.Enabled = true;
             cbRuang.Enabled = true;
             cbHari.Enabled = true;
             txTarif.Enabled = true;
-            numJamAwal.Enabled = true;
-            numMenitAwal.Enabled = true;
-            numJamAkhir.Enabled = true;
-            numMenitAkhir.Enabled = true;
+            dtpJamMulai.Enabled = true;
+            dtpJamAkhir.Enabled = true;
             btnSimpan.Enabled = true;
             Gambar();
         }
@@ -213,8 +195,8 @@ namespace D_Clinic.Halaman
             update.Parameters.AddWithValue("Id_Dokter", cbDokter.SelectedValue);
             update.Parameters.AddWithValue("Id_RuangPeriksa", cbRuang.SelectedValue);
             update.Parameters.AddWithValue("Hari", cbHari.Text);
-            update.Parameters.AddWithValue("Jam_Mulai", jamMulai());
-            update.Parameters.AddWithValue("Jam_Akhir", jamAkhir());
+            update.Parameters.AddWithValue("Jam_Mulai", dtpJamMulai.Text);
+            update.Parameters.AddWithValue("Jam_Akhir", dtpJamAkhir.Text);
             update.Parameters.AddWithValue("Tarif_Jasa", unformatTarif);
 
             try
@@ -262,8 +244,8 @@ namespace D_Clinic.Halaman
             insert.Parameters.AddWithValue("Id_Dokter", cbDokter.SelectedValue);
             insert.Parameters.AddWithValue("Id_RuangPeriksa", cbRuang.SelectedValue);
             insert.Parameters.AddWithValue("Hari", cbHari.Text);
-            insert.Parameters.AddWithValue("Jam_Mulai", jamMulai());
-            insert.Parameters.AddWithValue("Jam_Akhir", jamAkhir());
+            insert.Parameters.AddWithValue("Jam_Mulai", dtpJamMulai.Text);
+            insert.Parameters.AddWithValue("Jam_Akhir", dtpJamAkhir.Text);
             insert.Parameters.AddWithValue("Tarif_Jasa", unformatTarif);
 
             try
@@ -403,23 +385,20 @@ namespace D_Clinic.Halaman
                 string nama_dokter = row.Cells["dokter"].Value.ToString();
                 string nama_ruang = row.Cells["ruang"].Value.ToString();
                 string hari = row.Cells["day"].Value.ToString();
-                DateTime jam_mulai = (DateTime)row.Cells["jam1"].Value;
+                string jam_mulai = row.Cells["jam1"].Value.ToString();
                 string jam_akhir = row.Cells["jam2"].Value.ToString();
                 string tarif = (row.Cells["trf_jasa"].Value.ToString());
                 string status = row.Cells["stts"].Value.ToString();
 
                 txID.IconLeft = Properties.Resources.green_kode;
                 txTarif.IconLeft = Properties.Resources.green_harga;
-                imgJam.Image = Properties.Resources.green_clock;
                 txID.Enabled = false;
                 cbDokter.Enabled = true;
                 cbRuang.Enabled = true;
                 cbHari.Enabled = true;
                 txTarif.Enabled = true;
-                numJamAwal.Enabled = true;
-                numMenitAwal.Enabled = true;
-                numJamAkhir.Enabled = true;
-                numMenitAkhir.Enabled = true;
+                dtpJamMulai.Enabled = true;
+                dtpJamAkhir.Enabled = true;
                 btnUpdate.Enabled = true;
                 if (status == "Non-Aktif")
                 {
@@ -439,11 +418,8 @@ namespace D_Clinic.Halaman
                 cbDokter.Text = nama_dokter;
                 cbRuang.Text = nama_ruang;
                 cbHari.Text = hari;
-                /*numJamAwal.Value = int.Parse(jam_mulai.Substring(0, 2));
-                numMenitAwal.Value = int.Parse(jam_mulai.Substring(3, 2));*/
-                numJamAkhir.Value = int.Parse(jam_akhir.Substring(0, 2));
-                numMenitAkhir.Value = int.Parse(jam_akhir.Substring(3, 2));
-                dtpJamMulai.Value = jam_mulai;
+                dtpJamMulai.Value = DateTime.Parse(jam_mulai);
+                dtpJamAkhir.Value = DateTime.Parse(jam_akhir);
                 txTarif.Text = formatTarif;
             }
         }
@@ -522,17 +498,14 @@ namespace D_Clinic.Halaman
             {
                 if (ditemukan)
                 {
-                    imgJam.Image = Properties.Resources.green_clock;
                     cariData();
                     txID.Enabled = false;
                     cbDokter.Enabled = true;
                     cbRuang.Enabled = true;
                     cbHari.Enabled = true;
                     txTarif.Enabled = true;
-                    numJamAwal.Enabled = true;
-                    numMenitAwal.Enabled = true;
-                    numJamAkhir.Enabled = true;
-                    numMenitAkhir.Enabled = true;
+                    dtpJamMulai.Enabled = true;
+                    dtpJamAkhir.Enabled = true;
                     btnUpdate.Enabled = true;
                     if (status == "Non-Aktif")
                     {
@@ -551,10 +524,8 @@ namespace D_Clinic.Halaman
                     cbDokter.SelectedValue = id_dokter;
                     cbRuang.SelectedValue = id_ruang;
                     cbHari.Text = hari;
-                    numJamAwal.Value = int.Parse(jam_mulai.Substring(0, 2));
-                    numMenitAwal.Value = int.Parse(jam_mulai.Substring(3, 2));
-                    numJamAkhir.Value = int.Parse(jam_akhir.Substring(0, 2));
-                    numMenitAkhir.Value = int.Parse(jam_akhir.Substring(3, 2));
+                    dtpJamMulai.Value = DateTime.Parse(jam_mulai);
+                    dtpJamAkhir.Value = DateTime.Parse(jam_akhir);
                     txTarif.Text = formatTarif;
                 }
                 else

@@ -14,7 +14,6 @@ namespace D_Clinic.Resources
 {
     public partial class Msg_Box : Form
     {
-        string nama;
         public Msg_Box()
         {
             InitializeComponent();
@@ -22,32 +21,11 @@ namespace D_Clinic.Resources
 
         private void Msg_Box_Load(object sender, EventArgs e)
         {
-            GenerateNama();
-        }
-        private void GenerateNama()
-        {
-            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
-            string query = "SELECT TOP 1 Nama FROM Riwayat_Login ORDER BY Id_Login DESC";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        // Ambil nilai-nilai kolom dari reader
-                        nama = reader.GetString(0);
-                    }
-                }
-                reader.Close();
-            }
         }
         private void Masuk()
         {
+            string nama = lblNama.Text;
             Form_Menu menu = new Form_Menu();
 
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";

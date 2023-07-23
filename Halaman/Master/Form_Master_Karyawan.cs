@@ -21,7 +21,7 @@ namespace D_Clinic.Halaman
         Msg_Box mBox = new Msg_Box();
         byte[] imageData;
         int validNamaUsername;
-
+        bool updateFoto = false;
         string jabatan, status;
         public Form_Master_Karyawan()
         {
@@ -42,6 +42,7 @@ namespace D_Clinic.Halaman
             cbJabatan.ForeColor = Color.White;
             imgProfil.Image = null;
             status = "";
+            updateFoto = false;
         }
         private void disablePropherties()
         {
@@ -58,7 +59,71 @@ namespace D_Clinic.Halaman
             btnCariGambar.Enabled = false;
             btnHapusGambar.Enabled = false;
         }
-       
+        private void Gambar()
+        {
+            if (!string.IsNullOrEmpty(txCariKaryawan.Text))
+            {
+                txCariKaryawan.IconLeft = Properties.Resources.green_magnifier;
+            }
+            else
+            {
+                txCariKaryawan.IconLeft = Properties.Resources.white_magnifier;
+            }
+
+            if (!string.IsNullOrEmpty(txID.Text))
+            {
+                txID.IconLeft = Properties.Resources.green_id_card;
+            }
+            else
+            {
+                txID.IconLeft = Properties.Resources.white_id_card;
+            }
+
+            if (!string.IsNullOrEmpty(txNama.Text))
+            {
+                txNama.IconLeft = Properties.Resources.green_name;
+            }
+            else
+            {
+                txNama.IconLeft = Properties.Resources.white_name;
+            }
+
+            if (!string.IsNullOrEmpty(txTelp.Text))
+            {
+                txTelp.IconLeft = Properties.Resources.green_telephone;
+            }
+            else
+            {
+                txTelp.IconLeft = Properties.Resources.white_telephone;
+            }
+
+            if (!string.IsNullOrEmpty(txEmail.Text))
+            {
+                txEmail.IconLeft = Properties.Resources.green_email;
+            }
+            else
+            {
+                txEmail.IconLeft = Properties.Resources.white_email;
+            }
+
+            if (!string.IsNullOrEmpty(txPassword.Text))
+            {
+                txPassword.IconLeft = Properties.Resources.green_pass;
+            }
+            else
+            {
+                txPassword.IconLeft = Properties.Resources.white_pass;
+            }
+
+            if (!string.IsNullOrEmpty(txUsername.Text))
+            {
+                txUsername.IconLeft = Properties.Resources.green_user;
+            }
+            else
+            {
+                txUsername.IconLeft = Properties.Resources.white_user;
+            }
+        }
         private string IDKaryawan()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -114,18 +179,8 @@ namespace D_Clinic.Halaman
             insert.Parameters.AddWithValue("Username", txUsername.Text);
             insert.Parameters.AddWithValue("Password", txPassword.Text);
             insert.Parameters.AddWithValue("Jabatan", cbJabatan.Text);
-
-            if (imgProfil.Image != null)
-            {
-                // Konversi gambar ke byte array
-                imageData = ImageToByteArray(image);
-                insert.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
-            }
-            else
-            {
-                imageData= null;
-                insert.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = (object)imageData ?? DBNull.Value;
-            }
+            imageData = ImageToByteArray(image);
+            insert.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
 
             try
             {
@@ -311,8 +366,15 @@ namespace D_Clinic.Halaman
             update.Parameters.AddWithValue("Password", txPassword.Text);
             update.Parameters.AddWithValue("Jabatan", cbJabatan.Text);
 
-            imageData = ImageToByteArray(image);
-            update.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
+            if (!updateFoto)
+            {
+                update.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
+            }
+            else
+            {
+                imageData = ImageToByteArray(image);
+                update.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
+            }
 
             try
             {
@@ -415,71 +477,6 @@ namespace D_Clinic.Halaman
                 mBox.WarningMessage();
             }
         }
-        private void Gambar()
-        {
-            if (!string.IsNullOrEmpty(txCariKaryawan.Text))
-            {
-                txCariKaryawan.IconLeft = Properties.Resources.green_magnifier;
-            }
-            else
-            {
-                txCariKaryawan.IconLeft = Properties.Resources.white_magnifier;
-            }
-
-            if (!string.IsNullOrEmpty(txID.Text))
-            {
-                txID.IconLeft = Properties.Resources.green_id_card;
-            }
-            else
-            {
-                txID.IconLeft = Properties.Resources.white_id_card;
-            }
-
-            if (!string.IsNullOrEmpty(txNama.Text))
-            {
-                txNama.IconLeft = Properties.Resources.green_name;
-            }
-            else
-            {
-                txNama.IconLeft = Properties.Resources.white_name;
-            }
-
-            if (!string.IsNullOrEmpty(txTelp.Text))
-            {
-                txTelp.IconLeft = Properties.Resources.green_telephone;
-            }
-            else
-            {
-                txTelp.IconLeft = Properties.Resources.white_telephone;
-            }
-
-            if (!string.IsNullOrEmpty(txEmail.Text))
-            {
-                txEmail.IconLeft = Properties.Resources.green_email;
-            }
-            else
-            {
-                txEmail.IconLeft = Properties.Resources.white_email;
-            }
-
-            if (!string.IsNullOrEmpty(txPassword.Text))
-            {
-                txPassword.IconLeft = Properties.Resources.green_pass;
-            }
-            else
-            {
-                txPassword.IconLeft = Properties.Resources.white_pass;
-            }
-
-            if (!string.IsNullOrEmpty(txUsername.Text))
-            {
-                txUsername.IconLeft = Properties.Resources.green_user;
-            }
-            else
-            {
-                txUsername.IconLeft = Properties.Resources.white_user;
-            }
-        }
 
         private void btnCariGambar_Click(object sender, EventArgs e)
         {
@@ -493,6 +490,7 @@ namespace D_Clinic.Halaman
                 // Tampilkan dialog "Open File" dan periksa apakah pengguna memilih berkas gambar sebelum mengambil hasilnya
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    updateFoto = true;
                     // Dapatkan nama berkas gambar yang dipilih oleh pengguna
                     string selectedFileName = openFileDialog.FileName;
 
@@ -521,6 +519,7 @@ namespace D_Clinic.Halaman
 
         private void btnHapusGambar_Click(object sender, EventArgs e)
         {
+            updateFoto = true;
             imgProfil.Image = Properties.Resources.profil_default;
         }
 

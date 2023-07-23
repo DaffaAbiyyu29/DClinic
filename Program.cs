@@ -20,7 +20,7 @@ namespace D_Clinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Master_Jadwal_Dokter());
+            Application.Run(new DClinic_App());
         }
 
         public static void CloseAllForms()
