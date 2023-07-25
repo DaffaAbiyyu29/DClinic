@@ -33,6 +33,7 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnCari = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
             this.lblJabatan = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,7 +57,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dClinicDataSet = new D_Clinic.DClinicDataSet();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfil)).BeginInit();
@@ -151,6 +151,18 @@
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 57;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.label2.Location = new System.Drawing.Point(9, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 32);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Detail Karyawan";
             // 
             // btnAktif
             // 
@@ -738,7 +750,7 @@
             this.txCariKaryawan.Name = "txCariKaryawan";
             this.txCariKaryawan.PasswordChar = '\0';
             this.txCariKaryawan.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txCariKaryawan.PlaceholderText = "Search";
+            this.txCariKaryawan.PlaceholderText = "Cari Karyawan";
             this.txCariKaryawan.SelectedText = "";
             this.txCariKaryawan.Size = new System.Drawing.Size(232, 37);
             this.txCariKaryawan.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -768,18 +780,6 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Karyawan";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.label2.Location = new System.Drawing.Point(9, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 32);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "Detail Karyawan";
             // 
             // Form_Master_Karyawan
             // 

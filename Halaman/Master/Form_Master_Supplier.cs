@@ -18,6 +18,7 @@ namespace D_Clinic.Halaman
         Msg_Box mBox = new Msg_Box();
         string id, nama, telp, status;
         bool ditemukan = false;
+        int validNamaSupplier = 0;
         public Form_Master_Supplier()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace D_Clinic.Halaman
             txNama.Clear();
             txTelp.Clear();
             status = "";
+            validNamaSupplier = 0;
         }
         private void disablePropherties()
         {
@@ -125,50 +127,6 @@ namespace D_Clinic.Halaman
         private void tblSupplier_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             this.tblSupplier.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
-        }
-
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            btnSimpan.Enabled = false;
-            if (txCariSupplier.Text != "")
-            {
-                if (ditemukan)
-                {
-                    cariData();
-                    txID.Enabled = false;
-                    txNama.Enabled = true;
-                    txTelp.Enabled = true;
-                    btnUpdate.Enabled = true;
-                    if (status == "Non-Aktif")
-                    {
-                        btnAktif.Visible = true;
-                        btnNonAktif.Visible = false;
-                    }
-                    else if (status == "Aktif")
-                    {
-                        btnAktif.Visible = false;
-                        btnNonAktif.Visible = true;
-                    }
-
-                    txID.Text = id;
-                    txNama.Text = nama;
-                    txTelp.Text = telp;
-                }
-                else
-                {
-                    mBox.text1.Text = "Supplier " + txCariSupplier.Text + " Tidak Ditemukan, Silakan Cari Supplier Kembali!";
-                    mBox.session.Text = "Supplier";
-                    mBox.Show();
-                    mBox.WarningMessage();
-                }
-            }
-            else
-            {
-                mBox.text1.Text = "Masukkan Supplier Yang Ingin Diubah!";
-                mBox.session.Text = "Supplier";
-                mBox.Show();
-                mBox.WarningMessage();
-            }
         }
 
         private void Gambar_TextChanged(object sender, EventArgs e)
@@ -307,12 +265,22 @@ namespace D_Clinic.Halaman
                 }
                 else
                 {
-                    UpdateSupplier();
+                    if (validNamaSupplier <= 1)
+                    {
+                        UpdateSupplier();
+                    }
+                    else
+                    {
+                        mBox.text1.Text = "Supplier Sudah Tersedia!";
+                        mBox.session.Text = "Supplier";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
                 }
             }
             else
             {
-                mBox.text1.Text = "Masukkan Semua Data!";
+                mBox.text1.Text = "Harap Masukkan Semua Data!";
                 mBox.session.Text = "Supplier";
                 mBox.Show();
                 mBox.WarningMessage();
@@ -323,6 +291,24 @@ namespace D_Clinic.Halaman
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+        private int CekNamaSupplier(string Nama)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekNamaSupplier(@Nama)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Nama", Nama);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
             }
         }
         private void TambahSupplier()
@@ -361,29 +347,49 @@ namespace D_Clinic.Halaman
         {
             if (txNama.Text.Length != 0 || txTelp.Text.Length != 0)
             {
-                if (txTelp.Text.Length < 12)
+                if (validNamaSupplier == 0)
                 {
-                    mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                    if (txTelp.Text.Length < 12)
+                    {
+                        mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                        mBox.session.Text = "Supplier";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+                    else
+                    {
+                        TambahSupplier();
+                    }
+                }
+                else
+                {
+                    mBox.text1.Text = "Supplier Sudah Tersedia!";
                     mBox.session.Text = "Supplier";
                     mBox.Show();
                     mBox.WarningMessage();
                 }
-                else
-                {
-                    TambahSupplier();
-                }
             }
             else
             {
-                mBox.text1.Text = "Masukkan Semua Data!";
+                mBox.text1.Text = "Harap Masukkan Semua Data!";
                 mBox.session.Text = "Supplier";
                 mBox.Show();
                 mBox.WarningMessage();
             }
         }
 
+        private void ValidasiNamaSupplier(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNama.Text))
+            {
+                validNamaSupplier = CekNamaSupplier(txNama.Text);
+            }
+            Gambar();
+        }
+
         private void tblSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnSimpan.Enabled = false;
             if (e.RowIndex >= 0) // Pastikan baris yang diklik valid
             {
                 DataGridViewRow row = tblSupplier.Rows[e.RowIndex];

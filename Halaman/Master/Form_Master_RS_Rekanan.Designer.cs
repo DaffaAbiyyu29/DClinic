@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnCari = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblRSRujukan = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -60,7 +60,6 @@
             this.radiusDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.rumahSakitRekananTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.RumahSakitRekananTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblRSRujukan)).BeginInit();
@@ -78,7 +77,6 @@
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.guna2GroupBox1.BorderRadius = 15;
             this.guna2GroupBox1.BorderThickness = 2;
-            this.guna2GroupBox1.Controls.Add(this.btnCari);
             this.guna2GroupBox1.Controls.Add(this.guna2GroupBox2);
             this.guna2GroupBox1.Controls.Add(this.btnTambah);
             this.guna2GroupBox1.Controls.Add(this.txCariRS);
@@ -91,34 +89,6 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1584, 746);
             this.guna2GroupBox1.TabIndex = 36;
-            // 
-            // btnCari
-            // 
-            this.btnCari.Animated = true;
-            this.btnCari.BackColor = System.Drawing.Color.Transparent;
-            this.btnCari.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.BorderRadius = 10;
-            this.btnCari.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnCari.BorderThickness = 2;
-            this.btnCari.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCari.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCari.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCari.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCari.FillColor = System.Drawing.Color.Transparent;
-            this.btnCari.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnCari.Location = new System.Drawing.Point(1365, 46);
-            this.btnCari.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCari.Name = "btnCari";
-            this.btnCari.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnCari.PressedDepth = 50;
-            this.btnCari.Size = new System.Drawing.Size(144, 37);
-            this.btnCari.TabIndex = 53;
-            this.btnCari.Text = "Cari";
-            this.btnCari.UseTransparentBackground = true;
-            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
             // guna2GroupBox2
             // 
@@ -148,6 +118,18 @@
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 57;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.label2.Location = new System.Drawing.Point(9, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 32);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Detail Rumah Sakit Rekanan";
             // 
             // btnAktif
             // 
@@ -224,22 +206,22 @@
             this.tblRSRujukan.AllowUserToDeleteRows = false;
             this.tblRSRujukan.AllowUserToResizeColumns = false;
             this.tblRSRujukan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            this.tblRSRujukan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            this.tblRSRujukan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.tblRSRujukan.AutoGenerateColumns = false;
             this.tblRSRujukan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.tblRSRujukan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.tblRSRujukan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tblRSRujukan.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblRSRujukan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblRSRujukan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tblRSRujukan.ColumnHeadersHeight = 40;
             this.tblRSRujukan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -249,14 +231,14 @@
             this.telp_rs,
             this.status_rs});
             this.tblRSRujukan.DataSource = this.rumahSakitRekananBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblRSRujukan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblRSRujukan.DefaultCellStyle = dataGridViewCellStyle9;
             this.tblRSRujukan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tblRSRujukan.Location = new System.Drawing.Point(748, 21);
             this.tblRSRujukan.MultiSelect = false;
@@ -557,7 +539,7 @@
             this.txNama.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txNama.TabIndex = 20;
             this.txNama.TextOffset = new System.Drawing.Point(5, 0);
-            this.txNama.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            this.txNama.TextChanged += new System.EventHandler(this.ValidasiNamaRS);
             // 
             // txTelp
             // 
@@ -653,13 +635,13 @@
             this.txCariRS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txCariRS.IconLeft = global::D_Clinic.Properties.Resources.white_magnifier;
             this.txCariRS.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txCariRS.Location = new System.Drawing.Point(1128, 46);
+            this.txCariRS.Location = new System.Drawing.Point(1249, 46);
             this.txCariRS.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txCariRS.MaxLength = 30;
             this.txCariRS.Name = "txCariRS";
             this.txCariRS.PasswordChar = '\0';
             this.txCariRS.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txCariRS.PlaceholderText = "Search";
+            this.txCariRS.PlaceholderText = "Cari Rumah Sakit";
             this.txCariRS.SelectedText = "";
             this.txCariRS.Size = new System.Drawing.Size(232, 37);
             this.txCariRS.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -690,18 +672,6 @@
             // 
             this.rumahSakitRekananTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.label2.Location = new System.Drawing.Point(9, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 32);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "Detail Rumah Sakit Rekanan";
-            // 
             // Form_Master_RS_Rekanan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,7 +698,6 @@
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2Button btnCari;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnBatal;

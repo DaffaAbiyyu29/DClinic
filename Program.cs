@@ -1,4 +1,5 @@
 ﻿using D_Clinic.Halaman;
+using D_Clinic.Halaman.Laporan;
 using D_Clinic.Halaman.Transaksi;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace D_Clinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Laporan_Rekam_Medis());
+            Application.Run(new DClinic_App());
         }
 
         public static void CloseAllForms()

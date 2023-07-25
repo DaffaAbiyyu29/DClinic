@@ -18,6 +18,7 @@ namespace D_Clinic.Halaman
 
         string id, nama, alamat, telp, status;
         bool ditemukan = false;
+        int validNamaRS;
         public Form_Master_RS_Rekanan()
         {
             InitializeComponent();
@@ -140,6 +141,24 @@ namespace D_Clinic.Halaman
             this.rumahSakitRekananTableAdapter.Fill(this.dClinicDataSet.RumahSakitRekanan);
             cariData();
         }
+        private int CekNamaRS(string Nama)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekNamaRS(@Nama)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Nama", Nama);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
         private void TambahRS()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -180,16 +199,26 @@ namespace D_Clinic.Halaman
         {
             if (txNama.Text.Length != 0 && txAlamat.Text.Length != 0 && txTelp.Text.Length != 0)
             {
-                if (txTelp.Text.Length < 12)
+                if (validNamaRS == 0)
                 {
-                    mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                    mBox.session.Text = "RS";
-                    mBox.Show();
-                    mBox.WarningMessage();
+                    if (txTelp.Text.Length < 12)
+                    {
+                        mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                        mBox.session.Text = "RS";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+                    else
+                    {
+                        TambahRS();
+                    }
                 }
                 else
                 {
-                    TambahRS();
+                    mBox.text1.Text = "Rumah Sakit Sudah Tersedia!";
+                    mBox.session.Text = "RS";
+                    mBox.Show();
+                    mBox.WarningMessage();
                 }
             }
             else
@@ -250,7 +279,17 @@ namespace D_Clinic.Halaman
                 }
                 else
                 {
-                    UpdateRS();
+                    if (validNamaRS <= 1)
+                    {
+                        UpdateRS();
+                    }
+                    else
+                    {
+                        mBox.text1.Text = "Rumah Sakit Sudah Tersedia!";
+                        mBox.session.Text = "RS";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
                 }
             }
             else
@@ -346,6 +385,7 @@ namespace D_Clinic.Halaman
 
         private void tblRSRujukan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnSimpan.Enabled = false;
             if (e.RowIndex >= 0) // Pastikan baris yang diklik valid
             {
                 DataGridViewRow row = tblRSRujukan.Rows[e.RowIndex];
@@ -396,6 +436,15 @@ namespace D_Clinic.Halaman
                 cariData();
                 txCariRS.IconLeft = Properties.Resources.white_magnifier;
             }
+        }
+
+        private void ValidasiNamaRS(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNama.Text))
+            {
+                validNamaRS = CekNamaRS(txNama.Text);
+            }
+            Gambar();
         }
 
         private string IDRSRekanan()

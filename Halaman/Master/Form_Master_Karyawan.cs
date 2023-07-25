@@ -20,7 +20,7 @@ namespace D_Clinic.Halaman
     {
         Msg_Box mBox = new Msg_Box();
         byte[] imageData;
-        int validNamaUsername;
+        int validNamaUsername = 0;
         bool updateFoto = false;
         string jabatan, status;
         public Form_Master_Karyawan()
@@ -43,6 +43,7 @@ namespace D_Clinic.Halaman
             imgProfil.Image = null;
             status = "";
             updateFoto = false;
+            validNamaUsername = 0;
         }
         private void disablePropherties()
         {
@@ -246,6 +247,8 @@ namespace D_Clinic.Halaman
                             txNama.Enabled = true;
                             txEmail.Enabled = true;
                             txTelp.Enabled = true;
+                            txUsername.Enabled = true;
+                            txPassword.Enabled = true;
                             cbJabatan.Enabled = true;
                             btnUpdate.Enabled = true;
                             btnCariGambar.Enabled = true;
@@ -413,7 +416,17 @@ namespace D_Clinic.Halaman
                 {
                     if (validEmail)
                     {
-                        UpdateKaryawan();
+                        if (validNamaUsername <= 1)
+                        {
+                            UpdateKaryawan();
+                        }
+                        else
+                        {
+                            mBox.text1.Text = "Nama / Username Sudah Tersedia!";
+                            mBox.session.Text = "Karyawan";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
                     }
                     else
                     {
@@ -426,7 +439,7 @@ namespace D_Clinic.Halaman
             }
             else
             {
-                mBox.text1.Text = "Masukkan Semua Data!";
+                mBox.text1.Text = "Harap Masukkan Semua Data!";
                 mBox.session.Text = "Karyawan";
                 mBox.Show();
                 mBox.WarningMessage();
@@ -471,7 +484,7 @@ namespace D_Clinic.Halaman
                 }
             } else
             {
-                mBox.text1.Text = "Masukkan Semua Data!";
+                mBox.text1.Text = "Harap Masukkan Semua Data!";
                 mBox.session.Text = "Karyawan";
                 mBox.Show();
                 mBox.WarningMessage();
@@ -526,6 +539,7 @@ namespace D_Clinic.Halaman
         private void btnCari_Click(object sender, EventArgs e)
         {
             btnSimpan.Enabled = false;
+
             if (txCariKaryawan.Text != "")
             {
                 cariKaryawan();
@@ -578,12 +592,11 @@ namespace D_Clinic.Halaman
 
         private void ValidasiNamaUsername(object sender, EventArgs e)
         {
-            Gambar();
-
             if (!string.IsNullOrEmpty(txNama.Text) || !string.IsNullOrEmpty(txUsername.Text))
             {
                 validNamaUsername = CekNamaUsername(txNama.Text, txUsername.Text);
             }
+            Gambar();
         }
 
         private void Gambar_TextChanged(object sender, EventArgs e)

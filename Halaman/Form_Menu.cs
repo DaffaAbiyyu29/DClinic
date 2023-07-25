@@ -1,4 +1,5 @@
-﻿using D_Clinic.Halaman.Transaksi;
+﻿using D_Clinic.Halaman.Laporan;
+using D_Clinic.Halaman.Transaksi;
 using D_Clinic.Resources;
 using System;
 using System.Collections.Generic;
@@ -53,7 +54,6 @@ namespace D_Clinic.Halaman
 
         private void btnMasterKaryawan_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             Form_Master_Karyawan kry = new Form_Master_Karyawan();
             kry.TopLevel = false;
             pnlContainer.Controls.Add(kry);
@@ -133,7 +133,6 @@ namespace D_Clinic.Halaman
         }
         private void btnMasterObat_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             Form_Master_Obat obt = new Form_Master_Obat();
             obt.TopLevel = false;
             pnlContainer.Controls.Add(obt);
@@ -156,7 +155,6 @@ namespace D_Clinic.Halaman
 
         private void btnMasterPasien_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             Form_Master_Pasien pas = new Form_Master_Pasien();
             pas.TopLevel = false;
             pnlContainer.Controls.Add(pas);
@@ -176,7 +174,6 @@ namespace D_Clinic.Halaman
 
         private void btnDataObat_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             Form_View_Obat obt = new Form_View_Obat();
             obt.TopLevel = false;
             pnlContainer.Controls.Add(obt);
@@ -186,7 +183,6 @@ namespace D_Clinic.Halaman
 
         private void btnDataKaryawan_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             Form_View_Karyawan kry = new Form_View_Karyawan();
             kry.TopLevel = false;
             pnlContainer.Controls.Add(kry);
@@ -196,7 +192,6 @@ namespace D_Clinic.Halaman
 
         private void btnDataPasien_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             Form_View_Pasien pas = new Form_View_Pasien();
             pas.TopLevel = false;
             pnlContainer.Controls.Add(pas);
@@ -323,12 +318,34 @@ namespace D_Clinic.Halaman
 
         private void btnLaporanRekamMedis_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             Form_Laporan_Rekam_Medis medis = new Form_Laporan_Rekam_Medis();
             medis.TopLevel = false;
             pnlContainer.Controls.Add(medis);
             medis.BringToFront();
             medis.Show();
+        }
+
+        private void btnLaporanPemberianResep_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLaporanRestokObat_Click(object sender, EventArgs e)
+        {
+            Form_Laporan_Restok_Obat restok = new Form_Laporan_Restok_Obat();
+            restok.TopLevel = false;
+            pnlContainer.Controls.Add(restok);
+            restok.BringToFront();
+            restok.Show();
+        }
+
+        private void btnLaporanPembayaran_Click(object sender, EventArgs e)
+        {
+            Form_Laporan_Pembayaran bayar = new Form_Laporan_Pembayaran();
+            bayar.TopLevel = false;
+            pnlContainer.Controls.Add(bayar);
+            bayar.BringToFront();
+            bayar.Show();
         }
     }
 }
