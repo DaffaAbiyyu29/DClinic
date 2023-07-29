@@ -116,7 +116,7 @@ namespace D_Clinic.Halaman.Transaksi
         }
         private void Form_Transaksi_Pembayaran_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dClinicDataSet.View_TrsPembayaran' table. You can move, or remove it, as needed.
+            dClinicDataSet.View_TrsPembayaran.Columns["Id_TrsResep"].AllowDBNull = true;
             this.view_TrsPembayaranTableAdapter.Fill(this.dClinicDataSet.View_TrsPembayaran);
             this.view_TrsPendaftaran_TrsPembayaranTableAdapter.Fill(this.dClinicDataSet.View_TrsPendaftaran_TrsPembayaran);
             txTanggal.Text = currentDateTime.ToString("dd MMMM yyyy");
