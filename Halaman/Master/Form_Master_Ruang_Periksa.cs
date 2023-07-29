@@ -18,6 +18,7 @@ namespace D_Clinic.Halaman
 
         bool ditemukan = false;
         string id, nama, status;
+        int validNamaRuang = 0;
         public Form_Master_Ruang_Periksa()
         {
             InitializeComponent();
@@ -30,6 +31,8 @@ namespace D_Clinic.Halaman
             txID.Clear();
             txNama.Clear();
             status = "";
+            validNamaRuang = 0;
+            epWarning.SetError(txNama, "");
         }
         private void disablePropherties()
         {
@@ -92,21 +95,6 @@ namespace D_Clinic.Halaman
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 tblRuangPeriksa.DataSource = table;
-
-                SqlDataReader reader = search.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        ditemukan = true;
-                        // Ambil nilai-nilai kolom dari reader
-                        id = reader.GetString(0);
-                        nama = reader.GetString(1);
-                        status = reader.GetString(2);
-                    }
-                }
-                reader.Close();
             }
         }
         private void Form_Ruang_Periksa_Load(object sender, EventArgs e)
@@ -155,7 +143,17 @@ namespace D_Clinic.Halaman
         {
             if (txNama.Text.Length != 0)
             {
-                UpdateRuangan();
+                if (validNamaRuang == 0)
+                {
+                    UpdateRuangan();
+                }
+                else
+                {
+                    mBox.text1.Text = "Ruangan Sudah Tersedia!";
+                    mBox.session.Text = "Ruang";
+                    mBox.Show();
+                    mBox.WarningMessage();
+                }
             }
             else
             {
@@ -272,50 +270,9 @@ namespace D_Clinic.Halaman
             cariData();
         }
 
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            btnSimpan.Enabled = false;
-            if (txCariRuangPeriksa.Text != "")
-            {
-                if (ditemukan)
-                {
-                    cariData();
-                    txID.Enabled = false;
-                    txNama.Enabled = true;
-                    btnUpdate.Enabled = true;
-                    if (status == "Non-Aktif")
-                    {
-                        btnAktif.Visible = true;
-                        btnNonAktif.Visible = false;
-                    }
-                    else if (status == "Aktif")
-                    {
-                        btnAktif.Visible = false;
-                        btnNonAktif.Visible = true;
-                    }
-
-                    txID.Text = id;
-                    txNama.Text = nama;
-                }
-                else
-                {
-                    mBox.text1.Text = "Ruang Periksa " + txCariRuangPeriksa.Text + " Tidak Ditemukan, Silakan Cari Ruang Periksa Kembali!";
-                    mBox.session.Text = "Ruang";
-                    mBox.Show();
-                    mBox.WarningMessage();
-                }
-            }
-            else
-            {
-                mBox.text1.Text = "Masukkan Ruang Periksa Yang Ingin Diubah!";
-                mBox.session.Text = "Ruang";
-                mBox.Show();
-                mBox.WarningMessage();
-            }
-        }
-
         private void tblRuangPeriksa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnSimpan.Enabled = false;
             if (e.RowIndex >= 0) // Pastikan baris yang diklik valid
             {
                 DataGridViewRow row = tblRuangPeriksa.Rows[e.RowIndex];
@@ -361,6 +318,42 @@ namespace D_Clinic.Halaman
         {
             Gambar();
         }
+        private int CekNamaRuang(string Nama, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekNamaRuangPeriksa(@Nama, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
+
+        private void ValidasiNamaRuang(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNama.Text))
+            {
+                validNamaRuang = CekNamaRuang(txNama.Text, txID.Text);
+                if (validNamaRuang != 0)
+                {
+                    epWarning.SetError(txNama, "Ruangan Sudah Tersedia!");
+                }
+                else
+                {
+                    epWarning.SetError(txNama, "");
+                }
+            }
+            Gambar();
+        }
 
         private void TambahRuangan()
         {
@@ -400,7 +393,18 @@ namespace D_Clinic.Halaman
         {
             if (txNama.Text.Length != 0)
             {
-                TambahRuangan();
+               
+                if (validNamaRuang == 0)
+                {
+                    TambahRuangan();
+                }
+                else
+                {
+                    mBox.text1.Text = "Ruangan Sudah Tersedia!";
+                    mBox.session.Text = "Ruang";
+                    mBox.Show();
+                    mBox.WarningMessage();
+                }
             }
             else
             {

@@ -35,6 +35,7 @@
             this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
             this.btnCari = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbTanggalKadaluarsa = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dtpKadaluarsa = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
@@ -56,12 +57,13 @@
             this.dClinicDataSet = new D_Clinic.DClinicDataSet();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.gbTanggalKadaluarsa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgKemasan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -214,11 +216,22 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 57;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.label2.Location = new System.Drawing.Point(9, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 32);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Detail Obat";
+            // 
             // gbTanggalKadaluarsa
             // 
             this.gbTanggalKadaluarsa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.gbTanggalKadaluarsa.BorderColor = System.Drawing.Color.White;
-            this.gbTanggalKadaluarsa.BorderRadius = 10;
+            this.gbTanggalKadaluarsa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.gbTanggalKadaluarsa.BorderThickness = 2;
             this.gbTanggalKadaluarsa.Controls.Add(this.dtpKadaluarsa);
             this.gbTanggalKadaluarsa.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
@@ -226,10 +239,10 @@
             this.gbTanggalKadaluarsa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.gbTanggalKadaluarsa.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTanggalKadaluarsa.ForeColor = System.Drawing.Color.White;
-            this.gbTanggalKadaluarsa.Location = new System.Drawing.Point(819, 230);
+            this.gbTanggalKadaluarsa.Location = new System.Drawing.Point(808, 230);
             this.gbTanggalKadaluarsa.Margin = new System.Windows.Forms.Padding(2);
             this.gbTanggalKadaluarsa.Name = "gbTanggalKadaluarsa";
-            this.gbTanggalKadaluarsa.Size = new System.Drawing.Size(478, 93);
+            this.gbTanggalKadaluarsa.Size = new System.Drawing.Size(524, 93);
             this.gbTanggalKadaluarsa.TabIndex = 58;
             this.gbTanggalKadaluarsa.Text = "Tanggal Kadaluarsa";
             // 
@@ -255,18 +268,18 @@
             this.dtpKadaluarsa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.dtpKadaluarsa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.dtpKadaluarsa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpKadaluarsa.Location = new System.Drawing.Point(17, 40);
+            this.dtpKadaluarsa.Location = new System.Drawing.Point(12, 40);
             this.dtpKadaluarsa.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpKadaluarsa.MinDate = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
             this.dtpKadaluarsa.Name = "dtpKadaluarsa";
             this.dtpKadaluarsa.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
             this.dtpKadaluarsa.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.dtpKadaluarsa.Size = new System.Drawing.Size(445, 36);
+            this.dtpKadaluarsa.Size = new System.Drawing.Size(478, 36);
             this.dtpKadaluarsa.TabIndex = 27;
             this.dtpKadaluarsa.TextOffset = new System.Drawing.Point(18, 0);
             this.dtpKadaluarsa.UseTransparentBackground = true;
             this.dtpKadaluarsa.Value = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
-            this.dtpKadaluarsa.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            this.dtpKadaluarsa.TextChanged += new System.EventHandler(this.dtpKadaluarsa_TextChanged);
             // 
             // btnAktif
             // 
@@ -556,7 +569,7 @@
             this.txNama.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txNama.TabIndex = 20;
             this.txNama.TextOffset = new System.Drawing.Point(5, 0);
-            this.txNama.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            this.txNama.TextChanged += new System.EventHandler(this.txNama_TextChanged);
             // 
             // txStok
             // 
@@ -778,17 +791,10 @@
             this.label1.Text = "Obat";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // epWarning
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.label2.Location = new System.Drawing.Point(9, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 32);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "Detail Obat";
+            this.epWarning.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epWarning.ContainerControl = this;
             // 
             // Form_Master_Obat
             // 
@@ -808,6 +814,7 @@
             this.gbTanggalKadaluarsa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgKemasan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -841,5 +848,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAktif;
         private Guna.UI2.WinForms.Guna2GroupBox gbTanggalKadaluarsa;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider epWarning;
     }
 }

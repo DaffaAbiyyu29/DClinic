@@ -34,8 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnCari = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblRuangPeriksa = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -55,12 +55,13 @@
             this.txCariRuangPeriksa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ruangPeriksaTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.RuangPeriksaTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
+            this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblRuangPeriksa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ruangPeriksaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -73,7 +74,6 @@
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.guna2GroupBox1.BorderRadius = 15;
             this.guna2GroupBox1.BorderThickness = 2;
-            this.guna2GroupBox1.Controls.Add(this.btnCari);
             this.guna2GroupBox1.Controls.Add(this.guna2GroupBox2);
             this.guna2GroupBox1.Controls.Add(this.btnTambah);
             this.guna2GroupBox1.Controls.Add(this.txCariRuangPeriksa);
@@ -86,34 +86,6 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1584, 746);
             this.guna2GroupBox1.TabIndex = 38;
-            // 
-            // btnCari
-            // 
-            this.btnCari.Animated = true;
-            this.btnCari.BackColor = System.Drawing.Color.Transparent;
-            this.btnCari.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.BorderRadius = 10;
-            this.btnCari.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnCari.BorderThickness = 2;
-            this.btnCari.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCari.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCari.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCari.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCari.FillColor = System.Drawing.Color.Transparent;
-            this.btnCari.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnCari.Location = new System.Drawing.Point(1365, 46);
-            this.btnCari.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCari.Name = "btnCari";
-            this.btnCari.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnCari.PressedDepth = 50;
-            this.btnCari.Size = new System.Drawing.Size(144, 37);
-            this.btnCari.TabIndex = 53;
-            this.btnCari.Text = "Cari";
-            this.btnCari.UseTransparentBackground = true;
-            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
             // guna2GroupBox2
             // 
@@ -141,6 +113,18 @@
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 57;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.label2.Location = new System.Drawing.Point(9, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(178, 32);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Detail Ruang Periksa";
             // 
             // btnAktif
             // 
@@ -493,7 +477,7 @@
             this.txNama.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txNama.TabIndex = 20;
             this.txNama.TextOffset = new System.Drawing.Point(5, 0);
-            this.txNama.TextChanged += new System.EventHandler(this.GambarTextChanged);
+            this.txNama.TextChanged += new System.EventHandler(this.ValidasiNamaRuang);
             // 
             // btnTambah
             // 
@@ -549,13 +533,13 @@
             this.txCariRuangPeriksa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txCariRuangPeriksa.IconLeft = global::D_Clinic.Properties.Resources.white_magnifier;
             this.txCariRuangPeriksa.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txCariRuangPeriksa.Location = new System.Drawing.Point(1128, 46);
+            this.txCariRuangPeriksa.Location = new System.Drawing.Point(1249, 46);
             this.txCariRuangPeriksa.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txCariRuangPeriksa.MaxLength = 30;
             this.txCariRuangPeriksa.Name = "txCariRuangPeriksa";
             this.txCariRuangPeriksa.PasswordChar = '\0';
             this.txCariRuangPeriksa.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txCariRuangPeriksa.PlaceholderText = "Search";
+            this.txCariRuangPeriksa.PlaceholderText = "Cari Ruangan";
             this.txCariRuangPeriksa.SelectedText = "";
             this.txCariRuangPeriksa.Size = new System.Drawing.Size(232, 37);
             this.txCariRuangPeriksa.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -581,17 +565,10 @@
             // 
             this.ruangPeriksaTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
+            // epWarning
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.label2.Location = new System.Drawing.Point(9, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 32);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "Detail Ruang Periksa";
+            this.epWarning.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epWarning.ContainerControl = this;
             // 
             // Form_Master_Ruang_Periksa
             // 
@@ -611,6 +588,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblRuangPeriksa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ruangPeriksaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,7 +597,6 @@
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2Button btnCari;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2TextBox txID;
         private Guna.UI2.WinForms.Guna2DataGridView tblRuangPeriksa;
@@ -641,5 +618,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_ruang;
         private System.Windows.Forms.DataGridViewTextBoxColumn status_ruang;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider epWarning;
     }
 }

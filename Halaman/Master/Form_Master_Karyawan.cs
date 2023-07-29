@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 using System.Windows.Markup;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -20,7 +21,7 @@ namespace D_Clinic.Halaman
     {
         Msg_Box mBox = new Msg_Box();
         byte[] imageData;
-        int validNamaUsername = 0;
+        int validNama = 0, validUsername = 0, validEmail = 0;
         bool updateFoto = false;
         string jabatan, status;
         public Form_Master_Karyawan()
@@ -43,7 +44,14 @@ namespace D_Clinic.Halaman
             imgProfil.Image = null;
             status = "";
             updateFoto = false;
-            validNamaUsername = 0;
+            validNama = 0;
+            validUsername = 0;
+            txPassword.UseSystemPasswordChar = true;
+            btnTampilPass.Image = Properties.Resources.hide_pass;
+            epWarning.SetError(txNama, "");
+            epWarning.SetError(txEmail, "");
+            epWarning.SetError(txTelp, "");
+            epWarning.SetError(txUsername, "");
         }
         private void disablePropherties()
         {
@@ -142,7 +150,7 @@ namespace D_Clinic.Halaman
                 }
             }
         }
-        private int CekNamaUsername(string Nama, string Username)
+        private int CekNamaKaryawan(string Nama, string id)
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -151,9 +159,47 @@ namespace D_Clinic.Halaman
                 {
                     command.Connection = connection;
                     command.CommandType = System.Data.CommandType.Text;
-                    command.CommandText = "SELECT dbo.CekNamaUsername(@Nama, @Username)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.CommandText = "SELECT dbo.CekNamaKaryawan(@Nama, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
                     command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
+        private int CekEmailKaryawan(string Email, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekEmailKaryawan(@Email, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Email", Email);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
+        private int CekUsernameKaryawan(string Username, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekUsernameKaryawan(@Username, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
                     command.Parameters.AddWithValue("@Username", Username);
+                    command.Parameters.AddWithValue("@ID", id);
 
                     connection.Open();
                     int result = (int)command.ExecuteScalar();
@@ -261,7 +307,14 @@ namespace D_Clinic.Halaman
                             txPassword.Text = password;
                             txTelp.Text = telp;
                             cbJabatan.Text = jabatan;
-                            imgProfil.Image = ByteArrayToImage(imageData);
+                            if(imageData.Length == 23300)
+                            {
+                                imgProfil.Image = Properties.Resources.profil_default;
+                            }
+                            else
+                            {
+                                imgProfil.Image = ByteArrayToImage(imageData);
+                            }
                         }
                     }
                     else
@@ -373,7 +426,7 @@ namespace D_Clinic.Halaman
             {
                 update.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
             }
-            else
+            else if(updateFoto)
             {
                 imageData = ImageToByteArray(image);
                 update.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = imageData;
@@ -401,40 +454,59 @@ namespace D_Clinic.Halaman
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            bool validEmail = ValidasiEmail(txEmail.Text);
-
+            bool formatEmail = ValidasiEmail(txEmail.Text);
             if (txNama.Text.Length != 0 && txTelp.Text.Length != 0 && txEmail.Text.Length != 0 && txUsername.Text.Length != 0 && txPassword.Text.Length != 0 && cbJabatan.SelectedIndex != -1)
             {
-                if (txTelp.Text.Length < 12)
+                if (validNama == 0)
                 {
-                    mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                    mBox.session.Text = "Karyawan";
-                    mBox.Show();
-                    mBox.WarningMessage();
-                }
-                else
-                {
-                    if (validEmail)
+                    if (txTelp.Text.Length < 12)
                     {
-                        if (validNamaUsername <= 1)
+                        mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                        mBox.session.Text = "Karyawan";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+                    else
+                    {
+                        if (formatEmail)
                         {
-                            UpdateKaryawan();
+                            if (validEmail == 0)
+                            {
+                                if (validUsername == 0)
+                                {
+                                    UpdateKaryawan();
+                                }
+                                else
+                                {
+                                    mBox.text1.Text = "Username Sudah Tersedia!";
+                                    mBox.session.Text = "Karyawan";
+                                    mBox.Show();
+                                    mBox.WarningMessage();
+                                }
+                            }
+                            else
+                            {
+                                mBox.text1.Text = "Email Sudah Terdaftar!";
+                                mBox.session.Text = "Karyawan";
+                                mBox.Show();
+                                mBox.WarningMessage();
+                            }
                         }
                         else
                         {
-                            mBox.text1.Text = "Nama / Username Sudah Tersedia!";
+                            mBox.text1.Text = "Email Tidak Valid!\nexample@gmail.com";
                             mBox.session.Text = "Karyawan";
                             mBox.Show();
                             mBox.WarningMessage();
                         }
                     }
-                    else
-                    {
-                        mBox.text1.Text = "Format Email Salah!\nexample@gmail.com";
-                        mBox.session.Text = "Karyawan";
-                        mBox.Show();
-                        mBox.WarningMessage();
-                    }
+                }
+                else
+                {
+                    mBox.text1.Text = "Karyawan Sudah Terdaftar!";
+                    mBox.session.Text = "Karyawan";
+                    mBox.Show();
+                    mBox.WarningMessage();
                 }
             }
             else
@@ -448,39 +520,59 @@ namespace D_Clinic.Halaman
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            bool validEmail = ValidasiEmail(txEmail.Text);
-
+            bool formatEmail = ValidasiEmail(txEmail.Text);
             if (txNama.Text.Length != 0 && txTelp.Text.Length != 0 && txEmail.Text.Length != 0 && txUsername.Text.Length != 0 && txPassword.Text.Length != 0 && cbJabatan.SelectedIndex != -1)
             {
-                if(txTelp.Text.Length < 12)
+                if (validNama == 0)
                 {
-                    mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                    mBox.session.Text = "Karyawan";
-                    mBox.Show();
-                    mBox.WarningMessage();
-                } else
-                {
-                    if(validNamaUsername == 0)
+                    if (txTelp.Text.Length < 12)
                     {
-                        if (validEmail)
+                        mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                        mBox.session.Text = "Karyawan";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+                    else
+                    {
+                        if (formatEmail)
                         {
-                            TambahKaryawan();
+                            if (validEmail == 0)
+                            {
+                                if (validUsername == 0)
+                                {
+                                    TambahKaryawan();
+                                }
+                                else
+                                {
+                                    mBox.text1.Text = "Username Sudah Tersedia!";
+                                    mBox.session.Text = "Karyawan";
+                                    mBox.Show();
+                                    mBox.WarningMessage();
+                                }
+                            }
+                            else
+                            {
+                                mBox.text1.Text = "Email Sudah Terdaftar!";
+                                mBox.session.Text = "Karyawan";
+                                mBox.Show();
+                                mBox.WarningMessage();
+                            }
                         }
                         else
                         {
-                            mBox.text1.Text = "Format Email Salah!\nexample@gmail.com";
+                            mBox.text1.Text = "Email Tidak Valid!\nexample@gmail.com";
                             mBox.session.Text = "Karyawan";
                             mBox.Show();
                             mBox.WarningMessage();
                         }
                     }
-                    else
-                    {
-                        mBox.text1.Text = "Nama / Username Sudah Tersedia!";
-                        mBox.session.Text = "Karyawan";
-                        mBox.Show();
-                        mBox.WarningMessage();
-                    }
+                }
+                else
+                {
+                    mBox.text1.Text = "Karyawan Sudah Terdaftar!";
+                    mBox.session.Text = "Karyawan";
+                    mBox.Show();
+                    mBox.WarningMessage();
                 }
             } else
             {
@@ -590,15 +682,6 @@ namespace D_Clinic.Halaman
             return Regex.IsMatch(email, pattern);
         }
 
-        private void ValidasiNamaUsername(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txNama.Text) || !string.IsNullOrEmpty(txUsername.Text))
-            {
-                validNamaUsername = CekNamaUsername(txNama.Text, txUsername.Text);
-            }
-            Gambar();
-        }
-
         private void Gambar_TextChanged(object sender, EventArgs e)
         {
             Gambar();
@@ -611,6 +694,117 @@ namespace D_Clinic.Halaman
                 image.Save(memoryStream, image.RawFormat);
                 return memoryStream.ToArray();
             }
+        }
+
+        private void txNama_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNama.Text))
+            {
+                validNama = CekNamaKaryawan(txNama.Text, txID.Text);
+                if (validNama != 0)
+                {
+                    epWarning.SetError(txNama, "Karyawan Sudah Terdaftar!");
+                }
+                else
+                {
+                    epWarning.SetError(txNama, "");
+                }
+            }
+            Gambar();
+        }
+        private void txTelp_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txTelp.Text))
+            {
+                if (txTelp.Text.Length < 12)
+                {
+                    epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
+                }
+                else
+                {
+                    epWarning.SetError(txTelp, "");
+                }
+            }
+            Gambar();
+        }
+
+        private void btnTampilPass_Click(object sender, EventArgs e)
+        {
+            if (txPassword.UseSystemPasswordChar)
+            {
+                // Jika karakter password disembunyikan, tampilkan sebagai teks biasa
+                txPassword.UseSystemPasswordChar = false;
+                btnTampilPass.Image = Properties.Resources.show_pass;
+
+            }
+            else
+            {
+                // Jika karakter password ditampilkan sebagai teks biasa, sembunyikan
+                txPassword.UseSystemPasswordChar = true;
+                btnTampilPass.Image = Properties.Resources.hide_pass;
+            }
+        }
+
+        private void Form_Master_Karyawan_Load(object sender, EventArgs e)
+        {
+            txPassword.UseSystemPasswordChar = true;
+        }
+
+        private void txTelp_TextChanged_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txTelp.Text))
+            {
+                if (txTelp.Text.Length < 12)
+                {
+                    epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
+                }
+                else
+                {
+                    epWarning.SetError(txTelp, "");
+                }
+            }
+            Gambar();
+        }
+
+        private void txEmail_TextChanged(object sender, EventArgs e)
+        {
+            bool formatEmail = ValidasiEmail(txEmail.Text);
+            if (!string.IsNullOrEmpty(txEmail.Text))
+            {
+                if (!formatEmail)
+                {
+                    epWarning.SetError(txEmail, "Email Tidak Valid!");
+                }
+                else
+                {
+                    validEmail = CekEmailKaryawan(txEmail.Text, txID.Text);
+                    if (validEmail != 0)
+                    {
+                        epWarning.SetError(txEmail, "Email Sudah Terdaftar!");
+                    }
+                    else
+                    {
+                        epWarning.SetError(txEmail, "");
+                    }
+                }
+            }
+            Gambar();
+        }
+        private void txUsername_TextChanged(object sender, EventArgs e) 
+        {
+            if (!string.IsNullOrEmpty(txUsername.Text))
+            {
+                validUsername = CekUsernameKaryawan(txUsername.Text, txID.Text);
+                if (validUsername != 0)
+                {
+                    epWarning.SetError(txUsername, "Username Sudah Tersedia!");
+                }
+                else
+                {
+                    epWarning.SetError(txUsername, "");
+                }
+            }
+            Gambar();
         }
 
         private Image ByteArrayToImage(byte[] byteArray)

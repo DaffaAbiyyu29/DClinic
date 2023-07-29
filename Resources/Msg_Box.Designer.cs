@@ -176,6 +176,7 @@
             this.Name = "Msg_Box";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Msg_Box";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Msg_Box_Load);
             this.pnlContainer.ResumeLayout(false);
             this.pnlBawah.ResumeLayout(false);

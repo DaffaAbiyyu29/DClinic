@@ -19,7 +19,7 @@ namespace D_Clinic.Halaman
     public partial class Form_Master_Obat : Form
     {
         Msg_Box mBox = new Msg_Box();
-
+        int validNama = 0;
         string status;
         public Form_Master_Obat()
         {
@@ -82,6 +82,25 @@ namespace D_Clinic.Halaman
 
                     connection.Open();
                     string result = (string)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
+        private int CekNamaObat(string Nama, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekNamaObat(@Nama, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
                     return result;
                 }
             }
@@ -213,11 +232,7 @@ namespace D_Clinic.Halaman
         {
             if (txNama.Text.Length != 0 && txMerk.Text.Length != 0 && cbKemasan.SelectedIndex != -1 && txEfek.Text.Length != 0 && txHargaBeli.Text.Length != 0 && txStok.Text.Length != 0)
             {
-                if (txStok.Text == "0")
-                {
-
-                }
-                else
+                if (validNama == 0)
                 {
                     DateTime currentDateTime = DateTime.Now;
 
@@ -232,6 +247,13 @@ namespace D_Clinic.Halaman
                     {
                         UpdateObat();
                     }
+                }
+                else
+                {
+                    mBox.text1.Text = "Obat Sudah Tersedia!";
+                    mBox.session.Text = "Obat";
+                    mBox.Show();
+                    mBox.WarningMessage();
                 }
             }
             else
@@ -288,10 +310,7 @@ namespace D_Clinic.Halaman
         {
             if (txNama.Text.Length != 0 && txMerk.Text.Length != 0 && cbKemasan.SelectedIndex != -1 && txEfek.Text.Length != 0 && txHargaBeli.Text.Length != 0 && txStok.Text.Length != 0)
             {
-                if(txStok.Text == "0")
-                {
-
-                } else
+                if(validNama == 0)
                 {
                     DateTime currentDateTime = DateTime.Now;
 
@@ -306,6 +325,13 @@ namespace D_Clinic.Halaman
                     {
                         TambahObat();
                     }
+                }
+                else
+                {
+                    mBox.text1.Text = "Obat Sudah Tersedia!";
+                    mBox.session.Text = "Obat";
+                    mBox.Show();
+                    mBox.WarningMessage();
                 }
             }
             else
@@ -558,5 +584,34 @@ namespace D_Clinic.Halaman
             dtpKadaluarsa.Value = currentDateTime;
         }
 
+        private void txNama_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNama.Text))
+            {
+                validNama = CekNamaObat(txNama.Text, txID.Text);
+                if (validNama != 0)
+                {
+                    epWarning.SetError(txNama, "Obat Sudah Tersedia!");
+                }
+                else
+                {
+                    epWarning.SetError(txNama, "");
+                }
+            }
+            Gambar();
+        }
+
+        private void dtpKadaluarsa_TextChanged(object sender, EventArgs e)
+        {
+            DateTime currentDateTime = DateTime.Now;
+            if (dtpKadaluarsa.Value < currentDateTime)
+            {
+                epWarning.SetError(dtpKadaluarsa, "Tanggal Kadaluarsa Tidak Boleh Kurang Dari " + currentDateTime.ToString("dd MMMM yyyy"));
+            }
+            else
+            {
+                epWarning.SetError(dtpKadaluarsa, "");
+            }
+        }
     }
 }

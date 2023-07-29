@@ -21,7 +21,7 @@ namespace D_Clinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DClinic_App());
+            Application.Run(new Form_Transaksi_Pembayaran());
         }
 
         public static void CloseAllForms()

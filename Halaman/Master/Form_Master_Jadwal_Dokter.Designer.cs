@@ -34,13 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnCari = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.gbJamAkhir = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.dtpJamAkhir = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.gbJamMulai = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dtpJamMulai = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHari = new System.Windows.Forms.Label();
             this.lblRuang = new System.Windows.Forms.Label();
+            this.btnBatal = new Guna.UI2.WinForms.Guna2Button();
             this.lblDokter = new System.Windows.Forms.Label();
             this.imgHari = new System.Windows.Forms.PictureBox();
             this.imgRuang = new System.Windows.Forms.PictureBox();
@@ -54,20 +56,8 @@
             this.txTarif = new Guna.UI2.WinForms.Guna2TextBox();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblJadwalDokter = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDokterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dokter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRuangPeriksaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ruang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jam1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jam2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trf_jasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewJadwalDokterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBatal = new Guna.UI2.WinForms.Guna2Button();
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
             this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -80,10 +70,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.view_DokterTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_DokterTableAdapter();
             this.view_JadwalDokterTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_JadwalDokterTableAdapter();
-            this.gbJamAkhir = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dtpJamAkhir = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDokterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dokter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idRuangPeriksaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jam1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jam2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trf_jasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
+            this.gbJamAkhir.SuspendLayout();
             this.gbJamMulai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgHari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRuang)).BeginInit();
@@ -93,7 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewDokterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblJadwalDokter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewJadwalDokterBindingSource)).BeginInit();
-            this.gbJamAkhir.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -101,7 +102,6 @@
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.guna2GroupBox1.BorderRadius = 15;
             this.guna2GroupBox1.BorderThickness = 2;
-            this.guna2GroupBox1.Controls.Add(this.btnCari);
             this.guna2GroupBox1.Controls.Add(this.guna2GroupBox2);
             this.guna2GroupBox1.Controls.Add(this.btnTambah);
             this.guna2GroupBox1.Controls.Add(this.txCariJadwal);
@@ -114,34 +114,6 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1584, 746);
             this.guna2GroupBox1.TabIndex = 38;
-            // 
-            // btnCari
-            // 
-            this.btnCari.Animated = true;
-            this.btnCari.BackColor = System.Drawing.Color.Transparent;
-            this.btnCari.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.BorderRadius = 10;
-            this.btnCari.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnCari.BorderThickness = 2;
-            this.btnCari.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCari.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCari.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCari.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCari.FillColor = System.Drawing.Color.Transparent;
-            this.btnCari.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnCari.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnCari.Location = new System.Drawing.Point(1365, 46);
-            this.btnCari.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCari.Name = "btnCari";
-            this.btnCari.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnCari.PressedDepth = 50;
-            this.btnCari.Size = new System.Drawing.Size(144, 37);
-            this.btnCari.TabIndex = 53;
-            this.btnCari.Text = "Cari";
-            this.btnCari.UseTransparentBackground = true;
-            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
             // guna2GroupBox2
             // 
@@ -181,11 +153,65 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 57;
             // 
+            // gbJamAkhir
+            // 
+            this.gbJamAkhir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.gbJamAkhir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.gbJamAkhir.BorderThickness = 2;
+            this.gbJamAkhir.Controls.Add(this.dtpJamAkhir);
+            this.gbJamAkhir.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.gbJamAkhir.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.gbJamAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.gbJamAkhir.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbJamAkhir.ForeColor = System.Drawing.Color.White;
+            this.gbJamAkhir.Location = new System.Drawing.Point(101, 351);
+            this.gbJamAkhir.Margin = new System.Windows.Forms.Padding(2);
+            this.gbJamAkhir.Name = "gbJamAkhir";
+            this.gbJamAkhir.Size = new System.Drawing.Size(494, 93);
+            this.gbJamAkhir.TabIndex = 71;
+            this.gbJamAkhir.Text = "Jam Akhir";
+            // 
+            // dtpJamAkhir
+            // 
+            this.dtpJamAkhir.Animated = true;
+            this.dtpJamAkhir.BackColor = System.Drawing.Color.Transparent;
+            this.dtpJamAkhir.BorderColor = System.Drawing.Color.White;
+            this.dtpJamAkhir.BorderRadius = 10;
+            this.dtpJamAkhir.BorderThickness = 2;
+            this.dtpJamAkhir.Checked = true;
+            this.dtpJamAkhir.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamAkhir.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.CustomFormat = "HH:ss";
+            this.dtpJamAkhir.CustomizableEdges.BottomLeft = false;
+            this.dtpJamAkhir.CustomizableEdges.TopRight = false;
+            this.dtpJamAkhir.Enabled = false;
+            this.dtpJamAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamAkhir.FocusedColor = System.Drawing.Color.Transparent;
+            this.dtpJamAkhir.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.dtpJamAkhir.ForeColor = System.Drawing.Color.White;
+            this.dtpJamAkhir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpJamAkhir.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.dtpJamAkhir.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.dtpJamAkhir.Location = new System.Drawing.Point(17, 40);
+            this.dtpJamAkhir.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpJamAkhir.MinDate = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
+            this.dtpJamAkhir.Name = "dtpJamAkhir";
+            this.dtpJamAkhir.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
+            this.dtpJamAkhir.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.dtpJamAkhir.ShowUpDown = true;
+            this.dtpJamAkhir.Size = new System.Drawing.Size(477, 36);
+            this.dtpJamAkhir.TabIndex = 27;
+            this.dtpJamAkhir.TextOffset = new System.Drawing.Point(18, 0);
+            this.dtpJamAkhir.UseTransparentBackground = true;
+            this.dtpJamAkhir.Value = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
+            this.dtpJamAkhir.ValueChanged += new System.EventHandler(this.Validasi_Jadwal);
+            // 
             // gbJamMulai
             // 
             this.gbJamMulai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.gbJamMulai.BorderColor = System.Drawing.Color.White;
-            this.gbJamMulai.BorderRadius = 10;
+            this.gbJamMulai.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.gbJamMulai.BorderThickness = 2;
             this.gbJamMulai.Controls.Add(this.dtpJamMulai);
             this.gbJamMulai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
@@ -193,10 +219,10 @@
             this.gbJamMulai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.gbJamMulai.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbJamMulai.ForeColor = System.Drawing.Color.White;
-            this.gbJamMulai.Location = new System.Drawing.Point(117, 280);
+            this.gbJamMulai.Location = new System.Drawing.Point(101, 270);
             this.gbJamMulai.Margin = new System.Windows.Forms.Padding(2);
             this.gbJamMulai.Name = "gbJamMulai";
-            this.gbJamMulai.Size = new System.Drawing.Size(478, 93);
+            this.gbJamMulai.Size = new System.Drawing.Size(494, 93);
             this.gbJamMulai.TabIndex = 71;
             this.gbJamMulai.Text = "Jam Mulai";
             // 
@@ -230,11 +256,12 @@
             this.dtpJamMulai.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
             this.dtpJamMulai.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.dtpJamMulai.ShowUpDown = true;
-            this.dtpJamMulai.Size = new System.Drawing.Size(445, 36);
+            this.dtpJamMulai.Size = new System.Drawing.Size(477, 36);
             this.dtpJamMulai.TabIndex = 27;
             this.dtpJamMulai.TextOffset = new System.Drawing.Point(18, 0);
             this.dtpJamMulai.UseTransparentBackground = true;
             this.dtpJamMulai.Value = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
+            this.dtpJamMulai.ValueChanged += new System.EventHandler(this.Validasi_Jadwal);
             // 
             // label2
             // 
@@ -269,6 +296,34 @@
             this.lblRuang.Size = new System.Drawing.Size(83, 31);
             this.lblRuang.TabIndex = 0;
             this.lblRuang.Text = "Ruang";
+            // 
+            // btnBatal
+            // 
+            this.btnBatal.Animated = true;
+            this.btnBatal.BackColor = System.Drawing.Color.Transparent;
+            this.btnBatal.BorderColor = System.Drawing.Color.Moccasin;
+            this.btnBatal.BorderRadius = 10;
+            this.btnBatal.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnBatal.BorderThickness = 2;
+            this.btnBatal.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBatal.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBatal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBatal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBatal.FillColor = System.Drawing.Color.Transparent;
+            this.btnBatal.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.btnBatal.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnBatal.HoverState.FillColor = System.Drawing.Color.Moccasin;
+            this.btnBatal.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnBatal.Location = new System.Drawing.Point(748, 555);
+            this.btnBatal.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBatal.Name = "btnBatal";
+            this.btnBatal.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.btnBatal.PressedDepth = 50;
+            this.btnBatal.Size = new System.Drawing.Size(657, 37);
+            this.btnBatal.TabIndex = 55;
+            this.btnBatal.Text = "Batal";
+            this.btnBatal.UseTransparentBackground = true;
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
             // 
             // lblDokter
             // 
@@ -456,7 +511,7 @@
             this.txTarif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txTarif.IconLeft = global::D_Clinic.Properties.Resources.white_harga;
             this.txTarif.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txTarif.Location = new System.Drawing.Point(117, 489);
+            this.txTarif.Location = new System.Drawing.Point(117, 451);
             this.txTarif.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txTarif.MaxLength = 10;
             this.txTarif.Name = "txTarif";
@@ -506,7 +561,7 @@
             this.txID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txID.TabIndex = 63;
             this.txID.TextOffset = new System.Drawing.Point(5, 0);
-            this.txID.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            this.txID.TextChanged += new System.EventHandler(this.txID_TextChanged);
             // 
             // tblJadwalDokter
             // 
@@ -596,92 +651,6 @@
             this.tblJadwalDokter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblJadwalDokter_CellContentClick);
             this.tblJadwalDokter.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tblJadwalDokter_RowPostPaint);
             // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 40;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id.DataPropertyName = "Id_JadwalDokter";
-            this.id.HeaderText = "ID Jadwal";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 80;
-            // 
-            // idDokterDataGridViewTextBoxColumn
-            // 
-            this.idDokterDataGridViewTextBoxColumn.DataPropertyName = "Id_Dokter";
-            this.idDokterDataGridViewTextBoxColumn.HeaderText = "Id_Dokter";
-            this.idDokterDataGridViewTextBoxColumn.Name = "idDokterDataGridViewTextBoxColumn";
-            this.idDokterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDokterDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dokter
-            // 
-            this.dokter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dokter.DataPropertyName = "Nama";
-            this.dokter.HeaderText = "Dokter";
-            this.dokter.Name = "dokter";
-            this.dokter.ReadOnly = true;
-            // 
-            // idRuangPeriksaDataGridViewTextBoxColumn
-            // 
-            this.idRuangPeriksaDataGridViewTextBoxColumn.DataPropertyName = "Id_RuangPeriksa";
-            this.idRuangPeriksaDataGridViewTextBoxColumn.HeaderText = "Id_RuangPeriksa";
-            this.idRuangPeriksaDataGridViewTextBoxColumn.Name = "idRuangPeriksaDataGridViewTextBoxColumn";
-            this.idRuangPeriksaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idRuangPeriksaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ruang
-            // 
-            this.ruang.DataPropertyName = "Nama_Ruang";
-            this.ruang.HeaderText = "Ruang";
-            this.ruang.Name = "ruang";
-            this.ruang.ReadOnly = true;
-            // 
-            // day
-            // 
-            this.day.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.day.DataPropertyName = "Hari";
-            this.day.HeaderText = "Hari";
-            this.day.Name = "day";
-            this.day.ReadOnly = true;
-            this.day.Width = 70;
-            // 
-            // jam1
-            // 
-            this.jam1.DataPropertyName = "Jam_Mulai";
-            this.jam1.HeaderText = "Jam Mulai";
-            this.jam1.Name = "jam1";
-            this.jam1.ReadOnly = true;
-            // 
-            // jam2
-            // 
-            this.jam2.DataPropertyName = "Jam_Akhir";
-            this.jam2.HeaderText = "Jam Akhir";
-            this.jam2.Name = "jam2";
-            this.jam2.ReadOnly = true;
-            // 
-            // trf_jasa
-            // 
-            this.trf_jasa.DataPropertyName = "Tarif_Jasa";
-            this.trf_jasa.HeaderText = "Tarif_Jasa";
-            this.trf_jasa.Name = "trf_jasa";
-            this.trf_jasa.ReadOnly = true;
-            this.trf_jasa.Visible = false;
-            // 
-            // stts
-            // 
-            this.stts.DataPropertyName = "Status";
-            this.stts.HeaderText = "Status";
-            this.stts.Name = "stts";
-            this.stts.ReadOnly = true;
-            // 
             // viewJadwalDokterBindingSource
             // 
             this.viewJadwalDokterBindingSource.DataMember = "View_JadwalDokter";
@@ -695,34 +664,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 580);
             this.panel1.TabIndex = 58;
-            // 
-            // btnBatal
-            // 
-            this.btnBatal.Animated = true;
-            this.btnBatal.BackColor = System.Drawing.Color.Transparent;
-            this.btnBatal.BorderColor = System.Drawing.Color.Moccasin;
-            this.btnBatal.BorderRadius = 10;
-            this.btnBatal.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnBatal.BorderThickness = 2;
-            this.btnBatal.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBatal.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBatal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBatal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBatal.FillColor = System.Drawing.Color.Transparent;
-            this.btnBatal.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.btnBatal.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnBatal.HoverState.FillColor = System.Drawing.Color.Moccasin;
-            this.btnBatal.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnBatal.Location = new System.Drawing.Point(748, 555);
-            this.btnBatal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBatal.Name = "btnBatal";
-            this.btnBatal.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnBatal.PressedDepth = 50;
-            this.btnBatal.Size = new System.Drawing.Size(657, 37);
-            this.btnBatal.TabIndex = 55;
-            this.btnBatal.Text = "Batal";
-            this.btnBatal.UseTransparentBackground = true;
-            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
             // 
             // btnAktif
             // 
@@ -900,13 +841,13 @@
             this.txCariJadwal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txCariJadwal.IconLeft = global::D_Clinic.Properties.Resources.white_magnifier;
             this.txCariJadwal.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txCariJadwal.Location = new System.Drawing.Point(1128, 46);
+            this.txCariJadwal.Location = new System.Drawing.Point(1249, 46);
             this.txCariJadwal.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txCariJadwal.MaxLength = 30;
             this.txCariJadwal.Name = "txCariJadwal";
             this.txCariJadwal.PasswordChar = '\0';
             this.txCariJadwal.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txCariJadwal.PlaceholderText = "Search";
+            this.txCariJadwal.PlaceholderText = "Cari Jadwal";
             this.txCariJadwal.SelectedText = "";
             this.txCariJadwal.Size = new System.Drawing.Size(232, 37);
             this.txCariJadwal.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -950,60 +891,98 @@
             // 
             this.view_JadwalDokterTableAdapter.ClearBeforeFill = true;
             // 
-            // gbJamAkhir
+            // epWarning
             // 
-            this.gbJamAkhir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.gbJamAkhir.BorderColor = System.Drawing.Color.White;
-            this.gbJamAkhir.BorderRadius = 10;
-            this.gbJamAkhir.BorderThickness = 2;
-            this.gbJamAkhir.Controls.Add(this.dtpJamAkhir);
-            this.gbJamAkhir.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.gbJamAkhir.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.gbJamAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.gbJamAkhir.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbJamAkhir.ForeColor = System.Drawing.Color.White;
-            this.gbJamAkhir.Location = new System.Drawing.Point(117, 389);
-            this.gbJamAkhir.Margin = new System.Windows.Forms.Padding(2);
-            this.gbJamAkhir.Name = "gbJamAkhir";
-            this.gbJamAkhir.Size = new System.Drawing.Size(478, 93);
-            this.gbJamAkhir.TabIndex = 71;
-            this.gbJamAkhir.Text = "Jam Mulai";
+            this.epWarning.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epWarning.ContainerControl = this;
             // 
-            // dtpJamAkhir
+            // No
             // 
-            this.dtpJamAkhir.Animated = true;
-            this.dtpJamAkhir.BackColor = System.Drawing.Color.Transparent;
-            this.dtpJamAkhir.BorderColor = System.Drawing.Color.White;
-            this.dtpJamAkhir.BorderRadius = 10;
-            this.dtpJamAkhir.BorderThickness = 2;
-            this.dtpJamAkhir.Checked = true;
-            this.dtpJamAkhir.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamAkhir.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.dtpJamAkhir.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamAkhir.CustomFormat = "HH:ss";
-            this.dtpJamAkhir.CustomizableEdges.BottomLeft = false;
-            this.dtpJamAkhir.CustomizableEdges.TopRight = false;
-            this.dtpJamAkhir.Enabled = false;
-            this.dtpJamAkhir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.dtpJamAkhir.FocusedColor = System.Drawing.Color.Transparent;
-            this.dtpJamAkhir.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.dtpJamAkhir.ForeColor = System.Drawing.Color.White;
-            this.dtpJamAkhir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpJamAkhir.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamAkhir.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.dtpJamAkhir.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.dtpJamAkhir.Location = new System.Drawing.Point(17, 40);
-            this.dtpJamAkhir.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpJamAkhir.MinDate = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
-            this.dtpJamAkhir.Name = "dtpJamAkhir";
-            this.dtpJamAkhir.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
-            this.dtpJamAkhir.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.dtpJamAkhir.ShowUpDown = true;
-            this.dtpJamAkhir.Size = new System.Drawing.Size(445, 36);
-            this.dtpJamAkhir.TabIndex = 27;
-            this.dtpJamAkhir.TextOffset = new System.Drawing.Point(18, 0);
-            this.dtpJamAkhir.UseTransparentBackground = true;
-            this.dtpJamAkhir.Value = new System.DateTime(2023, 6, 24, 0, 0, 0, 0);
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 40;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id.DataPropertyName = "Id_JadwalDokter";
+            this.id.HeaderText = "ID Jadwal";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 80;
+            // 
+            // idDokterDataGridViewTextBoxColumn
+            // 
+            this.idDokterDataGridViewTextBoxColumn.DataPropertyName = "Id_Dokter";
+            this.idDokterDataGridViewTextBoxColumn.HeaderText = "Id_Dokter";
+            this.idDokterDataGridViewTextBoxColumn.Name = "idDokterDataGridViewTextBoxColumn";
+            this.idDokterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDokterDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dokter
+            // 
+            this.dokter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dokter.DataPropertyName = "Nama";
+            this.dokter.HeaderText = "Dokter";
+            this.dokter.Name = "dokter";
+            this.dokter.ReadOnly = true;
+            // 
+            // idRuangPeriksaDataGridViewTextBoxColumn
+            // 
+            this.idRuangPeriksaDataGridViewTextBoxColumn.DataPropertyName = "Id_RuangPeriksa";
+            this.idRuangPeriksaDataGridViewTextBoxColumn.HeaderText = "Id_RuangPeriksa";
+            this.idRuangPeriksaDataGridViewTextBoxColumn.Name = "idRuangPeriksaDataGridViewTextBoxColumn";
+            this.idRuangPeriksaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idRuangPeriksaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ruang
+            // 
+            this.ruang.DataPropertyName = "Nama_Ruang";
+            this.ruang.HeaderText = "Ruang";
+            this.ruang.Name = "ruang";
+            this.ruang.ReadOnly = true;
+            // 
+            // day
+            // 
+            this.day.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.day.DataPropertyName = "Hari";
+            this.day.HeaderText = "Hari";
+            this.day.Name = "day";
+            this.day.ReadOnly = true;
+            this.day.Width = 70;
+            // 
+            // jam1
+            // 
+            this.jam1.DataPropertyName = "Jam_Mulai";
+            this.jam1.HeaderText = "Jam Mulai";
+            this.jam1.Name = "jam1";
+            this.jam1.ReadOnly = true;
+            this.jam1.Width = 80;
+            // 
+            // jam2
+            // 
+            this.jam2.DataPropertyName = "Jam_Akhir";
+            this.jam2.HeaderText = "Jam Akhir";
+            this.jam2.Name = "jam2";
+            this.jam2.ReadOnly = true;
+            this.jam2.Width = 80;
+            // 
+            // trf_jasa
+            // 
+            this.trf_jasa.DataPropertyName = "Tarif_Jasa";
+            this.trf_jasa.HeaderText = "Tarif_Jasa";
+            this.trf_jasa.Name = "trf_jasa";
+            this.trf_jasa.ReadOnly = true;
+            this.trf_jasa.Visible = false;
+            // 
+            // stts
+            // 
+            this.stts.DataPropertyName = "Status";
+            this.stts.HeaderText = "Status";
+            this.stts.Name = "stts";
+            this.stts.ReadOnly = true;
             // 
             // Form_Master_Jadwal_Dokter
             // 
@@ -1020,6 +999,7 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
+            this.gbJamAkhir.ResumeLayout(false);
             this.gbJamMulai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgHari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRuang)).EndInit();
@@ -1029,14 +1009,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewDokterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblJadwalDokter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewJadwalDokterBindingSource)).EndInit();
-            this.gbJamAkhir.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2Button btnCari;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2TextBox txID;
         private Guna.UI2.WinForms.Guna2DataGridView tblJadwalDokter;
@@ -1071,6 +1050,9 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2GroupBox gbJamMulai;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpJamMulai;
+        private Guna.UI2.WinForms.Guna2GroupBox gbJamAkhir;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpJamAkhir;
+        private System.Windows.Forms.ErrorProvider epWarning;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDokterDataGridViewTextBoxColumn;
@@ -1082,7 +1064,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jam2;
         private System.Windows.Forms.DataGridViewTextBoxColumn trf_jasa;
         private System.Windows.Forms.DataGridViewTextBoxColumn stts;
-        private Guna.UI2.WinForms.Guna2GroupBox gbJamAkhir;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpJamAkhir;
     }
 }

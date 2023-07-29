@@ -73,7 +73,7 @@ namespace D_Clinic.Resources
                         {
                             menu.btnObat.Visible = true;
                             menu.btnRestok.Visible = true;
-                            menu.btnDaftarObat.Visible = true;
+                            menu.btnDaftarResep.Visible = true;
                         }
                     }
                 }
@@ -121,42 +121,42 @@ namespace D_Clinic.Resources
         }
         public void WarningMessage()
         {
-            pnlAtas.FillColor = Color.Gold;
-            pnlBawah.FillColor = Color.Gold;
-            pnlContainer.BorderColor = Color.Gold;
-            text1.ForeColor = Color.Gold;
-            btnOkay.ForeColor = Color.Gold;
-            btnOkay.BorderColor = Color.Gold;
-            btnOkay.HoverState.BorderColor = Color.Gold;
-            btnOkay.HoverState.FillColor = Color.Gold;
+            pnlAtas.FillColor = Color.FromArgb(255, 196, 0);
+            pnlBawah.FillColor = Color.FromArgb(255, 196, 0);
+            pnlContainer.BorderColor = Color.FromArgb(255, 196, 0);
+            text1.ForeColor = Color.FromArgb(255, 196, 0);
+            btnOkay.ForeColor = Color.FromArgb(255, 196, 0);
+            btnOkay.BorderColor = Color.FromArgb(255, 196, 0);
+            btnOkay.HoverState.BorderColor = Color.FromArgb(255, 196, 0);
+            btnOkay.HoverState.FillColor = Color.FromArgb(255, 196, 0);
             btnOkay.HoverState.ForeColor = Color.FromArgb(47, 46, 48);
-            session.ForeColor = Color.Gold;
+            session.ForeColor = Color.FromArgb(255, 196, 0);
         }
         public void ErrorMessage()
         {
-            pnlAtas.FillColor = Color.FromArgb(247, 56, 89);
-            pnlBawah.FillColor = Color.FromArgb(247, 56, 89);
-            pnlContainer.BorderColor = Color.FromArgb(247, 56, 89);
-            text1.ForeColor = Color.FromArgb(247, 56, 89);
-            btnOkay.ForeColor = Color.FromArgb(247, 56, 89);
-            btnOkay.BorderColor = Color.FromArgb(247, 56, 89);
-            btnOkay.HoverState.BorderColor = Color.FromArgb(247, 56, 89);
-            btnOkay.HoverState.FillColor = Color.FromArgb(247, 56, 89);
+            pnlAtas.FillColor = Color.FromArgb(220, 72, 111);
+            pnlBawah.FillColor = Color.FromArgb(220, 72, 111);
+            pnlContainer.BorderColor = Color.FromArgb(220, 72, 111);
+            text1.ForeColor = Color.FromArgb(220, 72, 111);
+            btnOkay.ForeColor = Color.FromArgb(220, 72, 111);
+            btnOkay.BorderColor = Color.FromArgb(220, 72, 111);
+            btnOkay.HoverState.BorderColor = Color.FromArgb(220, 72, 111);
+            btnOkay.HoverState.FillColor = Color.FromArgb(220, 72, 111);
             btnOkay.HoverState.ForeColor = Color.FromArgb(47, 46, 48);
-            session.ForeColor = Color.FromArgb(247, 56, 89);
+            session.ForeColor = Color.FromArgb(220, 72, 111);
         }
         public void InformationMessage()
         {
-            pnlAtas.FillColor = Color.DodgerBlue;
-            pnlBawah.FillColor = Color.DodgerBlue;
-            pnlContainer.BorderColor = Color.DodgerBlue;
-            text1.ForeColor = Color.DodgerBlue;
-            btnOkay.ForeColor = Color.DodgerBlue;
-            btnOkay.BorderColor = Color.DodgerBlue;
-            btnOkay.HoverState.BorderColor = Color.DodgerBlue;
-            btnOkay.HoverState.FillColor = Color.DodgerBlue;
+            pnlAtas.FillColor = Color.FromArgb(33, 150, 243);
+            pnlBawah.FillColor = Color.FromArgb(33, 150, 243);
+            pnlContainer.BorderColor = Color.FromArgb(33, 150, 243);
+            text1.ForeColor = Color.FromArgb(33, 150, 243);
+            btnOkay.ForeColor = Color.FromArgb(33, 150, 243);
+            btnOkay.BorderColor = Color.FromArgb(33, 150, 243);
+            btnOkay.HoverState.BorderColor = Color.FromArgb(33, 150, 243);
+            btnOkay.HoverState.FillColor = Color.FromArgb(33, 150, 243);
             btnOkay.HoverState.ForeColor = Color.FromArgb(47, 46, 48);
-            session.ForeColor = Color.DodgerBlue;
+            session.ForeColor = Color.FromArgb(33, 150, 243);
         }
     }
 }

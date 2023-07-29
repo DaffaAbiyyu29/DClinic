@@ -35,7 +35,7 @@
             this.labelDateTime = new System.Windows.Forms.Label();
             this.pnlSidebar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnPembayaran = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDaftarObat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDaftarResep = new Guna.UI2.WinForms.Guna2Button();
             this.btnRestok = new Guna.UI2.WinForms.Guna2Button();
             this.btnRujukan = new Guna.UI2.WinForms.Guna2Button();
             this.btnResepObat = new Guna.UI2.WinForms.Guna2Button();
@@ -123,7 +123,7 @@
             this.pnlSidebar.AutoScroll = true;
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(200)))), ((int)(((byte)(177)))));
             this.pnlSidebar.Controls.Add(this.btnPembayaran);
-            this.pnlSidebar.Controls.Add(this.btnDaftarObat);
+            this.pnlSidebar.Controls.Add(this.btnDaftarResep);
             this.pnlSidebar.Controls.Add(this.btnRestok);
             this.pnlSidebar.Controls.Add(this.btnRujukan);
             this.pnlSidebar.Controls.Add(this.btnResepObat);
@@ -185,39 +185,39 @@
             this.btnPembayaran.Visible = false;
             this.btnPembayaran.Click += new System.EventHandler(this.btnPembayaran_Click);
             // 
-            // btnDaftarObat
+            // btnDaftarResep
             // 
-            this.btnDaftarObat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnDaftarObat.BorderRadius = 6;
-            this.btnDaftarObat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDaftarObat.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnDaftarObat.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnDaftarObat.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnDaftarObat.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.btnDaftarObat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDaftarObat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDaftarObat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDaftarObat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDaftarObat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDaftarObat.FillColor = System.Drawing.Color.Transparent;
-            this.btnDaftarObat.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
-            this.btnDaftarObat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnDaftarObat.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnDaftarObat.Image = ((System.Drawing.Image)(resources.GetObject("btnDaftarObat.Image")));
-            this.btnDaftarObat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDaftarObat.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDaftarObat.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDaftarObat.Location = new System.Drawing.Point(0, 792);
-            this.btnDaftarObat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDaftarObat.Name = "btnDaftarObat";
-            this.btnDaftarObat.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnDaftarObat.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnDaftarObat.Size = new System.Drawing.Size(188, 66);
-            this.btnDaftarObat.TabIndex = 126;
-            this.btnDaftarObat.Text = "Daftar Obat";
-            this.btnDaftarObat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDaftarObat.Visible = false;
-            this.btnDaftarObat.Click += new System.EventHandler(this.btnDaftarObat_Click);
+            this.btnDaftarResep.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnDaftarResep.BorderRadius = 6;
+            this.btnDaftarResep.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDaftarResep.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnDaftarResep.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnDaftarResep.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnDaftarResep.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.btnDaftarResep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDaftarResep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDaftarResep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDaftarResep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDaftarResep.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDaftarResep.FillColor = System.Drawing.Color.Transparent;
+            this.btnDaftarResep.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.btnDaftarResep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnDaftarResep.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnDaftarResep.Image = ((System.Drawing.Image)(resources.GetObject("btnDaftarResep.Image")));
+            this.btnDaftarResep.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDaftarResep.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnDaftarResep.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnDaftarResep.Location = new System.Drawing.Point(0, 792);
+            this.btnDaftarResep.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDaftarResep.Name = "btnDaftarResep";
+            this.btnDaftarResep.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnDaftarResep.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnDaftarResep.Size = new System.Drawing.Size(188, 66);
+            this.btnDaftarResep.TabIndex = 126;
+            this.btnDaftarResep.Text = "Daftar Resep";
+            this.btnDaftarResep.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDaftarResep.Visible = false;
+            this.btnDaftarResep.Click += new System.EventHandler(this.btnDaftarResep_Click);
             // 
             // btnRestok
             // 
@@ -1301,7 +1301,7 @@
         private Guna.UI2.WinForms.Guna2Button btnLaporanRekamMedis;
         public Guna.UI2.WinForms.Guna2Button btnLaporan;
         public Guna.UI2.WinForms.Guna2Button btnSupplier;
-        public Guna.UI2.WinForms.Guna2Button btnDaftarObat;
+        public Guna.UI2.WinForms.Guna2Button btnDaftarResep;
         public Guna.UI2.WinForms.Guna2Button btnPembayaran;
         private Guna.UI2.WinForms.Guna2Button btnLaporanRestokObat;
         private Guna.UI2.WinForms.Guna2Button btnLaporanPemberianResep;

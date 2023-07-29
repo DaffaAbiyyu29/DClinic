@@ -167,7 +167,14 @@ namespace D_Clinic.Halaman.Transaksi
             insert_trs.CommandType = CommandType.StoredProcedure;
             insert_trs.Parameters.AddWithValue("Id_TrsPembayaran", txID.Text);
             insert_trs.Parameters.AddWithValue("Id_TrsPendaftaran", idPendaftaran);
-            insert_trs.Parameters.AddWithValue("Id_TrsResep", idResep);
+            if(idResep.Length == 0)
+            {
+                insert_trs.Parameters.AddWithValue("Id_TrsResep", DBNull.Value);
+            }
+            else
+            {
+                insert_trs.Parameters.AddWithValue("Id_TrsResep", idResep);
+            }
             insert_trs.Parameters.AddWithValue("Tanggal", DateTime.Parse(txTanggal.Text));
             insert_trs.Parameters.AddWithValue("Waktu", waktu);
             insert_trs.Parameters.AddWithValue("Total_Bayar", unformatTotalHarga);
@@ -199,6 +206,11 @@ namespace D_Clinic.Halaman.Transaksi
         private void btnBayar_Click(object sender, EventArgs e)
         {
             Bayar();
+        }
+
+        private void tblPembayaran_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.tblPembayaran.Rows[e.RowIndex].Cells["no_bayar"].Value = (e.RowIndex + 1).ToString();
         }
 
         private decimal TotalHarga()

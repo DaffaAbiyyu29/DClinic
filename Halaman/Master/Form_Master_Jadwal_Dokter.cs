@@ -21,7 +21,7 @@ namespace D_Clinic.Halaman
         Msg_Box mBox = new Msg_Box();
 
         string id_jadwal, id_dokter, id_ruang, hari, jam_mulai, jam_akhir, status;
-        int tarif;
+        int tarif, validJdwDokter = 0, validJdwRuang = 0;
         bool ditemukan = false;
         public Form_Master_Jadwal_Dokter()
         {
@@ -41,6 +41,10 @@ namespace D_Clinic.Halaman
             txTarif.Clear();
             status = "";
             cariData();
+            epWarning.SetError(cbDokter, "");
+            epWarning.SetError(cbRuang, "");
+            epWarning.SetError(dtpJamMulai, "");
+            epWarning.SetError(dtpJamAkhir, "");
         }
 
         private void disablePropherties()
@@ -56,17 +60,6 @@ namespace D_Clinic.Halaman
             btnNonAktif.Visible = false;
             btnAktif.Visible = false;
             btnSimpan.Enabled = false;
-        }
-        private void Gambar()
-        {
-            if (!string.IsNullOrEmpty(txID.Text))
-            {
-                txID.IconLeft = Properties.Resources.green_kode;
-            }
-            else
-            {
-                txID.IconLeft = Properties.Resources.white_kode;
-            }
         }
         private string IDJadwalDokter()
         {
@@ -85,15 +78,55 @@ namespace D_Clinic.Halaman
                 }
             }
         }
+        private int CekJadwalDokter(string Nama, string Hari, string Jam_Mulai, string Jam_Akhir, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekJadwalDokter(@Nama, @Hari, @Jam_Mulai, @Jam_Akhir, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@Hari", Hari);
+                    command.Parameters.AddWithValue("@Jam_Mulai", Jam_Mulai);
+                    command.Parameters.AddWithValue("@Jam_Akhir", Jam_Akhir);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
+        private int CekJadwalRuang(string Nama, string Hari, string Jam_Mulai, string Jam_Akhir, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekJadwalRuang(@Nama, @Hari, @Jam_Mulai, @Jam_Akhir, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@Hari", Hari);
+                    command.Parameters.AddWithValue("@Jam_Mulai", Jam_Mulai);
+                    command.Parameters.AddWithValue("@Jam_Akhir", Jam_Akhir);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
         private void Form_Jadwal_Dokter_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dClinicDataSet.View_JadwalDokter' table. You can move, or remove it, as needed.
             this.view_JadwalDokterTableAdapter.Fill(this.dClinicDataSet.View_JadwalDokter);
-            // TODO: This line of code loads data into the 'dClinicDataSet.View_Dokter' table. You can move, or remove it, as needed.
             this.view_DokterTableAdapter.Fill(this.dClinicDataSet.View_Dokter);
-            // TODO: This line of code loads data into the 'dClinicDataSet.RuangPeriksa' table. You can move, or remove it, as needed.
             this.ruangPeriksaTableAdapter.Fill(this.dClinicDataSet.RuangPeriksa);
-            // TODO: This line of code loads data into the 'dClinicDataSet.View_Dokter' table. You can move, or remove it, as needed.
             cariData();
             cbDokter.SelectedIndex = -1;
             cbRuang.SelectedIndex = -1;
@@ -111,7 +144,6 @@ namespace D_Clinic.Halaman
             dtpJamMulai.Enabled = true;
             dtpJamAkhir.Enabled = true;
             btnSimpan.Enabled = true;
-            Gambar();
         }
         private void NonAktifJadwal()
         {
@@ -133,7 +165,6 @@ namespace D_Clinic.Halaman
                 mBox.SuccessMessage();
                 clearText();
                 disablePropherties();
-                Gambar();
             }
             catch (Exception)
             {
@@ -167,7 +198,6 @@ namespace D_Clinic.Halaman
                 mBox.SuccessMessage();
                 clearText();
                 disablePropherties();
-                Gambar();
             }
             catch (Exception)
             {
@@ -212,7 +242,6 @@ namespace D_Clinic.Halaman
                 cbHari.SelectedIndex = -1;
                 clearText();
                 disablePropherties();
-                Gambar();
             }
             catch (Exception)
             {
@@ -228,7 +257,47 @@ namespace D_Clinic.Halaman
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateJadwal();
+            if (cbDokter.SelectedIndex != -1 || cbRuang.SelectedIndex != -1 || cbHari.SelectedIndex != -1)
+            {
+                if (dtpJamAkhir.Value > dtpJamMulai.Value)
+                {
+                    if (validJdwDokter == 0)
+                    {
+                        if (validJdwRuang == 0)
+                        {
+                            UpdateJadwal();
+                        }
+                        else
+                        {
+                            mBox.text1.Text = "Ruangan Tidak Tersedia Pada Hari " + cbHari.Text + " Pada Pukul " + dtpJamMulai.Text + " - " + dtpJamAkhir.Text;
+                            mBox.session.Text = "Jadwal";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+                    }
+                    else
+                    {
+                        mBox.text1.Text = "Dokter Sudah Memiliki Jadwal Pada Hari " + cbHari.Text + " Pada Pukul " + dtpJamMulai.Text + " - " + dtpJamAkhir.Text;
+                        mBox.session.Text = "Jadwal";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+                }
+                else
+                {
+                    mBox.text1.Text = "Jam Akhir Harus Diatas Jam " + dtpJamMulai.Text;
+                    mBox.session.Text = "Jadwal";
+                    mBox.Show();
+                    mBox.WarningMessage();
+                }
+            }
+            else
+            {
+                mBox.text1.Text = "Masukkan Semua Data!";
+                mBox.session.Text = "Jadwal";
+                mBox.Show();
+                mBox.WarningMessage();
+            }
         }
         private void TambahJadwal()
         {
@@ -261,7 +330,6 @@ namespace D_Clinic.Halaman
                 cbHari.SelectedIndex = -1;
                 clearText();
                 disablePropherties();
-                Gambar();
             }
             catch (Exception)
             {
@@ -276,11 +344,6 @@ namespace D_Clinic.Halaman
             }
         }
 
-        private void Gambar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Gambar();
-        }
-
         private void cbDokter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbDokter.SelectedIndex != -1)
@@ -293,6 +356,7 @@ namespace D_Clinic.Halaman
                 imgDokter.Image = Properties.Resources.white_dokter;
                 lblDokter.Visible = true;
             }
+            Validasi_Jadwal_Dokter();
         }
 
         private void cbRuang_SelectedIndexChanged(object sender, EventArgs e)
@@ -307,6 +371,7 @@ namespace D_Clinic.Halaman
                 imgRuang.Image = Properties.Resources.white_ruang;
                 lblRuang.Visible = true;
             }
+            Validasi_Jadwal_Dokter();
         }
 
         private void tblJadwalDokter_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -328,11 +393,6 @@ namespace D_Clinic.Halaman
             }
         }
 
-        private void Gambar_TextChanged(object sender, EventArgs e)
-        {
-            Gambar();
-        }
-
         private void txCariJadwal_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txCariJadwal.Text))
@@ -346,6 +406,37 @@ namespace D_Clinic.Halaman
                 txCariJadwal.IconLeft = Properties.Resources.white_magnifier;
             }
         }
+
+        private void txID_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txID.Text))
+            {
+                txID.IconLeft = Properties.Resources.green_kode;
+            }
+            else
+            {
+                txID.IconLeft = Properties.Resources.white_kode;
+            }
+        }
+
+        private void Validasi_Jadwal(object sender, EventArgs e)
+        {
+            if(dtpJamAkhir.Value > dtpJamMulai.Value)
+            {
+                epWarning.SetError(dtpJamAkhir, "");
+                Validasi_Jadwal_Dokter();
+            }
+            else
+            {
+                epWarning.SetError(dtpJamAkhir, "Jam Akhir Harus Diatas Jam " +dtpJamMulai.Text);
+            }
+        }
+
+        private void dtpJamAkhir_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void txTarif_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txTarif.Text))
@@ -377,6 +468,7 @@ namespace D_Clinic.Halaman
 
         private void tblJadwalDokter_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnSimpan.Enabled = false;
             if (e.RowIndex >= 0) // Pastikan baris yang diklik valid
             {
                 DataGridViewRow row = tblJadwalDokter.Rows[e.RowIndex];
@@ -436,13 +528,44 @@ namespace D_Clinic.Halaman
                 imgHari.Image = Properties.Resources.white_cal;
                 lblHari.Visible = true;
             }
+            Validasi_Jadwal_Dokter();
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
             if (cbDokter.SelectedIndex != -1 || cbRuang.SelectedIndex != -1 || cbHari.SelectedIndex != -1)
             {
-                TambahJadwal();
+                if(dtpJamAkhir.Value > dtpJamMulai.Value)
+                {
+                    if(validJdwDokter == 0)
+                    {
+                        if(validJdwRuang == 0)
+                        {
+                            TambahJadwal();
+                        }
+                        else
+                        {
+                            mBox.text1.Text = "Ruangan Tidak Tersedia Pada Hari " + cbHari.Text + " Pada Pukul " + dtpJamMulai.Text + " - " + dtpJamAkhir.Text;
+                            mBox.session.Text = "Jadwal";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+                    }
+                    else
+                    {
+                        mBox.text1.Text = "Dokter Sudah Memiliki Jadwal Pada Hari " + cbHari.Text + " Pada Pukul " + dtpJamMulai.Text + " - " + dtpJamAkhir.Text;
+                        mBox.session.Text = "Jadwal";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+                }
+                else
+                {
+                    mBox.text1.Text = "Jam Akhir Harus Diatas Jam " + dtpJamMulai.Text;
+                    mBox.session.Text = "Jadwal";
+                    mBox.Show();
+                    mBox.WarningMessage();
+                }
             }
             else
             {
@@ -451,7 +574,6 @@ namespace D_Clinic.Halaman
                 mBox.Show();
                 mBox.WarningMessage();
             }
-            Gambar();
         }
         private void cariData()
         {
@@ -470,25 +592,6 @@ namespace D_Clinic.Halaman
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 tblJadwalDokter.DataSource = table;
-
-                SqlDataReader reader = search.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        ditemukan = true;
-                        // Ambil nilai-nilai kolom dari reader
-                        id_jadwal = reader.GetString(0);
-                        id_dokter = reader.GetString(1);
-                        id_ruang = reader.GetString(3);
-                        hari = reader.GetString(5);
-                        jam_mulai = reader.GetString(6);
-                        jam_akhir = reader.GetString(7);
-                        tarif = (int)reader.GetSqlMoney(8);
-                        status = reader.GetString(9);
-                    }
-                }
-                reader.Close();
             }
         }
         private void btnCari_Click(object sender, EventArgs e)
@@ -543,13 +646,32 @@ namespace D_Clinic.Halaman
                 mBox.Show();
                 mBox.WarningMessage();
             }
-            Gambar();
+        }
+        private void Validasi_Jadwal_Dokter()
+        {
+            validJdwDokter = CekJadwalDokter(cbDokter.Text, cbHari.Text, dtpJamMulai.Text, dtpJamAkhir.Text, txID.Text);
+            if (validJdwDokter != 0)
+            {
+                epWarning.SetError(cbDokter, "Dokter Sudah Memiliki Jadwal Pada Hari " + cbHari.Text + " Pada Pukul " + dtpJamMulai.Text + " - " + dtpJamAkhir.Text);
+            }
+            else
+            {
+                epWarning.SetError(cbDokter, "");
+            }
+            validJdwRuang = CekJadwalRuang(cbRuang.Text, cbHari.Text, dtpJamMulai.Text, dtpJamAkhir.Text, txID.Text);
+            if (validJdwRuang != 0)
+            {
+                epWarning.SetError(cbRuang, "Ruangan Tidak Tersedia Pada Hari " + cbHari.Text + " Pada Pukul " + dtpJamMulai.Text + " - " + dtpJamAkhir.Text);
+            }
+            else
+            {
+                epWarning.SetError(cbRuang, "");
+            }
         }
         private void btnBatal_Click(object sender, EventArgs e)
         {
             clearText();
             disablePropherties();
-            Gambar();
         }
     }
 }

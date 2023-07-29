@@ -296,16 +296,6 @@ namespace D_Clinic.Halaman
             restok.txApoteker.Text = lblNama.Text;
         }
 
-        private void btnDaftarObat_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            Form_Daftar_Resep daftar = new Form_Daftar_Resep();
-            daftar.TopLevel = false;
-            pnlContainer.Controls.Add(daftar);
-            daftar.BringToFront();
-            daftar.Show();
-        }
-
         private void btnPembayaran_Click(object sender, EventArgs e)
         {
             hideSubMenu();
@@ -327,7 +317,11 @@ namespace D_Clinic.Halaman
 
         private void btnLaporanPemberianResep_Click(object sender, EventArgs e)
         {
-
+            Form_Laporan_Resep resep = new Form_Laporan_Resep();
+            resep.TopLevel = false;
+            pnlContainer.Controls.Add(resep);
+            resep.BringToFront();
+            resep.Show();
         }
 
         private void btnLaporanRestokObat_Click(object sender, EventArgs e)
@@ -346,6 +340,16 @@ namespace D_Clinic.Halaman
             pnlContainer.Controls.Add(bayar);
             bayar.BringToFront();
             bayar.Show();
+        }
+
+        private void btnDaftarResep_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            Form_Daftar_Resep daftar = new Form_Daftar_Resep();
+            daftar.TopLevel = false;
+            pnlContainer.Controls.Add(daftar);
+            daftar.BringToFront();
+            daftar.Show();
         }
     }
 }

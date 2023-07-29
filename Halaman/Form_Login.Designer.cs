@@ -92,7 +92,7 @@
             this.btnTampilPass.FillColor = System.Drawing.Color.Transparent;
             this.btnTampilPass.Font = new System.Drawing.Font("Porsche Next TT", 18F, System.Drawing.FontStyle.Bold);
             this.btnTampilPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTampilPass.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTampilPass.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.btnTampilPass.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.btnTampilPass.Image = global::D_Clinic.Properties.Resources.hide_pass;
             this.btnTampilPass.ImageSize = new System.Drawing.Size(35, 35);

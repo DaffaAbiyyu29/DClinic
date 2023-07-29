@@ -157,9 +157,6 @@
   <data name="green_harga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_harga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_jabatan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_jabatan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="profil_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profil_default.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,6 +184,9 @@
   <data name="green_merk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_merk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="white_apoteker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_apoteker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="white_id-card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_id-card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,6 +201,9 @@
   </data>
   <data name="white_keluhan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_keluhan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="white_cal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_cal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,6 +280,9 @@
   <data name="white_jabatan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_jabatan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="green_apoteker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_apoteker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="green_blood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_blood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -304,8 +310,8 @@
   <data name="D-Clinic_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\D-Clinic_Green2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_cal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_cal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="green_jabatan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_jabatan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,10 +325,7 @@
   <data name="green_id-card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_id-card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_apoteker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_apoteker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white_apoteker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_apoteker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

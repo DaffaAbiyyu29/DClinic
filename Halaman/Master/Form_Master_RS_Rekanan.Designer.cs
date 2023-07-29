@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -39,12 +39,6 @@
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblRSRujukan = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamat_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telp_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rumahSakitRekananBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dClinicDataSet = new D_Clinic.DClinicDataSet();
             this.txAlamat = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,11 +54,19 @@
             this.radiusDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.rumahSakitRekananTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.RumahSakitRekananTableAdapter();
+            this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamat_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telp_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_rs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblRSRujukan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rumahSakitRekananBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -206,22 +208,22 @@
             this.tblRSRujukan.AllowUserToDeleteRows = false;
             this.tblRSRujukan.AllowUserToResizeColumns = false;
             this.tblRSRujukan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            this.tblRSRujukan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            this.tblRSRujukan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tblRSRujukan.AutoGenerateColumns = false;
             this.tblRSRujukan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.tblRSRujukan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.tblRSRujukan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tblRSRujukan.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblRSRujukan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblRSRujukan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tblRSRujukan.ColumnHeadersHeight = 40;
             this.tblRSRujukan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -231,14 +233,14 @@
             this.telp_rs,
             this.status_rs});
             this.tblRSRujukan.DataSource = this.rumahSakitRekananBindingSource;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblRSRujukan.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblRSRujukan.DefaultCellStyle = dataGridViewCellStyle3;
             this.tblRSRujukan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tblRSRujukan.Location = new System.Drawing.Point(748, 21);
             this.tblRSRujukan.MultiSelect = false;
@@ -276,53 +278,6 @@
             this.tblRSRujukan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.tblRSRujukan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblRSRujukan_CellContentClick);
             this.tblRSRujukan.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tblRSRujukan_RowPostPaint);
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 40;
-            // 
-            // id_rs
-            // 
-            this.id_rs.DataPropertyName = "Id_RumahSakit";
-            this.id_rs.HeaderText = "ID RS";
-            this.id_rs.Name = "id_rs";
-            this.id_rs.ReadOnly = true;
-            // 
-            // nama_rs
-            // 
-            this.nama_rs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nama_rs.DataPropertyName = "Nama";
-            this.nama_rs.HeaderText = "Nama RS";
-            this.nama_rs.Name = "nama_rs";
-            this.nama_rs.ReadOnly = true;
-            // 
-            // alamat_rs
-            // 
-            this.alamat_rs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.alamat_rs.DataPropertyName = "Alamat";
-            this.alamat_rs.HeaderText = "Alamat";
-            this.alamat_rs.Name = "alamat_rs";
-            this.alamat_rs.ReadOnly = true;
-            // 
-            // telp_rs
-            // 
-            this.telp_rs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.telp_rs.DataPropertyName = "Telp";
-            this.telp_rs.HeaderText = "No Telp";
-            this.telp_rs.Name = "telp_rs";
-            this.telp_rs.ReadOnly = true;
-            this.telp_rs.Width = 140;
-            // 
-            // status_rs
-            // 
-            this.status_rs.DataPropertyName = "Status";
-            this.status_rs.HeaderText = "Status";
-            this.status_rs.Name = "status_rs";
-            this.status_rs.ReadOnly = true;
             // 
             // rumahSakitRekananBindingSource
             // 
@@ -578,7 +533,7 @@
             this.txTelp.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txTelp.TabIndex = 21;
             this.txTelp.TextOffset = new System.Drawing.Point(5, 0);
-            this.txTelp.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
+            this.txTelp.TextChanged += new System.EventHandler(this.txTelp_TextChanged);
             this.txTelp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Integer_KeyPress);
             // 
             // btnTambah
@@ -672,6 +627,58 @@
             // 
             this.rumahSakitRekananTableAdapter.ClearBeforeFill = true;
             // 
+            // epWarning
+            // 
+            this.epWarning.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epWarning.ContainerControl = this;
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 40;
+            // 
+            // id_rs
+            // 
+            this.id_rs.DataPropertyName = "Id_RumahSakit";
+            this.id_rs.HeaderText = "ID RS";
+            this.id_rs.Name = "id_rs";
+            this.id_rs.ReadOnly = true;
+            // 
+            // nama_rs
+            // 
+            this.nama_rs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama_rs.DataPropertyName = "Nama";
+            this.nama_rs.HeaderText = "Nama RS";
+            this.nama_rs.Name = "nama_rs";
+            this.nama_rs.ReadOnly = true;
+            // 
+            // alamat_rs
+            // 
+            this.alamat_rs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.alamat_rs.DataPropertyName = "Alamat";
+            this.alamat_rs.HeaderText = "Alamat";
+            this.alamat_rs.Name = "alamat_rs";
+            this.alamat_rs.ReadOnly = true;
+            // 
+            // telp_rs
+            // 
+            this.telp_rs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.telp_rs.DataPropertyName = "Telp";
+            this.telp_rs.HeaderText = "No Telp";
+            this.telp_rs.Name = "telp_rs";
+            this.telp_rs.ReadOnly = true;
+            this.telp_rs.Width = 140;
+            // 
+            // status_rs
+            // 
+            this.status_rs.DataPropertyName = "Status";
+            this.status_rs.HeaderText = "Status";
+            this.status_rs.Name = "status_rs";
+            this.status_rs.ReadOnly = true;
+            // 
             // Form_Master_RS_Rekanan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,6 +697,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblRSRujukan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rumahSakitRekananBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -717,12 +725,13 @@
         private Guna.UI2.WinForms.Guna2Button btnAktif;
         private System.Windows.Forms.BindingSource rumahSakitRekananBindingSource;
         private DClinicDataSetTableAdapters.RumahSakitRekananTableAdapter rumahSakitRekananTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider epWarning;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_rs;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_rs;
         private System.Windows.Forms.DataGridViewTextBoxColumn alamat_rs;
         private System.Windows.Forms.DataGridViewTextBoxColumn telp_rs;
         private System.Windows.Forms.DataGridViewTextBoxColumn status_rs;
-        private System.Windows.Forms.Label label2;
     }
 }

@@ -33,6 +33,8 @@ namespace D_Clinic.Halaman
             txTelp.Clear();
             txAlamat.Clear();
             status = "";
+            epWarning.SetError(txNama, "");
+            epWarning.SetError(txTelp, "");
         }
         private void disablePropherties()
         {
@@ -109,23 +111,6 @@ namespace D_Clinic.Halaman
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 tblRSRujukan.DataSource = table;
-
-                SqlDataReader reader = search.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        ditemukan = true;
-                        // Ambil nilai-nilai kolom dari reader
-                        id = reader.GetString(0);
-                        nama = reader.GetString(1);
-                        alamat = reader.GetString(2);
-                        telp = reader.GetString(3);
-                        status = reader.GetString(4);
-                    }
-                }
-                reader.Close();
             }
         }
         private void tblRSRujukan_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -141,7 +126,7 @@ namespace D_Clinic.Halaman
             this.rumahSakitRekananTableAdapter.Fill(this.dClinicDataSet.RumahSakitRekanan);
             cariData();
         }
-        private int CekNamaRS(string Nama)
+        private int CekNamaRS(string Nama, string id)
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -150,8 +135,9 @@ namespace D_Clinic.Halaman
                 {
                     command.Connection = connection;
                     command.CommandType = System.Data.CommandType.Text;
-                    command.CommandText = "SELECT dbo.CekNamaRS(@Nama)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.CommandText = "SELECT dbo.CekNamaRS(@Nama, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
                     command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@ID", id);
 
                     connection.Open();
                     int result = (int)command.ExecuteScalar();
@@ -279,7 +265,7 @@ namespace D_Clinic.Halaman
                 }
                 else
                 {
-                    if (validNamaRS <= 1)
+                    if (validNamaRS == 0)
                     {
                         UpdateRS();
                     }
@@ -442,7 +428,31 @@ namespace D_Clinic.Halaman
         {
             if (!string.IsNullOrEmpty(txNama.Text))
             {
-                validNamaRS = CekNamaRS(txNama.Text);
+                validNamaRS = CekNamaRS(txNama.Text, txID.Text);
+                if (validNamaRS != 0)
+                {
+                    epWarning.SetError(txNama, "Rumah Sakit Sudah Tersedia!");
+                }
+                else
+                {
+                    epWarning.SetError(txNama, "");
+                }
+            }
+            Gambar();
+        }
+
+        private void txTelp_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txTelp.Text))
+            {
+                if (txTelp.Text.Length < 12)
+                {
+                    epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
+                }
+                else
+                {
+                    epWarning.SetError(txTelp, "");
+                }
             }
             Gambar();
         }

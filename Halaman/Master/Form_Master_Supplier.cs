@@ -33,6 +33,8 @@ namespace D_Clinic.Halaman
             txTelp.Clear();
             status = "";
             validNamaSupplier = 0;
+            epWarning.SetError(txNama, "");
+            epWarning.SetError(txTelp, "");
         }
         private void disablePropherties()
         {
@@ -85,7 +87,6 @@ namespace D_Clinic.Halaman
         }
         private void Form_Master_Supplier_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dClinicDataSet.Supplier' table. You can move, or remove it, as needed.
             this.supplierTableAdapter.Fill(this.dClinicDataSet.Supplier);
             cariData();
         }
@@ -106,22 +107,6 @@ namespace D_Clinic.Halaman
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 tblSupplier.DataSource = table;
-
-                SqlDataReader reader = search.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        ditemukan = true;
-                        // Ambil nilai-nilai kolom dari reader
-                        id = reader.GetString(0);
-                        nama = reader.GetString(1);
-                        telp = reader.GetString(2);
-                        status = reader.GetString(3);
-                    }
-                }
-                reader.Close();
             }
         }
         private void tblSupplier_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -215,7 +200,6 @@ namespace D_Clinic.Halaman
         {
             AktifSupplier();
         }
-
         private void UpdateSupplier()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -265,13 +249,13 @@ namespace D_Clinic.Halaman
                 }
                 else
                 {
-                    if (validNamaSupplier <= 1)
+                    if (validNamaSupplier == 0)
                     {
                         UpdateSupplier();
                     }
                     else
                     {
-                        mBox.text1.Text = "Supplier Sudah Tersedia!";
+                        mBox.text1.Text = "Supplier Sudah Terdaftar!";
                         mBox.session.Text = "Supplier";
                         mBox.Show();
                         mBox.WarningMessage();
@@ -293,7 +277,7 @@ namespace D_Clinic.Halaman
                 e.Handled = true;
             }
         }
-        private int CekNamaSupplier(string Nama)
+        private int CekNamaSupplier(string Nama, string id)
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -302,8 +286,9 @@ namespace D_Clinic.Halaman
                 {
                     command.Connection = connection;
                     command.CommandType = System.Data.CommandType.Text;
-                    command.CommandText = "SELECT dbo.CekNamaSupplier(@Nama)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.CommandText = "SELECT dbo.CekNamaSupplier(@Nama, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
                     command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@ID", id);
 
                     connection.Open();
                     int result = (int)command.ExecuteScalar();
@@ -363,7 +348,7 @@ namespace D_Clinic.Halaman
                 }
                 else
                 {
-                    mBox.text1.Text = "Supplier Sudah Tersedia!";
+                    mBox.text1.Text = "Supplier Sudah Terrdaftar!";
                     mBox.session.Text = "Supplier";
                     mBox.Show();
                     mBox.WarningMessage();
@@ -382,7 +367,31 @@ namespace D_Clinic.Halaman
         {
             if (!string.IsNullOrEmpty(txNama.Text))
             {
-                validNamaSupplier = CekNamaSupplier(txNama.Text);
+                validNamaSupplier = CekNamaSupplier(txNama.Text, txID.Text);
+                if (validNamaSupplier != 0)
+                {
+                    epWarning.SetError(txNama, "Supplier Sudah Terdaftar!");
+                }
+                else
+                {
+                    epWarning.SetError(txNama, "");
+                }
+            }
+            Gambar();
+        }
+
+        private void txTelp_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txTelp.Text))
+            {
+                if (txTelp.Text.Length < 12)
+                {
+                    epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
+                }
+                else
+                {
+                    epWarning.SetError(txTelp, "");
+                }
             }
             Gambar();
         }
