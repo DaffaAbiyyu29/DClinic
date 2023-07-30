@@ -135,6 +135,7 @@ namespace D_Clinic.Halaman.Transaksi
         private void btnBatal_Click(object sender, EventArgs e)
         {
             clearText();
+            btnBayar.Enabled = false;
         }
         private void cariPendaftaran()
         {

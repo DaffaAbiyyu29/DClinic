@@ -306,6 +306,11 @@ namespace D_Clinic.Halaman.Transaksi
                         // Menghapus baris dari DataGridView
                         tblKeranjang.Rows.Remove(row);
                     }
+                    
+                    if (tblKeranjang.SelectedRows.Count == 0)
+                    {
+                        btnKirim.Enabled = false;
+                    }
                 }
             }
         }

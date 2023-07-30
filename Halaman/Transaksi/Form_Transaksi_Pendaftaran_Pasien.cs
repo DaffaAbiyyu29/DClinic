@@ -179,8 +179,7 @@ namespace D_Clinic.Halaman
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-           
+            } 
         }
         private void cariData()
         {
@@ -311,6 +310,7 @@ namespace D_Clinic.Halaman
         {
             clearText();
             cbDokter.Enabled = false;
+            btnDaftar.Enabled = false;
         }
     }
 }

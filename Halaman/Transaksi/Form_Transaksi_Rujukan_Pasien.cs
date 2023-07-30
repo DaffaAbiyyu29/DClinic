@@ -39,6 +39,7 @@ namespace D_Clinic.Halaman.Transaksi
             txPasien.Clear();
             cbRumahSakit.SelectedIndex = -1;
             txKeterangan.Clear();
+            txDiagnosa.Clear();
         }
         private void Gambar()
         {
@@ -92,6 +93,23 @@ namespace D_Clinic.Halaman.Transaksi
                 }
             }
         }
+        private string IDRekamMedis()
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.GenerateIDRekamMedis()"; // Ganti "dbo" dengan skema fungsi Anda
+
+                    connection.Open();
+                    string result = (string)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
         private void RS_Tersedia()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -119,7 +137,6 @@ namespace D_Clinic.Halaman.Transaksi
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
         private void tblPendaftaran_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -131,6 +148,8 @@ namespace D_Clinic.Halaman.Transaksi
             clearText();
             cbRumahSakit.Enabled = false;
             txKeterangan.Enabled = false;
+            txDiagnosa.Enabled = false;
+            btnKirim.Enabled = false;
         }
 
         private void txCariRS_TextChanged(object sender, EventArgs e)
@@ -209,9 +228,10 @@ namespace D_Clinic.Halaman.Transaksi
             insert.Parameters.AddWithValue("Id_TrsRujukanPasien", txID.Text);
             insert.Parameters.AddWithValue("Id_TrsPendaftaran", IDPendaftaran);
             insert.Parameters.AddWithValue("Id_RumahSakit", GenerateIDRS());
-            insert.Parameters.AddWithValue("Keterangan", txKeterangan.Text);
             insert.Parameters.AddWithValue("Tanggal", currentDateTime);
             insert.Parameters.AddWithValue("Waktu", waktu);
+            insert.Parameters.AddWithValue("Keterangan", txKeterangan.Text);
+            insert.Parameters.AddWithValue("Id_RekamMedis", IDRekamMedis());
             insert.Parameters.AddWithValue("Diagnosa", txDiagnosa.Text);
 
             try
@@ -228,6 +248,7 @@ namespace D_Clinic.Halaman.Transaksi
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 mBox.text1.Text = "Rujukan Pasien Gagal";
                 mBox.session.Text = "Rujukan";
                 mBox.Show();
@@ -275,6 +296,7 @@ namespace D_Clinic.Halaman.Transaksi
             }
             cbRumahSakit.Enabled = true;
             txKeterangan.Enabled = true;
+            txDiagnosa.Enabled = true;
             btnKirim.Enabled = true;
         }
 
