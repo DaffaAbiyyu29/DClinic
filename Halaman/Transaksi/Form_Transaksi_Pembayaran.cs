@@ -35,6 +35,9 @@ namespace D_Clinic.Halaman.Transaksi
             txDokter.Clear();
             txPasien.Clear();
             txTotalHarga.Clear();
+            txBayar.Clear();
+            txKembali.Clear();
+            txBayar.Enabled = false;
         }
         private void Gambar()
         {
@@ -95,6 +98,14 @@ namespace D_Clinic.Halaman.Transaksi
             else
             {
                 txTotalHarga.IconLeft = Properties.Resources.white_harga;
+            }
+            if (!string.IsNullOrEmpty(txKembali.Text))
+            {
+                txKembali.IconLeft = Properties.Resources.green_harga;
+            }
+            else
+            {
+                txKembali.IconLeft = Properties.Resources.white_harga;
             }
         }
         private string IDPembayaran()
@@ -213,6 +224,47 @@ namespace D_Clinic.Halaman.Transaksi
         {
             this.tblPembayaran.Rows[e.RowIndex].Cells["no_bayar"].Value = (e.RowIndex + 1).ToString();
         }
+        private decimal HitungKembali()
+        {
+            string unformatTotalHarga = Regex.Replace(txTotalHarga.Text, "[^0-9]", "");
+            string unformatTotalBayar = Regex.Replace(txBayar.Text, "[^0-9]", "");
+            decimal totalHarga = decimal.Parse(unformatTotalHarga);
+            decimal totalBayar = decimal.Parse(unformatTotalBayar);
+            decimal totalKembali = totalBayar - totalHarga;
+            return totalKembali;
+        }
+        private void txBayar_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txBayar.Text))
+            {
+                string unformatTotalHarga = Regex.Replace(txTotalHarga.Text, "[^0-9]", "");
+                string unformatTotalBayar = Regex.Replace(txBayar.Text, "[^0-9]", "");
+                decimal amount = 0;
+                if (Decimal.TryParse(unformatTotalBayar, out amount))
+                {
+                    string formattedAmount = string.Format(new CultureInfo("id-ID"), "{0:N0}", amount);
+                    txBayar.Text = formattedAmount;
+                    txBayar.SelectionStart = txBayar.Text.Length;
+                }
+                txBayar.IconLeft = Properties.Resources.green_harga;
+                txKembali.Text = HitungKembali().ToString("C0");
+            }
+            else
+            {
+                txBayar.IconLeft = Properties.Resources.white_harga;
+                txKembali.Text = 0.ToString("C0");
+            }
+        }
+
+        private void txBayar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(txBayar.TextLength == 0)
+            {
+                if(!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }            }
+        }
 
         private decimal TotalHarga()
         {
@@ -220,6 +272,7 @@ namespace D_Clinic.Halaman.Transaksi
         }
         private void tblPendaftaran_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            txBayar.Enabled = true;
             if (e.RowIndex >= 0) // Pastikan baris yang diklik valid
             {
                 DataGridViewRow row = tblPendaftaran.Rows[e.RowIndex];

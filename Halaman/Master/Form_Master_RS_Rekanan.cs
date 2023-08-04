@@ -18,7 +18,7 @@ namespace D_Clinic.Halaman
 
         string id, nama, alamat, telp, status;
         bool ditemukan = false;
-        int validNamaRS;
+        int validNamaRS, validNomorTelpRS = 0;
         public Form_Master_RS_Rekanan()
         {
             InitializeComponent();
@@ -145,6 +145,26 @@ namespace D_Clinic.Halaman
                 }
             }
         }
+
+        private int CekNomorTelpRS(string Telp, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekNomorTelpRsRekanan(@Telp, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Telp", Telp);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
         private void TambahRS()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -187,17 +207,28 @@ namespace D_Clinic.Halaman
             {
                 if (validNamaRS == 0)
                 {
-                    if (txTelp.Text.Length < 12)
+                    if (validNomorTelpRS == 0)
                     {
-                        mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                        if (txTelp.Text.Length < 12)
+                        {
+                            mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                            mBox.session.Text = "RS";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+                        else
+                        {
+                            TambahRS();
+                        }
+                    }
+                    else
+                    {
+                        mBox.text1.Text = "Nomor Telepon Sudah Terdaftar!";
                         mBox.session.Text = "RS";
                         mBox.Show();
                         mBox.WarningMessage();
                     }
-                    else
-                    {
-                        TambahRS();
-                    }
+                    
                 }
                 else
                 {
@@ -256,26 +287,37 @@ namespace D_Clinic.Halaman
         {
             if (txNama.Text.Length != 0 && txAlamat.Text.Length != 0 && txTelp.Text.Length != 0)
             {
-                if (txTelp.Text.Length < 12)
+                if (validNamaRS == 0)
                 {
-                    mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                    mBox.session.Text = "RS";
-                    mBox.Show();
-                    mBox.WarningMessage();
-                }
-                else
-                {
-                    if (validNamaRS == 0)
+                    if (validNomorTelpRS == 0)
                     {
-                        UpdateRS();
+                        if (txTelp.Text.Length < 12)
+                        {
+                            mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                            mBox.session.Text = "RS";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+                        else
+                        {
+                            TambahRS();
+                        }
                     }
                     else
                     {
-                        mBox.text1.Text = "Rumah Sakit Sudah Tersedia!";
+                        mBox.text1.Text = "Nomor Telepon Sudah Terdaftar!";
                         mBox.session.Text = "RS";
                         mBox.Show();
                         mBox.WarningMessage();
                     }
+
+                }
+                else
+                {
+                    mBox.text1.Text = "Rumah Sakit Sudah Tersedia!";
+                    mBox.session.Text = "RS";
+                    mBox.Show();
+                    mBox.WarningMessage();
                 }
             }
             else
@@ -445,7 +487,12 @@ namespace D_Clinic.Halaman
         {
             if (!string.IsNullOrEmpty(txTelp.Text))
             {
-                if (txTelp.Text.Length < 12)
+                validNomorTelpRS = CekNomorTelpRS(txTelp.Text, txID.Text);
+                if (validNomorTelpRS != 0)
+                {
+                    epWarning.SetError(txTelp, "Nomor Telepon Sudah Terdaftar!");
+                }
+                else if (txTelp.Text.Length < 12)
                 {
                     epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
                 }

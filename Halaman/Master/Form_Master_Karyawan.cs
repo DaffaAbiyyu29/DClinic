@@ -21,7 +21,7 @@ namespace D_Clinic.Halaman
     {
         Msg_Box mBox = new Msg_Box();
         byte[] imageData;
-        int validNama = 0, validUsername = 0, validEmail = 0;
+        int validNama = 0, validUsername = 0, validEmail = 0, validNomorTelp = 0;
         bool updateFoto = false;
         string jabatan, status;
         public Form_Master_Karyawan()
@@ -207,6 +207,28 @@ namespace D_Clinic.Halaman
                 }
             }
         }
+
+        private int CekNomorTelpKaryawan(string Telp, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekNomorTelpKaryawan(@Telp, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Telp", Telp);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
+
+
         private void TambahKaryawan()
         {
             // Ambil gambar yang akan disimpan
@@ -459,26 +481,36 @@ namespace D_Clinic.Halaman
             {
                 if (validNama == 0)
                 {
-                    if (txTelp.Text.Length < 12)
+                    if (validNomorTelp == 0)
                     {
-                        mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                        mBox.session.Text = "Karyawan";
-                        mBox.Show();
-                        mBox.WarningMessage();
-                    }
-                    else
-                    {
-                        if (formatEmail)
+                        if (txTelp.Text.Length < 12)
                         {
-                            if (validEmail == 0)
+                            mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                            mBox.session.Text = "Karyawan";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+                        else
+                        {
+                            if (formatEmail)
                             {
-                                if (validUsername == 0)
+                                if (validEmail == 0)
                                 {
-                                    UpdateKaryawan();
+                                    if (validUsername == 0)
+                                    {
+                                        TambahKaryawan();
+                                    }
+                                    else
+                                    {
+                                        mBox.text1.Text = "Username Sudah Tersedia!";
+                                        mBox.session.Text = "Karyawan";
+                                        mBox.Show();
+                                        mBox.WarningMessage();
+                                    }
                                 }
                                 else
                                 {
-                                    mBox.text1.Text = "Username Sudah Tersedia!";
+                                    mBox.text1.Text = "Email Sudah Terdaftar!";
                                     mBox.session.Text = "Karyawan";
                                     mBox.Show();
                                     mBox.WarningMessage();
@@ -486,20 +518,21 @@ namespace D_Clinic.Halaman
                             }
                             else
                             {
-                                mBox.text1.Text = "Email Sudah Terdaftar!";
+                                mBox.text1.Text = "Email Tidak Valid!\nexample@gmail.com";
                                 mBox.session.Text = "Karyawan";
                                 mBox.Show();
                                 mBox.WarningMessage();
                             }
                         }
-                        else
-                        {
-                            mBox.text1.Text = "Email Tidak Valid!\nexample@gmail.com";
-                            mBox.session.Text = "Karyawan";
-                            mBox.Show();
-                            mBox.WarningMessage();
-                        }
                     }
+                    else
+                    {
+                        mBox.text1.Text = "Nomor Telepon Sudah Terdaftar!";
+                        mBox.session.Text = "Karyawan";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+
                 }
                 else
                 {
@@ -525,26 +558,36 @@ namespace D_Clinic.Halaman
             {
                 if (validNama == 0)
                 {
-                    if (txTelp.Text.Length < 12)
+                    if (validNomorTelp == 0)
                     {
-                        mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                        mBox.session.Text = "Karyawan";
-                        mBox.Show();
-                        mBox.WarningMessage();
-                    }
-                    else
-                    {
-                        if (formatEmail)
+                        if (txTelp.Text.Length < 12)
                         {
-                            if (validEmail == 0)
+                            mBox.text1.Text = "Nomor Telepon Tidak Valid";
+                            mBox.session.Text = "Karyawan";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+                        else
+                        {
+                            if (formatEmail)
                             {
-                                if (validUsername == 0)
+                                if (validEmail == 0)
                                 {
-                                    TambahKaryawan();
+                                    if (validUsername == 0)
+                                    {
+                                        TambahKaryawan();
+                                    }
+                                    else
+                                    {
+                                        mBox.text1.Text = "Username Sudah Tersedia!";
+                                        mBox.session.Text = "Karyawan";
+                                        mBox.Show();
+                                        mBox.WarningMessage();
+                                    }
                                 }
                                 else
                                 {
-                                    mBox.text1.Text = "Username Sudah Tersedia!";
+                                    mBox.text1.Text = "Email Sudah Terdaftar!";
                                     mBox.session.Text = "Karyawan";
                                     mBox.Show();
                                     mBox.WarningMessage();
@@ -552,20 +595,21 @@ namespace D_Clinic.Halaman
                             }
                             else
                             {
-                                mBox.text1.Text = "Email Sudah Terdaftar!";
+                                mBox.text1.Text = "Email Tidak Valid!\nexample@gmail.com";
                                 mBox.session.Text = "Karyawan";
                                 mBox.Show();
                                 mBox.WarningMessage();
                             }
                         }
-                        else
-                        {
-                            mBox.text1.Text = "Email Tidak Valid!\nexample@gmail.com";
-                            mBox.session.Text = "Karyawan";
-                            mBox.Show();
-                            mBox.WarningMessage();
-                        }
                     }
+                    else
+                    {
+                        mBox.text1.Text = "Nomor Telepon Sudah Terdaftar!";
+                        mBox.session.Text = "Karyawan";
+                        mBox.Show();
+                        mBox.WarningMessage();
+                    }
+                    
                 }
                 else
                 {
@@ -574,7 +618,8 @@ namespace D_Clinic.Halaman
                     mBox.Show();
                     mBox.WarningMessage();
                 }
-            } else
+            } 
+            else
             {
                 mBox.text1.Text = "Harap Masukkan Semua Data!";
                 mBox.session.Text = "Karyawan";
@@ -712,21 +757,6 @@ namespace D_Clinic.Halaman
             }
             Gambar();
         }
-        private void txTelp_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txTelp.Text))
-            {
-                if (txTelp.Text.Length < 12)
-                {
-                    epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
-                }
-                else
-                {
-                    epWarning.SetError(txTelp, "");
-                }
-            }
-            Gambar();
-        }
 
         private void btnTampilPass_Click(object sender, EventArgs e)
         {
@@ -754,7 +784,12 @@ namespace D_Clinic.Halaman
         {
             if (!string.IsNullOrEmpty(txTelp.Text))
             {
-                if (txTelp.Text.Length < 12)
+                validNomorTelp = CekNomorTelpKaryawan(txTelp.Text, txID.Text);
+                if (validNomorTelp != 0)
+                {
+                    epWarning.SetError(txTelp, "Nomor Telepon Sudah Terdaftar!");
+                }
+                else if (txTelp.Text.Length < 12)
                 {
                     epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
                 }

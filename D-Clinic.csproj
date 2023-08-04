@@ -132,6 +132,12 @@
     <Compile Include="Halaman\Laporan\Form_Laporan_Resep.Designer.cs">
       <DependentUpon>Form_Laporan_Resep.cs</DependentUpon>
     </Compile>
+    <Compile Include="Halaman\Laporan\Struk_Pembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Halaman\Laporan\Struk_Pembayaran.Designer.cs">
+      <DependentUpon>Struk_Pembayaran.cs</DependentUpon>
+    </Compile>
     <Compile Include="Halaman\Master\Form_Master_Jadwal_Dokter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     <Compile Include="Halaman\Transaksi\Form_Transaksi_Rujukan_Pasien.Designer.cs">
       <DependentUpon>Form_Transaksi_Rujukan_Pasien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laporan.cs">
+      <DependentUpon>Laporan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Laporan.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -289,6 +298,10 @@
     <EmbeddedResource Include="Halaman\Laporan\Laporan_Rekam_Medis.rdlc" />
     <EmbeddedResource Include="Halaman\Laporan\Laporan_Resep_Obat.rdlc" />
     <EmbeddedResource Include="Halaman\Laporan\Laporan_Restok_Obat.rdlc" />
+    <EmbeddedResource Include="Halaman\Laporan\Struk_Pembayaran.rdlc" />
+    <EmbeddedResource Include="Halaman\Laporan\Struk_Pembayaran.resx">
+      <DependentUpon>Struk_Pembayaran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Halaman\Master\Form_Master_Jadwal_Dokter.resx">
       <DependentUpon>Form_Master_Jadwal_Dokter.cs</DependentUpon>
     </EmbeddedResource>

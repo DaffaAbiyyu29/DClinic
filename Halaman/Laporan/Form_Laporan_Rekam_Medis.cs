@@ -19,21 +19,22 @@ namespace D_Clinic
             InitializeComponent();
         }
 
-        private void btnCariData_Click(object sender, EventArgs e)
+        private void btnCariDetail_Click(object sender, EventArgs e)
         {
-            TanggalAwal = dtpTanggalAwal.Value;
-            TanggalAkhir = dtpTanggalAkhir.Value;
-            // TODO: This line of code loads data into the 'laporan.View_RekamMedis' table. You can move, or remove it, as needed.
-            this.view_RekamMedisTableAdapter.Fill(this.laporan.View_RekamMedis, TanggalAwal.ToString(), TanggalAkhir.ToString());
+            this.view_RekamMedisTableAdapter.Fill(this.laporan.View_RekamMedis, "%" + cbPasien.Text + "%");
+            this.rpRekamMedis.RefreshReport();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            this.view_RekamMedisTableAdapter.Fill(this.laporan.View_RekamMedis, "%%");
             this.rpRekamMedis.RefreshReport();
         }
 
         private void Form_Laporan_Rekam_Medis_Load(object sender, EventArgs e)
         {
-            TanggalAwal = dtpTanggalAwal.Value;
-            TanggalAkhir = dtpTanggalAkhir.Value;
-            // TODO: This line of code loads data into the 'laporan.View_RekamMedis' table. You can move, or remove it, as needed.
-            this.view_RekamMedisTableAdapter.Fill(this.laporan.View_RekamMedis, TanggalAwal.ToString(), TanggalAkhir.ToString());
+            this.pasienTableAdapter.Fill(this.dClinicDataSet.Pasien);
+            this.view_RekamMedisTableAdapter.Fill(this.laporan.View_RekamMedis, "%%");
             this.rpRekamMedis.RefreshReport();
         }
     }

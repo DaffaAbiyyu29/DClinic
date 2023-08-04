@@ -38,13 +38,15 @@
             this.radiusReportDetail = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.viewTrsPembayaranBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.view_TrsPembayaranTableAdapter = new D_Clinic.LaporanTableAdapters.View_TrsPembayaranTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpTanggalAkhir = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpTanggalAwal = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnCariData = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCetakStruk = new Guna.UI2.WinForms.Guna2Button();
+            this.cbStruk = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.viewTrsPembayaranBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.view_TrsPembayaranTableAdapter = new D_Clinic.LaporanTableAdapters.View_TrsPembayaranTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.viewTrsPembayaranBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laporan)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
@@ -118,15 +120,6 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Riwayat Pembayaran";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // viewTrsPembayaranBindingSource1
-            // 
-            this.viewTrsPembayaranBindingSource1.DataMember = "View_TrsPembayaran";
-            this.viewTrsPembayaranBindingSource1.DataSource = this.laporan;
-            // 
-            // view_TrsPembayaranTableAdapter
-            // 
-            this.view_TrsPembayaranTableAdapter.ClearBeforeFill = true;
             // 
             // label3
             // 
@@ -246,12 +239,80 @@
             this.btnCariData.UseTransparentBackground = true;
             this.btnCariData.Click += new System.EventHandler(this.btnCariData_Click);
             // 
+            // btnCetakStruk
+            // 
+            this.btnCetakStruk.Animated = true;
+            this.btnCetakStruk.BackColor = System.Drawing.Color.Transparent;
+            this.btnCetakStruk.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnCetakStruk.BorderRadius = 10;
+            this.btnCetakStruk.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnCetakStruk.BorderThickness = 2;
+            this.btnCetakStruk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCetakStruk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCetakStruk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCetakStruk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCetakStruk.FillColor = System.Drawing.Color.Transparent;
+            this.btnCetakStruk.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.btnCetakStruk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnCetakStruk.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnCetakStruk.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnCetakStruk.Location = new System.Drawing.Point(1487, 140);
+            this.btnCetakStruk.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCetakStruk.Name = "btnCetakStruk";
+            this.btnCetakStruk.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.btnCetakStruk.PressedDepth = 50;
+            this.btnCetakStruk.Size = new System.Drawing.Size(159, 37);
+            this.btnCetakStruk.TabIndex = 88;
+            this.btnCetakStruk.Text = "Cetak Struk";
+            this.btnCetakStruk.UseTransparentBackground = true;
+            this.btnCetakStruk.Click += new System.EventHandler(this.btnCetakStruk_Click);
+            // 
+            // cbStruk
+            // 
+            this.cbStruk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.cbStruk.BorderColor = System.Drawing.Color.White;
+            this.cbStruk.BorderThickness = 2;
+            this.cbStruk.DataSource = this.viewTrsPembayaranBindingSource;
+            this.cbStruk.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.cbStruk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.cbStruk.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.cbStruk.DisplayMember = "Id_TrsPembayaran";
+            this.cbStruk.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbStruk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStruk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.cbStruk.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.cbStruk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.cbStruk.FocusedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.cbStruk.Font = new System.Drawing.Font("Porsche Next TT", 15F, System.Drawing.FontStyle.Bold);
+            this.cbStruk.ForeColor = System.Drawing.Color.White;
+            this.cbStruk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbStruk.ItemHeight = 30;
+            this.cbStruk.Location = new System.Drawing.Point(1248, 140);
+            this.cbStruk.Margin = new System.Windows.Forms.Padding(2);
+            this.cbStruk.Name = "cbStruk";
+            this.cbStruk.Size = new System.Drawing.Size(235, 36);
+            this.cbStruk.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbStruk.TabIndex = 87;
+            this.cbStruk.TextOffset = new System.Drawing.Point(40, 0);
+            this.cbStruk.ValueMember = "Nama";
+            // 
+            // viewTrsPembayaranBindingSource1
+            // 
+            this.viewTrsPembayaranBindingSource1.DataMember = "View_TrsPembayaran";
+            this.viewTrsPembayaranBindingSource1.DataSource = this.laporan;
+            // 
+            // view_TrsPembayaranTableAdapter
+            // 
+            this.view_TrsPembayaranTableAdapter.ClearBeforeFill = true;
+            // 
             // Form_Laporan_Pembayaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1715, 924);
+            this.Controls.Add(this.btnCetakStruk);
+            this.Controls.Add(this.cbStruk);
             this.Controls.Add(this.btnCariData);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -289,5 +350,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTanggalAkhir;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTanggalAwal;
         private Guna.UI2.WinForms.Guna2Button btnCariData;
+        private Guna.UI2.WinForms.Guna2Button btnCetakStruk;
+        public Guna.UI2.WinForms.Guna2ComboBox cbStruk;
     }
 }

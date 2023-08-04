@@ -18,7 +18,7 @@ namespace D_Clinic
     {
         Msg_Box mBox = new Msg_Box();
         string gender, status = "";
-        int validNama = 0;
+        int validNama = 0, validNomorTelpPasien = 0;
         public Form_Master_Pasien()
         {
             InitializeComponent();
@@ -264,29 +264,40 @@ namespace D_Clinic
                 {
                     if (validNama == 0)
                     {
-                        if (txTelp.Text.Length < 12)
+                        if (validNomorTelpPasien == 0)
                         {
-                            mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                            mBox.session.Text = "Pasien";
-                            mBox.Show();
-                            mBox.WarningMessage();
-                        }
-                        else
-                        {
-                            DateTime currentDateTime = DateTime.Now;
-
-                            if (dtpTglLahir.Value > currentDateTime)
+                            if (txTelp.Text.Length < 12)
                             {
-                                mBox.text1.Text = "Tanggal Lahir Tidak Boleh Lebih Dari " + currentDateTime.ToString("dd MMMM yyyy");
+                                mBox.text1.Text = "Nomor Telepon Tidak Valid";
                                 mBox.session.Text = "Pasien";
                                 mBox.Show();
                                 mBox.WarningMessage();
                             }
                             else
                             {
-                                UpdatePasien();
+                                DateTime currentDateTime = DateTime.Now;
+
+                                if (dtpTglLahir.Value > currentDateTime)
+                                {
+                                    mBox.text1.Text = "Tanggal Lahir Tidak Boleh Lebih Dari " + currentDateTime.ToString("dd MMMM yyyy");
+                                    mBox.session.Text = "Pasien";
+                                    mBox.Show();
+                                    mBox.WarningMessage();
+                                }
+                                else
+                                {
+                                    TambahPasien();
+                                }
                             }
                         }
+                        else
+                        {
+                            mBox.text1.Text = "Nomor Telepon Sudah Terdaftar!";
+                            mBox.session.Text = "Pasien";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+
                     }
                     else
                     {
@@ -316,6 +327,26 @@ namespace D_Clinic
                     command.CommandType = System.Data.CommandType.Text;
                     command.CommandText = "SELECT dbo.CekNamaPasien(@Nama, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
                     command.Parameters.AddWithValue("@Nama", Nama);
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    return result;
+                }
+            }
+        }
+
+        private int CekNomorTelpPasien(string Telp, string id)
+        {
+            string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = "SELECT dbo.CekNomorPasien(@Telp, @ID)"; // Ganti "dbo" dengan skema fungsi Anda
+                    command.Parameters.AddWithValue("@Telp", Telp);
                     command.Parameters.AddWithValue("@ID", id);
 
                     connection.Open();
@@ -375,29 +406,40 @@ namespace D_Clinic
                 {
                     if(validNama == 0)
                     {
-                        if (txTelp.Text.Length < 12)
+                        if (validNomorTelpPasien == 0)
                         {
-                            mBox.text1.Text = "Nomor Telepon Tidak Valid";
-                            mBox.session.Text = "Pasien";
-                            mBox.Show();
-                            mBox.WarningMessage();
-                        }
-                        else
-                        {
-                            DateTime currentDateTime = DateTime.Now;
-
-                            if (dtpTglLahir.Value > currentDateTime)
+                            if (txTelp.Text.Length < 12)
                             {
-                                mBox.text1.Text = "Tanggal Lahir Tidak Boleh Lebih Dari " + currentDateTime.ToString("dd MMMM yyyy");
+                                mBox.text1.Text = "Nomor Telepon Tidak Valid";
                                 mBox.session.Text = "Pasien";
                                 mBox.Show();
                                 mBox.WarningMessage();
                             }
                             else
                             {
-                                TambahPasien();
+                                DateTime currentDateTime = DateTime.Now;
+
+                                if (dtpTglLahir.Value > currentDateTime)
+                                {
+                                    mBox.text1.Text = "Tanggal Lahir Tidak Boleh Lebih Dari " + currentDateTime.ToString("dd MMMM yyyy");
+                                    mBox.session.Text = "Pasien";
+                                    mBox.Show();
+                                    mBox.WarningMessage();
+                                }
+                                else
+                                {
+                                    TambahPasien();
+                                }
                             }
                         }
+                        else
+                        {
+                            mBox.text1.Text = "Nomor Telepon Sudah Terdaftar!";
+                            mBox.session.Text = "Pasien";
+                            mBox.Show();
+                            mBox.WarningMessage();
+                        }
+                        
                     }
                     else
                     {
@@ -579,7 +621,12 @@ namespace D_Clinic
         {
             if (!string.IsNullOrEmpty(txTelp.Text))
             {
-                if (txTelp.Text.Length < 12)
+                validNomorTelpPasien = CekNomorTelpPasien(txTelp.Text, txID.Text);
+                if (validNomorTelpPasien != 0)
+                {
+                    epWarning.SetError(txTelp, "Nomor Telepon Sudah Terdaftar!");
+                }
+                else if (txTelp.Text.Length < 12)
                 {
                     epWarning.SetError(txTelp, "Nomor Telepon Tidak Valid!");
                 }

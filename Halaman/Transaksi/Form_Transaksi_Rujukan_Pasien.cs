@@ -18,7 +18,8 @@ namespace D_Clinic.Halaman.Transaksi
         Msg_Box mBox = new Msg_Box();
 
         DateTime currentDateTime = DateTime.Now;
-        string IDPendaftaran, namaDokter, namaPasien;
+        string IDPendaftaran, namaPasien;
+        public string namaDokter = "";
         public Form_Transaksi_Rujukan_Pasien()
         {
             InitializeComponent();
