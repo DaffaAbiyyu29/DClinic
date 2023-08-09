@@ -33,38 +33,38 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnCari = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnTampilPass = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
             this.lblJabatan = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCariGambar = new Guna.UI2.WinForms.Guna2Button();
             this.btnHapusGambar = new Guna.UI2.WinForms.Guna2Button();
+            this.imgProfil = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnBatal = new Guna.UI2.WinForms.Guna2Button();
+            this.imgJabatan = new System.Windows.Forms.PictureBox();
             this.cbJabatan = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNonAktif = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dClinicDataSet = new D_Clinic.DClinicDataSet();
-            this.label1 = new System.Windows.Forms.Label();
-            this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnTampilPass = new Guna.UI2.WinForms.Guna2Button();
-            this.imgProfil = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.imgJabatan = new System.Windows.Forms.PictureBox();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnNonAktif = new Guna.UI2.WinForms.Guna2Button();
             this.txNama = new Guna.UI2.WinForms.Guna2TextBox();
             this.txTelp = new Guna.UI2.WinForms.Guna2TextBox();
             this.txEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
             this.txCariKaryawan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dClinicDataSet = new D_Clinic.DClinicDataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgJabatan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -155,6 +155,34 @@
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(1433, 613);
             this.guna2GroupBox2.TabIndex = 57;
+            // 
+            // btnTampilPass
+            // 
+            this.btnTampilPass.Animated = true;
+            this.btnTampilPass.BackColor = System.Drawing.Color.Transparent;
+            this.btnTampilPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTampilPass.BorderRadius = 20;
+            this.btnTampilPass.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnTampilPass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTampilPass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTampilPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTampilPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTampilPass.FillColor = System.Drawing.Color.Transparent;
+            this.btnTampilPass.Font = new System.Drawing.Font("Porsche Next TT", 18F, System.Drawing.FontStyle.Bold);
+            this.btnTampilPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTampilPass.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnTampilPass.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.btnTampilPass.Image = global::D_Clinic.Properties.Resources.hide_pass;
+            this.btnTampilPass.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnTampilPass.Location = new System.Drawing.Point(548, 336);
+            this.btnTampilPass.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTampilPass.Name = "btnTampilPass";
+            this.btnTampilPass.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.btnTampilPass.PressedDepth = 50;
+            this.btnTampilPass.Size = new System.Drawing.Size(30, 30);
+            this.btnTampilPass.TabIndex = 72;
+            this.btnTampilPass.UseTransparentBackground = true;
+            this.btnTampilPass.Click += new System.EventHandler(this.btnTampilPass_Click);
             // 
             // label2
             // 
@@ -280,6 +308,21 @@
             this.btnHapusGambar.UseTransparentBackground = true;
             this.btnHapusGambar.Click += new System.EventHandler(this.btnHapusGambar_Click);
             // 
+            // imgProfil
+            // 
+            this.imgProfil.BackColor = System.Drawing.Color.Transparent;
+            this.imgProfil.BorderRadius = 5;
+            this.imgProfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgProfil.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.imgProfil.ImageRotate = 0F;
+            this.imgProfil.Location = new System.Drawing.Point(937, 83);
+            this.imgProfil.Name = "imgProfil";
+            this.imgProfil.Size = new System.Drawing.Size(262, 330);
+            this.imgProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgProfil.TabIndex = 57;
+            this.imgProfil.TabStop = false;
+            this.imgProfil.UseTransparentBackground = true;
+            // 
             // btnBatal
             // 
             this.btnBatal.Animated = true;
@@ -307,6 +350,18 @@
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseTransparentBackground = true;
             this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
+            // 
+            // imgJabatan
+            // 
+            this.imgJabatan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.imgJabatan.Image = global::D_Clinic.Properties.Resources.white_jabatan;
+            this.imgJabatan.Location = new System.Drawing.Point(101, 387);
+            this.imgJabatan.Margin = new System.Windows.Forms.Padding(2);
+            this.imgJabatan.Name = "imgJabatan";
+            this.imgJabatan.Size = new System.Drawing.Size(30, 30);
+            this.imgJabatan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgJabatan.TabIndex = 29;
+            this.imgJabatan.TabStop = false;
             // 
             // cbJabatan
             // 
@@ -402,149 +457,6 @@
             this.btnUpdate.UseTransparentBackground = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnNonAktif
-            // 
-            this.btnNonAktif.Animated = true;
-            this.btnNonAktif.BackColor = System.Drawing.Color.Transparent;
-            this.btnNonAktif.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.btnNonAktif.BorderRadius = 10;
-            this.btnNonAktif.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnNonAktif.BorderThickness = 2;
-            this.btnNonAktif.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnNonAktif.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnNonAktif.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnNonAktif.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnNonAktif.FillColor = System.Drawing.Color.Transparent;
-            this.btnNonAktif.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.btnNonAktif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.btnNonAktif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
-            this.btnNonAktif.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.btnNonAktif.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnNonAktif.Location = new System.Drawing.Point(138, 505);
-            this.btnNonAktif.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNonAktif.Name = "btnNonAktif";
-            this.btnNonAktif.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnNonAktif.PressedDepth = 50;
-            this.btnNonAktif.Size = new System.Drawing.Size(130, 37);
-            this.btnNonAktif.TabIndex = 26;
-            this.btnNonAktif.Text = "Non Aktif";
-            this.btnNonAktif.UseTransparentBackground = true;
-            this.btnNonAktif.Visible = false;
-            this.btnNonAktif.Click += new System.EventHandler(this.btnNonAktif_Click);
-            // 
-            // btnTambah
-            // 
-            this.btnTambah.Animated = true;
-            this.btnTambah.BackColor = System.Drawing.Color.Transparent;
-            this.btnTambah.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTambah.BorderRadius = 10;
-            this.btnTambah.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnTambah.BorderThickness = 2;
-            this.btnTambah.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTambah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTambah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTambah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTambah.FillColor = System.Drawing.Color.Transparent;
-            this.btnTambah.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
-            this.btnTambah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTambah.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTambah.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTambah.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnTambah.Location = new System.Drawing.Point(76, 46);
-            this.btnTambah.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTambah.Name = "btnTambah";
-            this.btnTambah.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnTambah.PressedDepth = 50;
-            this.btnTambah.Size = new System.Drawing.Size(187, 37);
-            this.btnTambah.TabIndex = 54;
-            this.btnTambah.Text = "Tambah Karyawan";
-            this.btnTambah.UseTransparentBackground = true;
-            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // dClinicDataSet
-            // 
-            this.dClinicDataSet.DataSetName = "DClinicDataSet";
-            this.dClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Porsche Next TT", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1715, 131);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Karyawan";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // epWarning
-            // 
-            this.epWarning.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epWarning.ContainerControl = this;
-            // 
-            // btnTampilPass
-            // 
-            this.btnTampilPass.Animated = true;
-            this.btnTampilPass.BackColor = System.Drawing.Color.Transparent;
-            this.btnTampilPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTampilPass.BorderRadius = 20;
-            this.btnTampilPass.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnTampilPass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTampilPass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTampilPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTampilPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTampilPass.FillColor = System.Drawing.Color.Transparent;
-            this.btnTampilPass.Font = new System.Drawing.Font("Porsche Next TT", 18F, System.Drawing.FontStyle.Bold);
-            this.btnTampilPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            this.btnTampilPass.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.btnTampilPass.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            this.btnTampilPass.Image = global::D_Clinic.Properties.Resources.hide_pass;
-            this.btnTampilPass.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnTampilPass.Location = new System.Drawing.Point(548, 336);
-            this.btnTampilPass.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTampilPass.Name = "btnTampilPass";
-            this.btnTampilPass.PressedColor = System.Drawing.Color.NavajoWhite;
-            this.btnTampilPass.PressedDepth = 50;
-            this.btnTampilPass.Size = new System.Drawing.Size(30, 30);
-            this.btnTampilPass.TabIndex = 72;
-            this.btnTampilPass.UseTransparentBackground = true;
-            this.btnTampilPass.Click += new System.EventHandler(this.btnTampilPass_Click);
-            // 
-            // imgProfil
-            // 
-            this.imgProfil.BackColor = System.Drawing.Color.Transparent;
-            this.imgProfil.BorderRadius = 5;
-            this.imgProfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgProfil.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.imgProfil.ImageRotate = 0F;
-            this.imgProfil.Location = new System.Drawing.Point(937, 83);
-            this.imgProfil.Name = "imgProfil";
-            this.imgProfil.Size = new System.Drawing.Size(262, 330);
-            this.imgProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgProfil.TabIndex = 57;
-            this.imgProfil.TabStop = false;
-            this.imgProfil.UseTransparentBackground = true;
-            // 
-            // imgJabatan
-            // 
-            this.imgJabatan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
-            this.imgJabatan.Image = global::D_Clinic.Properties.Resources.white_jabatan;
-            this.imgJabatan.Location = new System.Drawing.Point(101, 387);
-            this.imgJabatan.Margin = new System.Windows.Forms.Padding(2);
-            this.imgJabatan.Name = "imgJabatan";
-            this.imgJabatan.Size = new System.Drawing.Size(30, 30);
-            this.imgJabatan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgJabatan.TabIndex = 29;
-            this.imgJabatan.TabStop = false;
-            // 
             // txID
             // 
             this.txID.Animated = true;
@@ -584,6 +496,36 @@
             this.txID.TextOffset = new System.Drawing.Point(5, 0);
             this.txID.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
+            // btnNonAktif
+            // 
+            this.btnNonAktif.Animated = true;
+            this.btnNonAktif.BackColor = System.Drawing.Color.Transparent;
+            this.btnNonAktif.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.btnNonAktif.BorderRadius = 10;
+            this.btnNonAktif.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnNonAktif.BorderThickness = 2;
+            this.btnNonAktif.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnNonAktif.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.FillColor = System.Drawing.Color.Transparent;
+            this.btnNonAktif.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.btnNonAktif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.btnNonAktif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(106)))), ((int)(((byte)(100)))));
+            this.btnNonAktif.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.btnNonAktif.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.btnNonAktif.Location = new System.Drawing.Point(138, 505);
+            this.btnNonAktif.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNonAktif.Name = "btnNonAktif";
+            this.btnNonAktif.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.btnNonAktif.PressedDepth = 50;
+            this.btnNonAktif.Size = new System.Drawing.Size(130, 37);
+            this.btnNonAktif.TabIndex = 26;
+            this.btnNonAktif.Text = "Non Aktif";
+            this.btnNonAktif.UseTransparentBackground = true;
+            this.btnNonAktif.Visible = false;
+            this.btnNonAktif.Click += new System.EventHandler(this.btnNonAktif_Click);
+            // 
             // txNama
             // 
             this.txNama.Animated = true;
@@ -621,7 +563,7 @@
             this.txNama.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txNama.TabIndex = 20;
             this.txNama.TextOffset = new System.Drawing.Point(5, 0);
-            this.txNama.TextChanged += new System.EventHandler(this.txNama_TextChanged);
+            this.txNama.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNama_KeyPress);
             // 
             // txTelp
             // 
@@ -779,6 +721,36 @@
             this.txPassword.TextOffset = new System.Drawing.Point(5, 0);
             this.txPassword.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
+            // btnTambah
+            // 
+            this.btnTambah.Animated = true;
+            this.btnTambah.BackColor = System.Drawing.Color.Transparent;
+            this.btnTambah.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTambah.BorderRadius = 10;
+            this.btnTambah.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnTambah.BorderThickness = 2;
+            this.btnTambah.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTambah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTambah.FillColor = System.Drawing.Color.Transparent;
+            this.btnTambah.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.btnTambah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTambah.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTambah.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.btnTambah.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnTambah.Location = new System.Drawing.Point(76, 46);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.btnTambah.PressedDepth = 50;
+            this.btnTambah.Size = new System.Drawing.Size(187, 37);
+            this.btnTambah.TabIndex = 54;
+            this.btnTambah.Text = "Tambah Karyawan";
+            this.btnTambah.UseTransparentBackground = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
+            // 
             // txCariKaryawan
             // 
             this.txCariKaryawan.Animated = true;
@@ -817,6 +789,34 @@
             this.txCariKaryawan.TextOffset = new System.Drawing.Point(5, 0);
             this.txCariKaryawan.TextChanged += new System.EventHandler(this.Gambar_TextChanged);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // dClinicDataSet
+            // 
+            this.dClinicDataSet.DataSetName = "DClinicDataSet";
+            this.dClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Porsche Next TT", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1715, 131);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Karyawan";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // epWarning
+            // 
+            this.epWarning.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epWarning.ContainerControl = this;
+            // 
             // Form_Master_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -833,10 +833,10 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgJabatan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dClinicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -656,6 +656,7 @@
             this.txNama.TabIndex = 21;
             this.txNama.TextOffset = new System.Drawing.Point(5, 0);
             this.txNama.TextChanged += new System.EventHandler(this.ValidasiNamaPasien);
+            this.txNama.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNama_KeyPress);
             // 
             // txTelp
             // 

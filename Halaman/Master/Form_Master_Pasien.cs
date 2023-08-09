@@ -18,7 +18,7 @@ namespace D_Clinic
     {
         Msg_Box mBox = new Msg_Box();
         string gender, status = "";
-        int validNama = 0, validNomorTelpPasien = 0;
+        int validNomorTelpPasien = 0;
         public Form_Master_Pasien()
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace D_Clinic
             txTelp.Clear();
             txAlamat.Clear();
             status = "";
-            validNama = 0;
+            //validNama = 0;
         }
         
         private void disablePropherties()
@@ -262,8 +262,8 @@ namespace D_Clinic
             {
                 if (cbGolDarah.SelectedIndex != -1)
                 {
-                    if (validNama == 0)
-                    {
+                    //if (validNama == 0)
+                    //{
                         if (validNomorTelpPasien == 0)
                         {
                             if (txTelp.Text.Length < 12)
@@ -286,7 +286,7 @@ namespace D_Clinic
                                 }
                                 else
                                 {
-                                    TambahPasien();
+                                    UpdatePasien();
                                 }
                             }
                         }
@@ -298,25 +298,26 @@ namespace D_Clinic
                             mBox.WarningMessage();
                         }
 
-                    }
+                    /*}
                     else
                     {
                         mBox.text1.Text = "Pasien Sudah Terdaftar!";
                         mBox.session.Text = "Pasien";
                         mBox.Show();
                         mBox.WarningMessage();
-                    }
+                    }*/
+
+                }
+                else
+                {
+                    mBox.text1.Text = "Masukkan Semua Data!";
+                    mBox.session.Text = "Pasien";
+                    mBox.Show();
+                    mBox.WarningMessage();
                 }
             }
-            else
-            {
-                mBox.text1.Text = "Masukkan Semua Data!";
-                mBox.session.Text = "Pasien";
-                mBox.Show();
-                mBox.WarningMessage();
-            }
         }
-        private int CekNamaPasien(string Nama, string id)
+        /*private int CekNamaPasien(string Nama, string id)
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -334,7 +335,7 @@ namespace D_Clinic
                     return result;
                 }
             }
-        }
+        }*/
 
         private int CekNomorTelpPasien(string Telp, string id)
         {
@@ -404,8 +405,8 @@ namespace D_Clinic
             {
                 if (cbGolDarah.SelectedIndex != -1)
                 {
-                    if(validNama == 0)
-                    {
+                    //if (validNama == 0)
+                    //{
                         if (validNomorTelpPasien == 0)
                         {
                             if (txTelp.Text.Length < 12)
@@ -439,15 +440,15 @@ namespace D_Clinic
                             mBox.Show();
                             mBox.WarningMessage();
                         }
-                        
-                    }
+
+                    /*}
                     else
                     {
                         mBox.text1.Text = "Pasien Sudah Terdaftar!";
                         mBox.session.Text = "Pasien";
                         mBox.Show();
                         mBox.WarningMessage();
-                    }
+                    }*/
                 }
             }
             else
@@ -604,15 +605,15 @@ namespace D_Clinic
         {
             if (!string.IsNullOrEmpty(txNama.Text))
             {
-                validNama = CekNamaPasien(txNama.Text, txID.Text);
+                /*validNama = CekNamaPasien(txNama.Text, txID.Text);
                 if (validNama != 0)
                 {
                     epWarning.SetError(txNama, "Pasien Sudah Terdaftar!");
-                }
-                else
-                {
-                    epWarning.SetError(txNama, "");
-                }
+                }*/
+            }
+            else
+            {
+                epWarning.SetError(txNama, "");
             }
             Gambar();
         }
@@ -636,6 +637,18 @@ namespace D_Clinic
                 }
             }
             Gambar();
+        }
+
+        private void txNama_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                mBox.text1.Text = "Harus Diisi dengan Huruf";
+                mBox.session.Text = "Pasien";
+                mBox.Show();
+                mBox.WarningMessage();
+            }
         }
 
         private void dtpTglLahir_ValueChanged(object sender, EventArgs e)

@@ -636,9 +636,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.label4.Location = new System.Drawing.Point(821, 355);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 32);
+            this.label4.Size = new System.Drawing.Size(111, 32);
             this.label4.TabIndex = 92;
-            this.label4.Text = "Data Pembayaran";
+            this.label4.Text = "Data Restok";
             // 
             // label3
             // 
@@ -648,9 +648,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.label3.Location = new System.Drawing.Point(821, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 32);
+            this.label3.Size = new System.Drawing.Size(93, 32);
             this.label3.TabIndex = 91;
-            this.label3.Text = "Data Pendaftaran";
+            this.label3.Text = "Data Obat";
             // 
             // lblTotalHarga
             // 

@@ -17,7 +17,8 @@ namespace D_Clinic.Halaman
         Msg_Box mBox = new Msg_Box();
 
         bool ditemukan = false;
-        string id, nama, status;
+        string id, nama;
+        string status = "";
         int validNamaRuang = 0;
         public Form_Master_Ruang_Periksa()
         {
@@ -78,6 +79,23 @@ namespace D_Clinic.Halaman
         {
             this.tblRuangPeriksa.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
         }
+        private void CariData(object sender, EventArgs e)
+        {
+            if (rbSemua.Checked)
+            {
+                status = "";
+            }
+            else if (rbAktif.Checked)
+            {
+                status = "Aktif";
+            }
+            else if (rbNonAktif.Checked)
+            {
+                status = "Non";
+            }
+            cariData();
+
+        }
         private void cariData()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -90,7 +108,7 @@ namespace D_Clinic.Halaman
                 SqlCommand search = new SqlCommand("sp_SearchRuangPeriksa", connection);
                 search.CommandType = CommandType.StoredProcedure;
                 search.Parameters.AddWithValue("Data", data); 
-                search.Parameters.AddWithValue("Status", ""); 
+                search.Parameters.AddWithValue("Status", status); 
                 SqlDataAdapter adapter = new SqlDataAdapter(search);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
@@ -353,6 +371,18 @@ namespace D_Clinic.Halaman
                 }
             }
             Gambar();
+        }
+
+        private void txNama_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                mBox.text1.Text = "Harus Diisi dengan Huruf";
+                mBox.session.Text = "RuangPeriksa";
+                mBox.Show();
+                mBox.WarningMessage();
+            }
         }
 
         private void TambahRuangan()

@@ -16,7 +16,8 @@ namespace D_Clinic.Halaman
     public partial class Form_Master_Supplier : Form
     {
         Msg_Box mBox = new Msg_Box();
-        string id, nama, telp, status;
+        string id, nama, telp;
+        string status = "";
         bool ditemukan = false;
         int validNamaSupplier = 0, validNomorTelpSupplier = 0;
         public Form_Master_Supplier()
@@ -90,6 +91,23 @@ namespace D_Clinic.Halaman
             this.supplierTableAdapter.Fill(this.dClinicDataSet.Supplier);
             cariData();
         }
+        private void CariData(object sender, EventArgs e)
+        {
+            if (rbSemua.Checked)
+            {
+                status = "";
+            }
+            else if (rbAktif.Checked)
+            {
+                status = "Aktif";
+            }
+            else if (rbNonAktif.Checked)
+            {
+                status = "Non";
+            }
+            cariData();
+
+        }
         private void cariData()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -102,7 +120,7 @@ namespace D_Clinic.Halaman
                 SqlCommand search = new SqlCommand("sp_SearchSupplier", connection);
                 search.CommandType = CommandType.StoredProcedure;
                 search.Parameters.AddWithValue("Data", data);
-                search.Parameters.AddWithValue("Status", "");
+                search.Parameters.AddWithValue("Status", status);
                 SqlDataAdapter adapter = new SqlDataAdapter(search);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
@@ -253,7 +271,7 @@ namespace D_Clinic.Halaman
                         }
                         else
                         {
-                            TambahSupplier();
+                            UpdateSupplier();
                         }
                     }
                     else
@@ -420,6 +438,18 @@ namespace D_Clinic.Halaman
                 }
             }
             Gambar();
+        }
+
+        private void txNama_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                mBox.text1.Text = "Harus Diisi dengan Huruf";
+                mBox.session.Text = "Supplier";
+                mBox.Show();
+                mBox.WarningMessage();
+            }
         }
 
         private void txTelp_TextChanged(object sender, EventArgs e)

@@ -32,6 +32,7 @@ namespace D_Clinic.Halaman
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            hideSubMenu();
             Form_Dashboard dashboard = new Form_Dashboard();
             dashboard.TopLevel = false;
             pnlContainer.Controls.Add(dashboard);

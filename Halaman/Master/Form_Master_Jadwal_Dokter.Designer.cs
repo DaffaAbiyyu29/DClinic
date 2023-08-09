@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.gbJamAkhir = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -56,6 +56,17 @@
             this.txTarif = new Guna.UI2.WinForms.Guna2TextBox();
             this.txID = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblJadwalDokter = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDokterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dokter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idRuangPeriksaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jam1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jam2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trf_jasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewJadwalDokterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAktif = new Guna.UI2.WinForms.Guna2Button();
@@ -71,17 +82,9 @@
             this.view_DokterTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_DokterTableAdapter();
             this.view_JadwalDokterTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_JadwalDokterTableAdapter();
             this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDokterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dokter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRuangPeriksaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ruang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jam1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jam2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trf_jasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbNonAktif = new Guna.UI2.WinForms.Guna2Button();
+            this.rbAktif = new Guna.UI2.WinForms.Guna2Button();
+            this.rbSemua = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.gbJamAkhir.SuspendLayout();
@@ -102,7 +105,10 @@
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
             this.guna2GroupBox1.BorderRadius = 15;
             this.guna2GroupBox1.BorderThickness = 2;
+            this.guna2GroupBox1.Controls.Add(this.rbNonAktif);
             this.guna2GroupBox1.Controls.Add(this.guna2GroupBox2);
+            this.guna2GroupBox1.Controls.Add(this.rbAktif);
+            this.guna2GroupBox1.Controls.Add(this.rbSemua);
             this.guna2GroupBox1.Controls.Add(this.btnTambah);
             this.guna2GroupBox1.Controls.Add(this.txCariJadwal);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
@@ -569,23 +575,23 @@
             this.tblJadwalDokter.AllowUserToDeleteRows = false;
             this.tblJadwalDokter.AllowUserToResizeColumns = false;
             this.tblJadwalDokter.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
-            this.tblJadwalDokter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(241)))), ((int)(((byte)(217)))));
+            this.tblJadwalDokter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.tblJadwalDokter.AutoGenerateColumns = false;
             this.tblJadwalDokter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.tblJadwalDokter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
             this.tblJadwalDokter.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tblJadwalDokter.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblJadwalDokter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblJadwalDokter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tblJadwalDokter.ColumnHeadersHeight = 40;
             this.tblJadwalDokter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -600,25 +606,25 @@
             this.trf_jasa,
             this.stts});
             this.tblJadwalDokter.DataSource = this.viewJadwalDokterBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblJadwalDokter.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblJadwalDokter.DefaultCellStyle = dataGridViewCellStyle7;
             this.tblJadwalDokter.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tblJadwalDokter.Location = new System.Drawing.Point(748, 21);
             this.tblJadwalDokter.MultiSelect = false;
             this.tblJadwalDokter.Name = "tblJadwalDokter";
             this.tblJadwalDokter.ReadOnly = true;
             this.tblJadwalDokter.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblJadwalDokter.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Porsche Next TT", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblJadwalDokter.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tblJadwalDokter.RowHeadersVisible = false;
             this.tblJadwalDokter.RowHeadersWidth = 4;
             this.tblJadwalDokter.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -650,6 +656,94 @@
             this.tblJadwalDokter.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.tblJadwalDokter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblJadwalDokter_CellContentClick);
             this.tblJadwalDokter.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tblJadwalDokter_RowPostPaint);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 40;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id.DataPropertyName = "Id_JadwalDokter";
+            this.id.HeaderText = "ID Jadwal";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 80;
+            // 
+            // idDokterDataGridViewTextBoxColumn
+            // 
+            this.idDokterDataGridViewTextBoxColumn.DataPropertyName = "Id_Dokter";
+            this.idDokterDataGridViewTextBoxColumn.HeaderText = "Id_Dokter";
+            this.idDokterDataGridViewTextBoxColumn.Name = "idDokterDataGridViewTextBoxColumn";
+            this.idDokterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDokterDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dokter
+            // 
+            this.dokter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dokter.DataPropertyName = "Nama";
+            this.dokter.HeaderText = "Dokter";
+            this.dokter.Name = "dokter";
+            this.dokter.ReadOnly = true;
+            // 
+            // idRuangPeriksaDataGridViewTextBoxColumn
+            // 
+            this.idRuangPeriksaDataGridViewTextBoxColumn.DataPropertyName = "Id_RuangPeriksa";
+            this.idRuangPeriksaDataGridViewTextBoxColumn.HeaderText = "Id_RuangPeriksa";
+            this.idRuangPeriksaDataGridViewTextBoxColumn.Name = "idRuangPeriksaDataGridViewTextBoxColumn";
+            this.idRuangPeriksaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idRuangPeriksaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ruang
+            // 
+            this.ruang.DataPropertyName = "Nama_Ruang";
+            this.ruang.HeaderText = "Ruang";
+            this.ruang.Name = "ruang";
+            this.ruang.ReadOnly = true;
+            // 
+            // day
+            // 
+            this.day.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.day.DataPropertyName = "Hari";
+            this.day.HeaderText = "Hari";
+            this.day.Name = "day";
+            this.day.ReadOnly = true;
+            this.day.Width = 70;
+            // 
+            // jam1
+            // 
+            this.jam1.DataPropertyName = "Jam_Mulai";
+            this.jam1.HeaderText = "Jam Mulai";
+            this.jam1.Name = "jam1";
+            this.jam1.ReadOnly = true;
+            this.jam1.Width = 80;
+            // 
+            // jam2
+            // 
+            this.jam2.DataPropertyName = "Jam_Akhir";
+            this.jam2.HeaderText = "Jam Akhir";
+            this.jam2.Name = "jam2";
+            this.jam2.ReadOnly = true;
+            this.jam2.Width = 80;
+            // 
+            // trf_jasa
+            // 
+            this.trf_jasa.DataPropertyName = "Tarif_Jasa";
+            this.trf_jasa.HeaderText = "Tarif_Jasa";
+            this.trf_jasa.Name = "trf_jasa";
+            this.trf_jasa.ReadOnly = true;
+            this.trf_jasa.Visible = false;
+            // 
+            // stts
+            // 
+            this.stts.DataPropertyName = "Status";
+            this.stts.HeaderText = "Status";
+            this.stts.Name = "stts";
+            this.stts.ReadOnly = true;
             // 
             // viewJadwalDokterBindingSource
             // 
@@ -896,93 +990,102 @@
             this.epWarning.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epWarning.ContainerControl = this;
             // 
-            // No
+            // rbNonAktif
             // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 40;
+            this.rbNonAktif.Animated = true;
+            this.rbNonAktif.AutoRoundedCorners = true;
+            this.rbNonAktif.BackColor = System.Drawing.Color.Transparent;
+            this.rbNonAktif.BorderColor = System.Drawing.Color.White;
+            this.rbNonAktif.BorderRadius = 17;
+            this.rbNonAktif.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.rbNonAktif.BorderThickness = 2;
+            this.rbNonAktif.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.rbNonAktif.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbNonAktif.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.rbNonAktif.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.rbNonAktif.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.rbNonAktif.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.rbNonAktif.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.rbNonAktif.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbNonAktif.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.rbNonAktif.ForeColor = System.Drawing.Color.White;
+            this.rbNonAktif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbNonAktif.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbNonAktif.Location = new System.Drawing.Point(1091, 46);
+            this.rbNonAktif.Margin = new System.Windows.Forms.Padding(2);
+            this.rbNonAktif.Name = "rbNonAktif";
+            this.rbNonAktif.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.rbNonAktif.PressedDepth = 50;
+            this.rbNonAktif.Size = new System.Drawing.Size(153, 37);
+            this.rbNonAktif.TabIndex = 78;
+            this.rbNonAktif.Text = "Non-Aktif";
+            this.rbNonAktif.UseTransparentBackground = true;
+            this.rbNonAktif.Click += new System.EventHandler(this.CariData);
             // 
-            // id
+            // rbAktif
             // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id.DataPropertyName = "Id_JadwalDokter";
-            this.id.HeaderText = "ID Jadwal";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 80;
+            this.rbAktif.Animated = true;
+            this.rbAktif.AutoRoundedCorners = true;
+            this.rbAktif.BackColor = System.Drawing.Color.Transparent;
+            this.rbAktif.BorderColor = System.Drawing.Color.White;
+            this.rbAktif.BorderRadius = 17;
+            this.rbAktif.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.rbAktif.BorderThickness = 2;
+            this.rbAktif.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.rbAktif.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbAktif.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.rbAktif.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.rbAktif.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.rbAktif.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.rbAktif.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.rbAktif.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbAktif.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.rbAktif.ForeColor = System.Drawing.Color.White;
+            this.rbAktif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbAktif.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbAktif.Location = new System.Drawing.Point(934, 46);
+            this.rbAktif.Margin = new System.Windows.Forms.Padding(2);
+            this.rbAktif.Name = "rbAktif";
+            this.rbAktif.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.rbAktif.PressedDepth = 50;
+            this.rbAktif.Size = new System.Drawing.Size(153, 37);
+            this.rbAktif.TabIndex = 79;
+            this.rbAktif.Text = "Aktif";
+            this.rbAktif.UseTransparentBackground = true;
+            this.rbAktif.Click += new System.EventHandler(this.CariData);
             // 
-            // idDokterDataGridViewTextBoxColumn
+            // rbSemua
             // 
-            this.idDokterDataGridViewTextBoxColumn.DataPropertyName = "Id_Dokter";
-            this.idDokterDataGridViewTextBoxColumn.HeaderText = "Id_Dokter";
-            this.idDokterDataGridViewTextBoxColumn.Name = "idDokterDataGridViewTextBoxColumn";
-            this.idDokterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDokterDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dokter
-            // 
-            this.dokter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dokter.DataPropertyName = "Nama";
-            this.dokter.HeaderText = "Dokter";
-            this.dokter.Name = "dokter";
-            this.dokter.ReadOnly = true;
-            // 
-            // idRuangPeriksaDataGridViewTextBoxColumn
-            // 
-            this.idRuangPeriksaDataGridViewTextBoxColumn.DataPropertyName = "Id_RuangPeriksa";
-            this.idRuangPeriksaDataGridViewTextBoxColumn.HeaderText = "Id_RuangPeriksa";
-            this.idRuangPeriksaDataGridViewTextBoxColumn.Name = "idRuangPeriksaDataGridViewTextBoxColumn";
-            this.idRuangPeriksaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idRuangPeriksaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ruang
-            // 
-            this.ruang.DataPropertyName = "Nama_Ruang";
-            this.ruang.HeaderText = "Ruang";
-            this.ruang.Name = "ruang";
-            this.ruang.ReadOnly = true;
-            // 
-            // day
-            // 
-            this.day.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.day.DataPropertyName = "Hari";
-            this.day.HeaderText = "Hari";
-            this.day.Name = "day";
-            this.day.ReadOnly = true;
-            this.day.Width = 70;
-            // 
-            // jam1
-            // 
-            this.jam1.DataPropertyName = "Jam_Mulai";
-            this.jam1.HeaderText = "Jam Mulai";
-            this.jam1.Name = "jam1";
-            this.jam1.ReadOnly = true;
-            this.jam1.Width = 80;
-            // 
-            // jam2
-            // 
-            this.jam2.DataPropertyName = "Jam_Akhir";
-            this.jam2.HeaderText = "Jam Akhir";
-            this.jam2.Name = "jam2";
-            this.jam2.ReadOnly = true;
-            this.jam2.Width = 80;
-            // 
-            // trf_jasa
-            // 
-            this.trf_jasa.DataPropertyName = "Tarif_Jasa";
-            this.trf_jasa.HeaderText = "Tarif_Jasa";
-            this.trf_jasa.Name = "trf_jasa";
-            this.trf_jasa.ReadOnly = true;
-            this.trf_jasa.Visible = false;
-            // 
-            // stts
-            // 
-            this.stts.DataPropertyName = "Status";
-            this.stts.HeaderText = "Status";
-            this.stts.Name = "stts";
-            this.stts.ReadOnly = true;
+            this.rbSemua.Animated = true;
+            this.rbSemua.AutoRoundedCorners = true;
+            this.rbSemua.BackColor = System.Drawing.Color.Transparent;
+            this.rbSemua.BorderColor = System.Drawing.Color.White;
+            this.rbSemua.BorderRadius = 17;
+            this.rbSemua.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.rbSemua.BorderThickness = 2;
+            this.rbSemua.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.rbSemua.Checked = true;
+            this.rbSemua.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbSemua.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.rbSemua.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.rbSemua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(27)))));
+            this.rbSemua.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.rbSemua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
+            this.rbSemua.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbSemua.Font = new System.Drawing.Font("Porsche Next TT", 13F, System.Drawing.FontStyle.Bold);
+            this.rbSemua.ForeColor = System.Drawing.Color.White;
+            this.rbSemua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbSemua.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(235)))), ((int)(((byte)(97)))));
+            this.rbSemua.Location = new System.Drawing.Point(777, 46);
+            this.rbSemua.Margin = new System.Windows.Forms.Padding(2);
+            this.rbSemua.Name = "rbSemua";
+            this.rbSemua.PressedColor = System.Drawing.Color.NavajoWhite;
+            this.rbSemua.PressedDepth = 50;
+            this.rbSemua.Size = new System.Drawing.Size(153, 37);
+            this.rbSemua.TabIndex = 80;
+            this.rbSemua.Text = "Semua Data";
+            this.rbSemua.UseTransparentBackground = true;
+            this.rbSemua.Click += new System.EventHandler(this.CariData);
             // 
             // Form_Master_Jadwal_Dokter
             // 
@@ -1064,5 +1167,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jam2;
         private System.Windows.Forms.DataGridViewTextBoxColumn trf_jasa;
         private System.Windows.Forms.DataGridViewTextBoxColumn stts;
+        private Guna.UI2.WinForms.Guna2Button rbNonAktif;
+        private Guna.UI2.WinForms.Guna2Button rbAktif;
+        private Guna.UI2.WinForms.Guna2Button rbSemua;
     }
 }

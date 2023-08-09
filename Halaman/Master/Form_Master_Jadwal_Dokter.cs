@@ -20,7 +20,8 @@ namespace D_Clinic.Halaman
     {
         Msg_Box mBox = new Msg_Box();
 
-        string id_jadwal, id_dokter, id_ruang, hari, jam_mulai, jam_akhir, status;
+        string id_jadwal, id_dokter, id_ruang, hari, jam_mulai, jam_akhir;
+        string status = "";
         int tarif, validJdwDokter = 0, validJdwRuang = 0;
         bool ditemukan = false;
         public Form_Master_Jadwal_Dokter()
@@ -575,6 +576,23 @@ namespace D_Clinic.Halaman
                 mBox.WarningMessage();
             }
         }
+        private void CariData(object sender, EventArgs e)
+        {
+            if (rbSemua.Checked)
+            {
+                status = "";
+            }
+            else if (rbAktif.Checked)
+            {
+                status = "Aktif";
+            }
+            else if (rbNonAktif.Checked)
+            {
+                status = "Non";
+            }
+            cariData();
+
+        }
         private void cariData()
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -587,7 +605,7 @@ namespace D_Clinic.Halaman
                 SqlCommand search = new SqlCommand("sp_SearchJadwalDokter", connection);
                 search.CommandType = CommandType.StoredProcedure;
                 search.Parameters.AddWithValue("Data", data); 
-                search.Parameters.AddWithValue("Status", ""); 
+                search.Parameters.AddWithValue("Status", status); 
                 SqlDataAdapter adapter = new SqlDataAdapter(search);
                 DataTable table = new DataTable();
                 adapter.Fill(table);

@@ -37,13 +37,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radiusForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -63,15 +63,6 @@
             this.dClinicDataSet = new D_Clinic.DClinicDataSet();
             this.txKeterangan = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblDaftarResep = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.no_daftar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTrsPendaftaranDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dokter_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggal_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.waktuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ket_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Harga_Resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewTrsPemberianResepBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txDokter = new Guna.UI2.WinForms.Guna2TextBox();
             this.txTanggal = new Guna.UI2.WinForms.Guna2TextBox();
@@ -100,6 +91,15 @@
             this.view_TrsPemberianResepTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPemberianResepTableAdapter();
             this.view_TrsPemberianResepDiterimaTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_TrsPemberianResepDiterimaTableAdapter();
             this.view_DetailObatTrsPemberianResepTableAdapter = new D_Clinic.DClinicDataSetTableAdapters.View_DetailObatTrsPemberianResepTableAdapter();
+            this.no_daftar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_daftar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dokter_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggal_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.waktuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ket_resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Harga_Resep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblDetailObat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDetailObatTrsPemberianResepBindingSource)).BeginInit();
@@ -418,7 +418,7 @@
             this.tblDaftarResep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.no_daftar,
             this.id_resep,
-            this.idTrsPendaftaranDataGridViewTextBoxColumn,
+            this.id_daftar,
             this.dokter_resep,
             this.tanggal_resep,
             this.waktuDataGridViewTextBoxColumn,
@@ -470,81 +470,6 @@
             this.tblDaftarResep.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(46)))), ((int)(((byte)(48)))));
             this.tblDaftarResep.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDaftarResep_CellContentClick);
             this.tblDaftarResep.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tblDaftarResep_RowPostPaint);
-            // 
-            // no_daftar
-            // 
-            this.no_daftar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.no_daftar.HeaderText = "No";
-            this.no_daftar.Name = "no_daftar";
-            this.no_daftar.ReadOnly = true;
-            this.no_daftar.Width = 40;
-            // 
-            // id_resep
-            // 
-            this.id_resep.DataPropertyName = "Id_TrsResep";
-            this.id_resep.HeaderText = "ID Resep";
-            this.id_resep.Name = "id_resep";
-            this.id_resep.ReadOnly = true;
-            // 
-            // idTrsPendaftaranDataGridViewTextBoxColumn
-            // 
-            this.idTrsPendaftaranDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idTrsPendaftaranDataGridViewTextBoxColumn.DataPropertyName = "Id_TrsPendaftaran";
-            this.idTrsPendaftaranDataGridViewTextBoxColumn.HeaderText = "ID Pendaftaran";
-            this.idTrsPendaftaranDataGridViewTextBoxColumn.Name = "idTrsPendaftaranDataGridViewTextBoxColumn";
-            this.idTrsPendaftaranDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idTrsPendaftaranDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // dokter_resep
-            // 
-            this.dokter_resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dokter_resep.DataPropertyName = "Nama_Dokter";
-            this.dokter_resep.HeaderText = "Dokter";
-            this.dokter_resep.Name = "dokter_resep";
-            this.dokter_resep.ReadOnly = true;
-            // 
-            // tanggal_resep
-            // 
-            this.tanggal_resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tanggal_resep.DataPropertyName = "Tanggal";
-            dataGridViewCellStyle8.Format = "D";
-            this.tanggal_resep.DefaultCellStyle = dataGridViewCellStyle8;
-            this.tanggal_resep.HeaderText = "Tanggal";
-            this.tanggal_resep.Name = "tanggal_resep";
-            this.tanggal_resep.ReadOnly = true;
-            // 
-            // waktuDataGridViewTextBoxColumn
-            // 
-            this.waktuDataGridViewTextBoxColumn.DataPropertyName = "Waktu";
-            this.waktuDataGridViewTextBoxColumn.HeaderText = "Waktu";
-            this.waktuDataGridViewTextBoxColumn.Name = "waktuDataGridViewTextBoxColumn";
-            this.waktuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.waktuDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ket_resep
-            // 
-            this.ket_resep.DataPropertyName = "Keterangan";
-            this.ket_resep.HeaderText = "Keterangan";
-            this.ket_resep.Name = "ket_resep";
-            this.ket_resep.ReadOnly = true;
-            this.ket_resep.Visible = false;
-            // 
-            // Harga_Resep
-            // 
-            this.Harga_Resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Harga_Resep.DataPropertyName = "Harga_Resep";
-            dataGridViewCellStyle9.Format = "C0";
-            this.Harga_Resep.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Harga_Resep.HeaderText = "Harga Resep";
-            this.Harga_Resep.Name = "Harga_Resep";
-            this.Harga_Resep.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // viewTrsPemberianResepBindingSource
             // 
@@ -1006,6 +931,81 @@
             // 
             this.view_DetailObatTrsPemberianResepTableAdapter.ClearBeforeFill = true;
             // 
+            // no_daftar
+            // 
+            this.no_daftar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.no_daftar.HeaderText = "No";
+            this.no_daftar.Name = "no_daftar";
+            this.no_daftar.ReadOnly = true;
+            this.no_daftar.Width = 40;
+            // 
+            // id_resep
+            // 
+            this.id_resep.DataPropertyName = "Id_TrsResep";
+            this.id_resep.HeaderText = "ID Resep";
+            this.id_resep.Name = "id_resep";
+            this.id_resep.ReadOnly = true;
+            // 
+            // id_daftar
+            // 
+            this.id_daftar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id_daftar.DataPropertyName = "Id_TrsPendaftaran";
+            this.id_daftar.HeaderText = "ID Pendaftaran";
+            this.id_daftar.Name = "id_daftar";
+            this.id_daftar.ReadOnly = true;
+            this.id_daftar.Width = 110;
+            // 
+            // dokter_resep
+            // 
+            this.dokter_resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dokter_resep.DataPropertyName = "Nama_Dokter";
+            this.dokter_resep.HeaderText = "Dokter";
+            this.dokter_resep.Name = "dokter_resep";
+            this.dokter_resep.ReadOnly = true;
+            // 
+            // tanggal_resep
+            // 
+            this.tanggal_resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tanggal_resep.DataPropertyName = "Tanggal";
+            dataGridViewCellStyle8.Format = "D";
+            this.tanggal_resep.DefaultCellStyle = dataGridViewCellStyle8;
+            this.tanggal_resep.HeaderText = "Tanggal";
+            this.tanggal_resep.Name = "tanggal_resep";
+            this.tanggal_resep.ReadOnly = true;
+            // 
+            // waktuDataGridViewTextBoxColumn
+            // 
+            this.waktuDataGridViewTextBoxColumn.DataPropertyName = "Waktu";
+            this.waktuDataGridViewTextBoxColumn.HeaderText = "Waktu";
+            this.waktuDataGridViewTextBoxColumn.Name = "waktuDataGridViewTextBoxColumn";
+            this.waktuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.waktuDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ket_resep
+            // 
+            this.ket_resep.DataPropertyName = "Keterangan";
+            this.ket_resep.HeaderText = "Keterangan";
+            this.ket_resep.Name = "ket_resep";
+            this.ket_resep.ReadOnly = true;
+            this.ket_resep.Visible = false;
+            // 
+            // Harga_Resep
+            // 
+            this.Harga_Resep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Harga_Resep.DataPropertyName = "Harga_Resep";
+            dataGridViewCellStyle9.Format = "C0";
+            this.Harga_Resep.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Harga_Resep.HeaderText = "Harga Resep";
+            this.Harga_Resep.Name = "Harga_Resep";
+            this.Harga_Resep.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Form_Daftar_Resep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1069,15 +1069,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hargaSatuanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jumlahDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalHargaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no_daftar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_resep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTrsPendaftaranDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dokter_resep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tanggal_resep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn waktuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ket_resep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Harga_Resep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn no_daftar2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTrsResepDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTrsPendaftaranDataGridViewTextBoxColumn1;
@@ -1090,5 +1081,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no_daftar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_resep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_daftar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dokter_resep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tanggal_resep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn waktuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ket_resep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Harga_Resep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

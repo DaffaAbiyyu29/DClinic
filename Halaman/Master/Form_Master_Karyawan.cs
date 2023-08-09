@@ -21,7 +21,7 @@ namespace D_Clinic.Halaman
     {
         Msg_Box mBox = new Msg_Box();
         byte[] imageData;
-        int validNama = 0, validUsername = 0, validEmail = 0, validNomorTelp = 0;
+        int validUsername = 0, validEmail = 0, validNomorTelp = 0;
         bool updateFoto = false;
         string jabatan, status;
         public Form_Master_Karyawan()
@@ -44,7 +44,7 @@ namespace D_Clinic.Halaman
             imgProfil.Image = null;
             status = "";
             updateFoto = false;
-            validNama = 0;
+            //validNama = 0;
             validUsername = 0;
             txPassword.UseSystemPasswordChar = true;
             btnTampilPass.Image = Properties.Resources.hide_pass;
@@ -150,7 +150,8 @@ namespace D_Clinic.Halaman
                 }
             }
         }
-        private int CekNamaKaryawan(string Nama, string id)
+
+        /*private int CekNamaKaryawan(string Nama, string id)
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -168,7 +169,8 @@ namespace D_Clinic.Halaman
                     return result;
                 }
             }
-        }
+        }*/
+
         private int CekEmailKaryawan(string Email, string id)
         {
             string connectionString = "Integrated Security = False; Data Source = DAFFA; User = sa; Password = daffa; Initial Catalog = DClinic";
@@ -479,8 +481,8 @@ namespace D_Clinic.Halaman
             bool formatEmail = ValidasiEmail(txEmail.Text);
             if (txNama.Text.Length != 0 && txTelp.Text.Length != 0 && txEmail.Text.Length != 0 && txUsername.Text.Length != 0 && txPassword.Text.Length != 0 && cbJabatan.SelectedIndex != -1)
             {
-                if (validNama == 0)
-                {
+                //if (validNama == 0)
+                //{
                     if (validNomorTelp == 0)
                     {
                         if (txTelp.Text.Length < 12)
@@ -498,7 +500,7 @@ namespace D_Clinic.Halaman
                                 {
                                     if (validUsername == 0)
                                     {
-                                        TambahKaryawan();
+                                        UpdateKaryawan();
                                     }
                                     else
                                     {
@@ -533,14 +535,14 @@ namespace D_Clinic.Halaman
                         mBox.WarningMessage();
                     }
 
-                }
+                /*}
                 else
                 {
                     mBox.text1.Text = "Karyawan Sudah Terdaftar!";
                     mBox.session.Text = "Karyawan";
                     mBox.Show();
                     mBox.WarningMessage();
-                }
+                }*/
             }
             else
             {
@@ -556,8 +558,8 @@ namespace D_Clinic.Halaman
             bool formatEmail = ValidasiEmail(txEmail.Text);
             if (txNama.Text.Length != 0 && txTelp.Text.Length != 0 && txEmail.Text.Length != 0 && txUsername.Text.Length != 0 && txPassword.Text.Length != 0 && cbJabatan.SelectedIndex != -1)
             {
-                if (validNama == 0)
-                {
+                //if (validNama == 0)
+                //{
                     if (validNomorTelp == 0)
                     {
                         if (txTelp.Text.Length < 12)
@@ -610,14 +612,14 @@ namespace D_Clinic.Halaman
                         mBox.WarningMessage();
                     }
                     
-                }
+                /*}
                 else
                 {
                     mBox.text1.Text = "Karyawan Sudah Terdaftar!";
                     mBox.session.Text = "Karyawan";
                     mBox.Show();
                     mBox.WarningMessage();
-                }
+                }*/
             } 
             else
             {
@@ -741,7 +743,7 @@ namespace D_Clinic.Halaman
             }
         }
 
-        private void txNama_TextChanged(object sender, EventArgs e)
+        /*private void txNama_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txNama.Text))
             {
@@ -756,7 +758,7 @@ namespace D_Clinic.Halaman
                 }
             }
             Gambar();
-        }
+        }*/
 
         private void btnTampilPass_Click(object sender, EventArgs e)
         {
@@ -778,6 +780,18 @@ namespace D_Clinic.Halaman
         private void Form_Master_Karyawan_Load(object sender, EventArgs e)
         {
             txPassword.UseSystemPasswordChar = true;
+        }
+
+        private void txNama_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                mBox.text1.Text = "Harus Diisi dengan Huruf";
+                mBox.session.Text = "Karaywan";
+                mBox.Show();
+                mBox.WarningMessage();
+            }
         }
 
         private void txTelp_TextChanged_1(object sender, EventArgs e)
